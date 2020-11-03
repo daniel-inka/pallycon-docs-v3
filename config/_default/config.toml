@@ -14,7 +14,7 @@ baseurl = "https://pallycon-docs-v3.netlify.app/"
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = "&copy; INKA ENTWORKS {year}"
+copyright = "&copy; {year} INKA ENTWORKS Inc."
 
 ############################
 ## Advanced options below ##
@@ -26,7 +26,7 @@ enableGitInfo = false
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
 hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
 
 summaryLength = 30  # Listing summary length in words. Also, see `abstract_length` in `params.toml`.

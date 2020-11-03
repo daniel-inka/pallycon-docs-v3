@@ -5,63 +5,63 @@
 
 [[main]]
   name = "Multi-DRM"
-  url = "https://pallycon.com/multi-drm/"
+  url = "https://pallycon.com/ko/multi-drm/"
   identifier = "multi-drm"
   weight = 10
 
 [[main]]
   name = "License Service"
-  url = "https://pallycon.com/license-service/"
+  url = "https://pallycon.com/ko/license-service/"
   parent = "multi-drm"
   weight = 11
 
 [[main]]
   name = "Packaging"
-  url = "https://pallycon.com/packaging/"
+  url = "https://pallycon.com/ko/packaging/"
   parent = "multi-drm"
   weight = 12
 
 [[main]]
   name = "SDK"
-  url = "https://pallycon.com/sdk/"
+  url = "https://pallycon.com/ko/sdk/"
   parent = "multi-drm"
   weight = 13
 
 [[main]]
   name = "Anti Capture"
-  url = "https://pallycon.com/anti-capture/"
+  url = "https://pallycon.com/ko/anti-capture/"
   parent = "multi-drm"
   weight = 14
 
 
 [[main]]
   name = "Watermarking"
-  url = "https://pallycon.com/forensic-watermarking/"
+  url = "https://pallycon.com/ko/forensic-watermarking/"
   identifier = "watermarking"
   weight = 20
 
 [[main]]
   name = "Forensic Watermarking"
-  url = "https://pallycon.com/forensic-watermarking/"
+  url = "https://pallycon.com/ko/forensic-watermarking/"
   parent = "watermarking"
   weight = 21
 
 [[main]]
   name = "Visible Watermarking"
-  url = "https://pallycon.com/visible-watermarking/"
+  url = "https://pallycon.com/ko/visible-watermarking/"
   parent = "watermarking"
   weight = 22
 
 
 [[main]]
   name = "Developers"
-  url = "https://pallycon.com/drm-platform"
+  url = "https://pallycon.com/ko/drm-platform"
   identifier = "developer"
   weight = 30
 
 [[main]]
   name = "DRM Platform"
-  url = "https://pallycon.com/drm-platform/"
+  url = "https://pallycon.com/ko/drm-platform/"
   parent = "developer"
   weight = 31
 
@@ -73,31 +73,31 @@
 
 [[main]]
   name = "Multi-DRM DEMO"
-  url = "https://pallycon.com/multi-drm-demo/"
+  url = "https://pallycon.com/ko/multi-drm-demo/"
   parent = "developer"
   weight = 33
 
 [[main]]
   name = "Dev Console"
-  url = "https://sample.pallycon.com/dev/devconsole/encDec.do?lang=en"
+  url = "https://sample.pallycon.com/dev/devconsole/encDec.do?lang=ko"
   parent = "developer"
   weight = 34
 
 [[main]]
   name = "HelpDesk"
-  url = "https://pallycon.zendesk.com/hc/en-us"
+  url = "https://pallycon.zendesk.com/hc/ko"
   parent = "developer"
   weight = 35
 
 
 [[main]]
   name = "Blog"
-  url = "https://pallycon.com/blog/"
+  url = "https://pallycon.com/ko/blog/"
   weight = 40
 
 [[main]]
   name = "Pricing"
-  url = "https://pallycon.com/pricing/"
+  url = "https://pallycon.com/ko/pricing/"
   weight = 50
 
 #[[main]]
@@ -107,37 +107,37 @@
 
 [[main]]
   name = "Company"
-  url = "https://pallycon.com/about"
+  url = "https://pallycon.com/ko/about"
   identifier = "company"
   weight = 60
 
 [[main]]
   name = "About"
-  url = "https://pallycon.com/about"
+  url = "https://pallycon.com/ko/about"
   parent = "company"
   weight = 61
 
 [[main]]
   name = "Partners"
-  url = "https://pallycon.com/partners"
+  url = "https://pallycon.com/ko/partners"
   parent = "company"
   weight = 62
 
 [[main]]
   name = "Customers"
-  url = "https://pallycon.com/customers"
+  url = "https://pallycon.com/ko/customers"
   parent = "company"
   weight = 63
 
 [[main]]
   name = "Use Cases"
-  url = "https://pallycon.com/usecase"
+  url = "https://pallycon.com/ko/usecase"
   parent = "company"
   weight = 64
 
 [[main]]
   name = "Contact"
-  url = "https://pallycon.com/contact"
+  url = "https://pallycon.com/ko/contact"
   parent = "company"
   weight = 65
 

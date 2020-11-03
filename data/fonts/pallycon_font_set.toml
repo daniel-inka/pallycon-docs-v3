@@ -1,0 +1,11 @@
+# Font style metadata
+name = "PallyCon"
+
+# Optional Google font URL
+google_fonts = "Noto+Sans+KR:400,700|Nanum+Gothic:400,400italic,700|Nanum+Gothic+Coding"
+
+# Font families
+heading_font = "Noto Sans KR"
+body_font = "Nanum Gothic"
+nav_font = "Nanum Gothic"
+mono_font = "Nanum Gothic Coding"

@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
-title = "Features"
-subtitle = "Document _anything_ ✨"
+title = "Guide documents"
+subtitle = "If you are a first time user of PallyCon service, please try to understand various basic concepts and experience the service through `Getting Started`. In the next step, please refer to `Multi-DRM` guide or `Watermarking` guide as needed to apply the service."
 
 # Showcase features.
 # 
@@ -15,22 +15,26 @@ subtitle = "Document _anything_ ✨"
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "book-open"
+  #icon = "book-open"
+  icon = "flag"
   icon_pack = "fas"
-  name = "Project Documentation"
-  description = "For users"
+  name = "Getting Started"
+  # description = "Provides basic description and quick start guide for quick understanding and experience of PallyCon Multi-DRM and Forensic Watermarking service."
+  link = "/en/getting-started/"
   
 [[feature]]
-  icon = "question"
+  icon = "lock"
   icon_pack = "fas"
-  name = "Knowledge Base"
-  description = "For teams"  
-  
+  name = "Multi-DRM"
+  # description = "For teams"  
+  link = "/en/multidrm/"
+
 [[feature]]
-  icon = "list-alt"
+  icon = "photo-video"
   icon_pack = "fas"
-  name = "Personal Notebook"
-  description = "For yourself"
+  name = "Watermarking"
+  # description = "For yourself"
+  link = "/en/watermarking/"
 
 # Uncomment to use emoji icons.
 # [[feature]]
