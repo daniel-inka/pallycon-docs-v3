@@ -51,25 +51,25 @@ subtitle = "고객들이 가장 많이 참고하고 있는 주요 가이드 문�
 +++
 
 {{% callout info %}}
-**PallyCon 멀티DRM**
+**멀티DRM 라이선스 토큰 가이드**
 
-PallyCon 멀티DRM 서비스는 다양한 클라이언트 환경에서 멀티미디어 콘텐츠를 보호할 수 있도록 PlayReady, Widevine, FairPlay, NCG DRM 등 멀티DRM에 대한 라이선스 발급과 클라이언트 연동 솔루션을 제공합니다.
+멀티DRM 콘텐츠의 재생에 필요한 DRM 라이선스 발급 방식인 `라이선스 토큰`의 생성 규격에 대한 가이드 문서입니다.
 
-[**바로 가기**](/ko/multidrm/)
+[**바로 가기**](/ko/multidrm/license/license-token)
 {{% /callout %}}
 
 {{% callout note %}}
-**PallyCon 포렌식 워터마킹**
+**HTML5 플레이어 연동 가이드**
 
-헐리우드 스튜디오 콘텐츠 등 프리미엄 콘텐츠에는 멀티DRM 외에도 포렌식 워터마킹 적용이 필요합니다. 본 문서는 클라우드 SaaS 방식의 PallyCon 포렌식 워터마킹 서비스를 적용하는 방법과 관련 API를 설명합니다.
+서비스 사이트의 웹 페이지에서 HTML5 플레이어를 이용해 멀티DRM(PlayReady, Widevine, FairPlay Streaming)으로 보호된 스트리밍 콘텐츠(DASH 또는 HLS)를 재생하는 방법을 설명합니다.
 
-[**바로 가기**](/ko/watermarking/)
+[**바로 가기**](/ko/multidrm/clients/html5-player/)
 {{% /callout %}}
 
 {{% callout note %}}
-**PallyCon 안티캡쳐**
+**포렌식 워터마킹 연동 워크플로우**
 
-블라 블라
+ PallyCon 포렌식 워터마킹 연동에 필요한 전체 워크플로우와 단계별 각종 옵션들을 설명합니다.
 
-[**바로 가기**](/ko/anticapture/)
+[**바로 가기**](/ko/forensic-watermarking/getting-started/watermarking-workflow/)
 {{% /callout %}}
