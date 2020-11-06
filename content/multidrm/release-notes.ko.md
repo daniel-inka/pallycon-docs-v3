@@ -7,8 +7,9 @@ date: "2019-05-05T00:00:00+01:00"
 draft: false
 menu:
   multidrm:
-    parent: 멀티 DRM
+    parent: 멀티DRM 가이드
     weight: 100
+    name: 릴리즈 노트
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
