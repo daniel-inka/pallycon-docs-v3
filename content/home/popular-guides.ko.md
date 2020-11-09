@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
-title = "주요 문서"
+title = "인기 문서"
 subtitle = "고객들이 가장 많이 참고하고 있는 주요 가이드 문서들입니다."
 
 [design]
