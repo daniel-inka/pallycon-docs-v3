@@ -4,8 +4,9 @@ weight: 3
 
 # Page metadata.
 title: CPIX API 가이드
+summary: 본 API를 이용하면 CPIX 기반의 키 연동을 지원하는 인코더/트랜스코더 솔루션과 PallyCon 멀티 DRM을 쉽게 연동할 수 있습니다.
 date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-06-26T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.

@@ -1,9 +1,11 @@
 ---
 title: 지원 환경
 linktitle: 지원 환경
+summary: PallyCon 멀티 DRM이 지원하는 클라이언트 플랫폼과 OS를 설명합니다.
 toc: true
 type: book
 date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-05-11T00:00:00Z"
 draft: false
 menu:
   multidrm:

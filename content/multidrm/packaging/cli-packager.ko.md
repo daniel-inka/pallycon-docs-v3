@@ -5,8 +5,9 @@ weight: 2
 
 # Page metadata.
 title: CLI 패키져 가이드
+summary: 본 문서는 PallyCon 멀티 DRM 클라우드 서비스에 사용되는 CLI(Command Line Interface) 기반 콘텐츠 패키징 툴의 기본 개념과 사용 방법을 설명합니다.
 date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-21T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
@@ -33,17 +34,13 @@ menu:
 4. HLS : HLS-AES 스트리밍 콘텐츠를 패키징하여 FPS(FairPlay Streaming) DRM을 적용하는 방식.
 5. HLS-NCG : HLS-AES 규격의 clear key 콘텐츠를 NCG DRM을 통해 보호하는 방식.
 
-또한 CID(Content ID) 발급 방식에 따라 패키져 실행 인자를 통한 직접 입력 방식과 패키징 콜백 페이지를 통한 방식이 있습니다.
-
-![flow1](/docs/images/cli-packager-flow1.png)
-
 > 본 문서는 최신 버전의 CLI 패키져를 기준으로 작성되었습니다. 아래 버튼을 클릭해 최신 버전 CLI 패키져를 다운로드할 수 있습니다.
 
-{{% button href="/docs/files/PallyCon-Packager-Cloud-v3.6.0.zip" icon="fas fa-download" %}}PallyCon CLI 패키져 다운로드{{% /button %}}
+{{% button href="/docs/files/PallyCon-Packager-Cloud-v3.6.3.zip" icon="fas fa-download" %}}PallyCon CLI 패키져 다운로드{{% /button %}}
 
 ## 연동 구조 및 설치 환경
 
-![flow2](/docs/images/cli-packager-flow2.png)
+![flow1](/docs/images/cli-packager-flow1.png)
 
 PallyCon CLI 패키져는 PallyCon 멀티 DRM 클라우드 서버와 연동되어 동작 합니다. PallyCon 클라우드 서버는 서비스 사이트 별 콘텐츠 키 정보를 관리하며, 클라이언트에서 DRM 라이선스 정보 요청 시 CID에 연결된 키(CEK) 정보를 찾아서 라이선스를 발급합니다. 
 
@@ -70,7 +67,7 @@ PallyCon CLI 패키져는 구글의 Shaka Packager를 기반으로 개발되었�
 | :--- | :---- | :--- | :--------------|
 | `--site_id` | string | Y | PallyCon 서비스 사이트 ID (4바이트) |
 | `--access_key` | string | Y | 서비스 사이트에 발급되는 인증 키 <br>PallyCon 콘솔 사이트에서 확인 |
-| `--content_id` | string | N | 패키징 콜백 페이지 대신 CID를 직접 입력하는 경우에 사용. (최대 200 바이트) 외부 키 사용 시에는 필수 사항 |
+| `--content_id` | string | Y | 패키징 대상 콘텐츠의 고유 ID. 고객사 CMS에서 관리하는 ID 값을 입력하며, 이후 클라이언트 연동 단계에서 동일한 CID를 사용해야 함. (최대 200 바이트) |
 | `--cmaf` | bool | Y | CMAF(Widevine, PlayReady, FPS) 패키징 수행 |
 | `--dash` | bool | Y | DASH-CENC(Widevine, PlayReady) 패키징 수행 |
 | `--hls` | bool | Y | HLS-AES (FPS) 패키징 수행 |
@@ -93,6 +90,7 @@ PallyCon CLI 패키져는 구글의 Shaka Packager를 기반으로 개발되었�
 | `--m3u8_filename` | string | N | HLS master manifest (.m3u8) 파일명 |
 | `--subtitle` | string | N | 자막 파일명 <br> [추가 옵션] name : 트랙명 설정 (:name=<값>) lang : 자막 언어 설정 (:lang=<값>) |
 | `--generate_tracktype_manifests` | bool | N | 트랙별 매니페스트(플레이리스트) 파일 생성. SD부터 UHD 트랙까지 포함된 어댑티브 스트림의 경우, 'SD_ONLY', 'SD_HD', 'SD_UHD' 세 가지 매니페스트가 생성됨. |
+| `--enable_average_bandwidth_mpd` | bool | N | MPD 파일 내 각 트랙 별 대역폭을 최대 값 대신 평균 값으로 적용 (기본: false) |
 | `--stop_indicator` | bool | N | 패키징 진행 상태 표시기 숨김 |
 | `--quiet` | bool | N | 패키징 로그 숨김 |
 
@@ -105,7 +103,6 @@ PallyCon 키 서버에서 생성한 암호 키를 사용하지 않고, 서비스
 | Name | Type | Required | Description |
 | :--- | :---- | :--- | :--------------|
 | `--enable_raw_key_encryption` | bool | Y | External key 사용 여부 |
-| `--content_id` | string | Y | CID 수동 지정, 최대 200 byte |
 | `--provider` | string | N | Widevine PSSH 생성을 위한 DRM provider 문자열<br>기본 값: inkaentworks |
 | `--license_url` | string | N | 라이선스 발급 URL <br>기본 값: https://license.pallycon.com/ri/licenseManager.do |
 | `--keys` | string | Y | 암호화 key 와 key ID 쌍 (HEX) |
@@ -156,7 +153,7 @@ PallyCon 키 서버에서 생성한 암호 키를 사용하지 않고, 서비스
 NCG DRM으로 clear key를 보호하는 HLS-AES128 스트림 패키징입니다.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls_ncg ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls_ncg -i <input file> -o <output directory>
 ```
 
 ### HLS 패키징
@@ -164,7 +161,7 @@ NCG DRM으로 clear key를 보호하는 HLS-AES128 스트림 패키징입니다.
 FairPlay Streaming DRM으로 보호되는 HLS 스트림 패키징입니다.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls -i <input file> -o <output directory>
 ```
 
 ### DASH 패키징
@@ -172,7 +169,7 @@ FairPlay Streaming DRM으로 보호되는 HLS 스트림 패키징입니다.
 PlayReady, Widevine DRM으로 보호되는 DASH 스트림 패키징입니다.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash -i <input file> -o <output directory>
 ```
 
 ### CMAF 패키징
@@ -180,7 +177,7 @@ PlayReady, Widevine DRM으로 보호되는 DASH 스트림 패키징입니다.
 PlayReady, Widevine, FPS DRM으로 보호되는 CMAF 방식 스트림 패키징입니다.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --cmaf ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --cmaf -i <input file> -o <output directory>
 ```
 
 ### NCG 패키징
@@ -188,7 +185,7 @@ PlayReady, Widevine, FPS DRM으로 보호되는 CMAF 방식 스트림 패키징�
 다운로드 또는 Progressive Download 시나리오에 사용되는 NCG DRM으로 암호화된 MP4 파일 패키징입니다.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --ncg ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --ncg -i <input file> -o <output directory>
 ```
 
 ### Adaptive-Streaming 패키징
@@ -196,7 +193,7 @@ PlayReady, Widevine, FPS DRM으로 보호되는 CMAF 방식 스트림 패키징�
 DASH 또는 HLS 패키징 시, 여러 해상도의 콘텐츠를 입력해 Adaptvie Streaming 형태로 패키징하는 방법입니다.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash --hls ​-i <input file1> <input file2> <input file3>​​ -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash --hls ​-i <input file1> <input file2> <input file3> -o <output directory>
 ```
 
 ### 외부 키 입력 (NCG, HLS-NCG)
@@ -204,7 +201,7 @@ DASH 또는 HLS 패키징 시, 여러 해상도의 콘텐츠를 입력해 Adaptv
 PallyCon 키 서버에서 생성하는 암호 키 대신, 서비스 사이트가 직접 관리하는 키를 이용해 NCG DRM으로 패키징하는 방법입니다.
 
 ```
-./PallyConPackager --site_id <site id> ​--content_id <content id> --enable_raw_key_encryption --ncg_cek <32bytes key> --ncg --hls_ncg ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> ​--content_id <content id> --enable_raw_key_encryption --ncg_cek <32bytes key> --ncg --hls_ncg -i <input file> -o <output directory>
 ```
 
 ### 외부 키 입력 (DASH, HLS)
@@ -212,7 +209,7 @@ PallyCon 키 서버에서 생성하는 암호 키 대신, 서비스 사이트가
 PallyCon 키 서버에서 생성하는 암호 키 대신, 서비스 사이트가 직접 관리하는 키를 이용해 멀티 DRM으로 패키징하는 방법입니다.
 
 ```
-./PallyConPackager ​--content_id <content id> --dash --hls --enable_raw_key_encryption --keys <key pair (e.g. label=:key_id=<16 bytes key id>:key=<16 bytes key>)>​​ -i <input file> -o <output directory>
+./PallyConPackager ​--content_id <content id> --dash --hls --enable_raw_key_encryption --keys <key pair (e.g. label=:key_id=<16 bytes key id>:key=<16 bytes key>)> -i <input file> -o <output directory>
 ```
 
 ### 설정 파일 사용
@@ -220,7 +217,7 @@ PallyCon 키 서버에서 생성하는 암호 키 대신, 서비스 사이트가
 입력 파라미터 중에서 고정된 설정 값들을 별도의 설정 파일로 저장해 사용하는 방법입니다.
 
 ```
-./PallyConPackager ​--config_file <configuration file path>​​ -i <input file> -o <output directory> --content_id <content_id>
+./PallyConPackager ​--config_file <configuration file path> -i <input file> -o <output directory> --content_id <content_id>
 ```
 
 #### 설정 파일 예제
@@ -253,13 +250,15 @@ PallyCon 키 서버에서 생성하는 암호 키 대신, 서비스 사이트가
 ### 라이브 패키징 (DASH 또는 HLS)
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id>​ ​​-o <output directory> ​--dash(or --hls) -i <input stream (e.g. udp://127.0.0.1:1234)> --preserved_segments_outside_live_window 10 --time_shift_buffer_depth 60
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id>​  -o <output directory> ​--dash(or --hls) -i <input stream (e.g. udp://127.0.0.1:1234)> --preserved_segments_outside_live_window 10 --time_shift_buffer_depth 60
 ```
 
 > - IIS(Windows), Apache/Nginx(Linux) 등의 웹 서버를 활용하면 실시간 패키징 / 재생 테스트를 할 수 있습니다.
 > - 패키저가 지원하는 유일한 라이브 스트림 프로토콜은 UDP 입니다. 지원되지 않는 다른 프로토콜의 스트림을 패키징하고 싶은 경우 다음과 같이 ffmpeg을 이용하여 redirect 할 수 있습니다.
 > - `# ffmpeg -i <input stream> -f mpegts -vcodec copy -acodec copy udp://127.0.0.1:1234`
 > - 위와 같은 PallyConPackager 이외의 라이브 스트리밍 환경은 각 서비스 사이트마다 직접 구성해야 합니다.
+
+> CLI 패키저에서 지원하는 라이브 스트림 패키징 기능은 간단한 개발 테스트 또는 소규모 서비스에 적합하며, 다수의 라이브 채널을 제공하는 대규모 서비스에는 권장하지 않습니다. 이러한 서비스의 경우에는 AWS Elemental 또는 Wowza Streaming Engine 등 별도의 상용 라이브 스트리밍 솔루션을 이용하시기 바랍니다.
 
 ### 멀티 키 패키징
 
@@ -276,7 +275,5 @@ PallyCon 키 서버에서 생성하는 암호 키 대신, 서비스 사이트가
 ### 멀티 매니페스트 생성
 
 ```
-#./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> -o <output directory> --dash --multi_key ​-i <input file1> <input file2> ... --generate_tracktype_manifests 
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> -o <output directory> --dash --multi_key ​-i <input file1> <input file2> ... --generate_tracktype_manifests 
 ```
-
-***

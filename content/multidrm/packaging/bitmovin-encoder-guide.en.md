@@ -4,8 +4,9 @@ weight: 6
 
 # Page metadata.
 title: Bitmovin Encoder Integration Guide
+summary: This document explains how to create DASH/HLS content with multi-DRM using examples written based on the Bitmovin Java SDK.
 date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-06-04T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.

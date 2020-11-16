@@ -1,10 +1,14 @@
 ---
 title: Multi-DRM Quick Start
 linktitle: Multi-DRM Quick Start
+summary: This document guides you through content packaging and DRM license integration for playback for a quick experience of PallyCon Multi-DRM service.
 toc: true
 type: book
 date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
+featured: true
+
 menu:
   multidrm:
     parent: Getting Started

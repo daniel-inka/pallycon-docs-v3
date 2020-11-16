@@ -20,6 +20,62 @@ menu:
     weight: 1
 ---
 
-PallyCon 서비스를 빠르게 이해하고 체험할 수 있도록 기본 설명과 퀵스타트 가이드를 제공합니다. 처음 사용자라면 제일 먼저 아래 문서들을 확인해 주시기 바랍니다.
+PallyCon Watermarking is a cloud-based SaaS service that allows you to quickly and easily apply watermarking without building complex server environments.
+
+![watermarking-workflow](/docs/images/pallycon-forensic-watermarking-workflow-en.png)
+
+Please refer to the following guide for watermarking service.
+
+<div class="cards">
+<article class="card">
+    <div class="text">
+        <h3>Watermarking Concepts and Terms</h3>
+        This document describes various call API specifications for PallyCon Forensic Watermarking service.<p>
+        <a href="{{<ref "watermarking-concepts.en.md">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+<article class="card">
+    <div class="text">
+        <h3>Watermarking Integration Workflow</h3>
+        This document describes the end-to-end workflows and options of PallyCon Forensic Watermarking integration.<p>
+        <a href="{{<ref "watermarking-workflow.en.md">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+<article class="card">
+    <div class="text">
+        <h3>Watermark Preprocessing Guide</h3>
+        To apply watermarking to your content, you need a preprocessing process that generates two versions of the watermark image from a single video. This document describes how to preprocess in a cloud-based packaging service or with an encoder integration.<p>
+        <a href="{{<ref "./preprocessing/">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+<article class="card">
+    <div class="text">
+        <h3>Watermark Embedding Guide</h3>
+        Two versions (A/B variants) of the video are mixed at the playback time according to the user (session) information and delivered to the client. This document explains how to use the session manager and the watermark embedding module that can run on your CDN edge servers.<p>
+        <a href="{{<ref "./embedding/">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+<article class="card">
+    <div class="text">
+        <h3>Watermark Detecting Guide</h3>
+        If a content service site obtains a leaked version of the watermarked content, it can track the leaker by  detect the watermark.<p>
+        <a href="{{<ref "./detecting/">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+<article class="card">
+    <div class="text">
+        <h3>Visible Watermarking Guide</h3>
+        This document describes how to use PallyCon Visible Watermarking to show user information on the player screen.<p>
+        <a href="{{<ref "visible-watermarking.en.md">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+<article class="card">
+    <div class="text">
+        <h3>Release Notes</h3>
+        This document shows release notes for PallyCon Watermarking products.<p>
+        <a href="{{<ref "watermarking-release-notes.en.md">}}" target="_self" class="btn btn-default">Read More</a>
+    </div>
+</article>
+</div>
 
 ***

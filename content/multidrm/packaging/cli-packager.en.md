@@ -5,8 +5,9 @@ weight: 2
 
 # Page metadata.
 title: CLI Packager Guide
+summary: This document describes the basic concepts and how to use the command line interface (CLI) based content packaging tool used for the PallyCon multi-DRM cloud service.
 date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-21T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
@@ -33,17 +34,13 @@ There are five types of content packaging:
 4. HLS: A method of applying FPS (FairPlay Streaming) DRM by packaging HLS-AES streaming contents.
 5. HLS-NCG: HLS-AES content packaging with clear key protected by NCG DRM.
 
-In addition, there are two types of CID(Content ID) input method. One is a direct input using an execution parameter of CLI Packager, and the other is using a packaging callback page method.
-
-![flow1](/docs/images/cli-packager-flow1.png)
-
 > This guide is based on the latest version of CLI packager. You can download the latest version using the download button below.
 
-{{% button href="/docs/files/PallyCon-Packager-Cloud-v3.6.0.zip" icon="fas fa-download" %}}Download PallyCon CLI Packager{{% /button %}}
+{{% button href="/docs/files/PallyCon-Packager-Cloud-v3.6.3.zip" icon="fas fa-download" %}}Download PallyCon CLI Packager{{% /button %}}
 
 ## Integration architecture and supported environments
 
-![flow2](/docs/images/cli-packager-flow2.png)
+![flow1](/docs/images/cli-packager-flow1.png)
 
 PallyCon CLI Packager works in conjunction with PallyCon Multi DRM Cloud Server. PallyCon cloud server manages the content key information for each service site, and when a client requests DRM license information, it finds the key (CEK) information associated with the CID and issues a license.
 
@@ -70,7 +67,7 @@ PallyCon CLI Packager is based on Google's Shaka Packager. Please refer to [Gith
 | :--- | :---- | :--- | :--------------|
 | `--site_id` | string | Y | Service site ID (4 bytes) issued by PallyCon |
 | `--access_key` | string | Y | Authentication key issued to the service site. <br> Can be checked on PallyCon Console site. |
-| `--content_id` | string | N | Set CID manually instead of using callback. (Maximum 200 bytes)<br> Required when using external key. |
+| `--content_id` | string | Y | Unique ID of the content being packaged. Enter the ID value managed by the customer's CMS, and the same CID must be used in the subsequent client integration step. (Maximum 200 bytes)<br> |
 | `--cmaf` | bool | Y | Perform CMAF(Widevine, PlayReady, FPS) packaging |
 | `--dash` | bool | Y | Perform DASH-CENC(Widevine, PlayReady) packaging |
 | `--hls` | bool | Y | Perform HLS-AES (FPS) packaging |
@@ -93,6 +90,7 @@ PallyCon CLI Packager is based on Google's Shaka Packager. Please refer to [Gith
 | `--m3u8_filename` | string | N | Filename of HLS master manifest (.m3u8) |
 | `--subtitle` | string | N | Filename of subtitles |
 | `--generate_tracktype_manifests` | bool | N | Create multiple manifest (playlist) files for multi-key packaging. For adaptive streams containing SD to UHD tracks, three manifests are created: 'SD_ONLY', 'SD_HD', and 'SD_UHD'. |
+| `--enable_average_bandwidth_mpd` | bool | N | Apply the bandwidth of each track in the MPD file as an average value instead of the maximum value (default: false) |
 | `--stop_indicator` | bool | N | Hide packaging status indicator |
 | `--quiet` | bool | N | Hide packaging logs |
 
@@ -105,7 +103,6 @@ This option is used when packaging with a key that is managed separately by the 
 | Name | Type | Required | Description |
 | :--- | :---- | :--- | :--------------|
 | `--enable_raw_key_encryption` | bool | Y | Enable the use of external key  |
-| `--content_id` | string | Y | Set CID manually. Maximum 200 bytes |
 | `--provider` | string | N | DRM Provider name for Widevine PSSH<br>Default: inkaentworks |
 | `--license_url` | string | N | License acquisition URL <br>Default: https://license.pallycon.com/ri/licenseManager.do |
 | `--keys` | string | Y | Encryption key and key ID pair (HEX) |
@@ -131,9 +128,9 @@ This option is used when packaging with a key that is managed separately by the 
 | Error Code | Description |
 |:------- | :------------- |
 | 0 | Succeeded |
-| 1101 | None of the argument values ​​after the run command are passed. |
+| 1101 | None of the argument values  after the run command are passed. |
 | 1102 | An invalid parameter value was entered. (Please refer to INFO.) |
-| 1103 | The number of the following argument values ​​is not correct. |
+| 1103 | The number of the following argument values  is not correct. |
 | 1201 | The file is not located in the specified path. |
 | 1202 | Can not access file. (Permission / file name problem) |
 | 1203 | Creation failed because the path to the file / folder is too long. |
@@ -156,7 +153,7 @@ This option is used when packaging with a key that is managed separately by the 
 HLS-AES128 stream packaging that protects clear keys with NCG DRM.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls_ncg ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls_ncg -i <input file> -o <output directory>
 ```
 
 ### HLS packaging
@@ -164,7 +161,7 @@ HLS-AES128 stream packaging that protects clear keys with NCG DRM.
 FairPlay Streaming DRM-protected HLS stream packaging.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --hls -i <input file> -o <output directory>
 ```
 
 ### DASH packaging
@@ -172,7 +169,7 @@ FairPlay Streaming DRM-protected HLS stream packaging.
 PlayReady, Widevine DRM-protected DASH stream packaging.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash -i <input file> -o <output directory>
 ```
 
 ### CMAF packaging
@@ -180,7 +177,7 @@ PlayReady, Widevine DRM-protected DASH stream packaging.
 PlayReady, Widevine, FPS DRM-protected CMAF stream packaging.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --cmaf ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --cmaf -i <input file> -o <output directory>
 ```
 
 ### NCG packaging
@@ -188,7 +185,7 @@ PlayReady, Widevine, FPS DRM-protected CMAF stream packaging.
 NCG DRM-encoded MP4 file packaging used for download or progressive download scenarios.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --ncg ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --ncg -i <input file> -o <output directory>
 ```
 
 ### Adaptive-Streaming packaging
@@ -196,7 +193,7 @@ NCG DRM-encoded MP4 file packaging used for download or progressive download sce
 For DASH or HLS packaging, you can enter content with multiple resolutions and package it for adaptive streaming.
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash --hls ​-i <input file1> <input file2> <input file3>​​ -o <output directory>
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> --dash --hls -i <input file1> <input file2> <input file3>  -o <output directory>
 ```
 
 ### Using external key (NCG, HLS-NCG)
@@ -204,7 +201,7 @@ For DASH or HLS packaging, you can enter content with multiple resolutions and p
 This is a method of packaging NCG DRM using the key managed by the service site instead of the encryption key generated by PallyCon key server.
 
 ```
-./PallyConPackager --site_id <site id> ​--content_id <content id> --enable_raw_key_encryption --ncg_cek <32bytes key> --ncg --hls_ncg ​​-i <input file> -o <output directory>
+./PallyConPackager --site_id <site id> ​--content_id <content id> --enable_raw_key_encryption --ncg_cek <32bytes key> --ncg --hls_ncg -i <input file> -o <output directory>
 ```
 
 ### Using external key (DASH, HLS)
@@ -212,7 +209,7 @@ This is a method of packaging NCG DRM using the key managed by the service site 
 This is a method of multi DRM packaging using the key managed by the service site instead of the encryption key generated by PallyCon key server.
 
 ```
-./PallyConPackager ​--content_id <content id> --dash --hls --enable_raw_key_encryption --keys <key pair (e.g. label=:key_id=<16 bytes key id>:key=<16 bytes key>)>​​ -i <input file> -o <output directory>
+./PallyConPackager ​--content_id <content id> --dash --hls --enable_raw_key_encryption --keys <key pair (e.g. label=:key_id=<16 bytes key id>:key=<16 bytes key>)> -i <input file> -o <output directory>
 ```
 
 ### Using configuration file
@@ -220,7 +217,7 @@ This is a method of multi DRM packaging using the key managed by the service sit
 It is a method to save fixed setting values among input parameters as a separate config file.
 
 ```
-./PallyConPackager ​--config_file <configuration file path>​​ -i <input file> -o <output directory> --content_id <content_id>
+./PallyConPackager ​--config_file <configuration file path> -i <input file> -o <output directory> --content_id <content_id>
 ```
 
 #### Example of config file
@@ -253,13 +250,15 @@ It is a method to save fixed setting values among input parameters as a separate
 ### Live stream packaging (DASH or HLS)
 
 ```
-./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id>​ ​​-o <output directory> ​--dash(or --hls) -i <input stream (e.g. udp://127.0.0.1:1234)> --preserved_segments_outside_live_window 10 --time_shift_buffer_depth 60
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id>​  -o <output directory> ​--dash(or --hls) -i <input stream (e.g. udp://127.0.0.1:1234)> --preserved_segments_outside_live_window 10 --time_shift_buffer_depth 60
 ```
 
 > - Live packaging / playback test can be done by using an web server such as IIS (Windows) and Apache / Nginx (Linux).
 > - The only live stream protocol supported by Packager is UDP. If you want to package streams of other unsupported protocols, you can redirect using ffmpeg as follows:
 > - `# ffmpeg -i <input stream> -f mpegts -vcodec copy -acodec copy udp://127.0.0.1:1234`
 > - Live streaming environments other than PallyCon Packager should be configured by each service site itself.
+
+> The live stream packaging function supported by the CLI packager is suitable for simple development tests or small services, and is not recommended for large-scale services that provide a large number of live channels. For these services, please use a commercial live streaming solution such as AWS Elemental or Wowza Streaming Engine.
 
 ### Multi-key Packaging
 
@@ -270,13 +269,11 @@ It is a method to save fixed setting values among input parameters as a separate
 ### Multi-key Packaging with external keys
 
 ```
-./PallyConPackager -o <output directory> --dash ​-i <input file1> <input file2> --content_id <content id> --enable_raw_key_encryption --keys <key pair (e.g. label=SD:key_id=<16 bytes key id>:key=<16 bytes key>,label=HD:key_id=<16 bytes key id>:key=<16 bytes key>,label=AUDIO:key_id=<16 bytes key id>:key=<16 bytes key>)>
+./PallyConPackager -o <output directory> --dash -i <input file1> <input file2> --content_id <content id> --enable_raw_key_encryption --keys <key pair (e.g. label=SD:key_id=<16 bytes key id>:key=<16 bytes key>,label=HD:key_id=<16 bytes key id>:key=<16 bytes key>,label=AUDIO:key_id=<16 bytes key id>:key=<16 bytes key>)>
 ```
 
 ### Multiple manifests for allowed track types
 
 ```
-#./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> -o <output directory> --dash --multi_key ​-i <input file1> <input file2> ... --generate_tracktype_manifests
+./PallyConPackager --site_id <site id> --access_key <access key> --content_id <content id> -o <output directory> --dash --multi_key -i <input file1> <input file2> ... --generate_tracktype_manifests
 ```
-
-***

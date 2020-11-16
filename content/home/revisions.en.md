@@ -3,7 +3,7 @@
 widget = "accomplishments"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 50  # Order that this section will appear.
+weight = 80  # Order that this section will appear.
 
 title = "Revision History"
 subtitle = ""
@@ -19,8 +19,8 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[item]]
-  organization = "업데이트"
-  title = "PallyCon Docs 사이트 3.0 리뉴얼"
+  organization = "Update"
+  title = "PallyCon Docs renewal for version 3.0"
   date_start = "2020-09-10"
   description = ""
 

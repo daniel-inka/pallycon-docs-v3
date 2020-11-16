@@ -4,8 +4,9 @@ weight: 3
 
 # Page metadata.
 title: CPIX API Guide
+summary: With this API, PallyCon Multi DRM can be easily linked with encoder/transcoder solution supporting CPIX based key exchange.
 date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-06-26T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.

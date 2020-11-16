@@ -3,6 +3,7 @@ title: "HTML5 Player Integration"
 date: 2018-08-28T16:12:37+09:00
 draft: false
 weight: 10
+featured: true
 ---
 
 ## Overview

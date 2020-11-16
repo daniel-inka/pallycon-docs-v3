@@ -31,7 +31,7 @@ PallyCon 서비스에서 사용하는 각종 HTTP API 요청시 아래 규격을
 ### 요청 규격
 
 |Name|Value|
-|---|---|
+| :--- | :--- |
 |pallycon-apidata|base64 Encoding ( JSON string )|
 
 ### 요청 데이터 JSON 포맷
@@ -47,7 +47,7 @@ PallyCon 서비스에서 사용하는 각종 HTTP API 요청시 아래 규격을
 **요청 데이터 명세**
 
 | Name | Value | Required | Description |
-| ---- | ----- | ---- | -------------- |
+| :---- | :----- | :-- | :---------- |
 | `data` | String | Y | 각 API마다 정의된 규격으로 생성한 JSON 문자열을 AES 암호화하고, 결과값을 base64 문자열로 입력 |
 | `timestamp` | String | Y | GMT 시간대 기준으로 요청 시점의 시간을 "yyyy-mm-ddThh:mm:ssZ" 포맷으로 입력 |
 | `hash` | String | Y | 아래 규격에 따라 생성한 해시값을 입력 |

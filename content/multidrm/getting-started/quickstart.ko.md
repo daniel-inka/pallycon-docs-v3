@@ -1,10 +1,14 @@
 ---
 title: 멀티DRM 퀵스타트
 linktitle: 멀티DRM 퀵스타트
+summary: 본 문서는 PallyCon 멀티DRM 서비스의 빠른 체험을 위해 콘텐츠 패키징과 DRM 라이선스 연동 및 재생 과정을 안내합니다.
 toc: true
 type: book
 date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
+featured: true
+
 menu:
   multidrm:
     parent: 멀티DRM 시작하기

@@ -5,6 +5,7 @@ summary: 고객사의 다양한 상황과 요구사항에 맞는 가이드 문�
 toc: false
 type: book
 date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-11-10T00:00:00Z"
 draft: false
 menu:
   multidrm:
@@ -19,7 +20,7 @@ weight: 1
 
 ```mermaid
 graph TD;
-  start_onboarding[멀티DRM 온보딩 시작] --> content_packaging[1단계 - 콘텐츠 패키징]
+  start_onboarding(멀티DRM 온보딩 시작) --> content_packaging[1단계 - 콘텐츠 패키징]
 
   content_packaging --> vod_packager{"파일 기반 패키저 선택<br>(VOD 콘텐츠의 경우)"}
   vod_packager --> cli_packager(PallyCon<br>CLI 패키져)
@@ -48,7 +49,7 @@ graph TD;
   apple_support -->|예| fps_cert(FairPlay 인증서 신청 및 등록)
   apple_support -->|아니오| license_token(라이선스 토큰 생성 로직 구현)
   fps_cert --> license_token
-  license_token --> license_test(라이선스 토큰 연동 테스트<br>- 2단계 완료)
+  license_token --> license_test[라이선스 토큰 연동 테스트<br>- 2단계 완료]
 
   license_test -->drm_client[3단계 - 클라이언트 연동]
   drm_client --> web_client{"HTML5 Player 선택<br>(웹 브라우저 지원 시)"}
@@ -84,7 +85,7 @@ graph TD;
   playready_uwp --> playback_test
   chromecast --> playback_test
 
-  playback_test --> finish_onboarding[멀티DRM 온보딩 완료]
+  playback_test --> finish_onboarding(멀티DRM 온보딩 완료)
 
   click cli_packager "/ko/multidrm/packaging/cli-packager"
   click mediaconvert "/ko/multidrm/packaging/aws-elemental/#mediaconvert"

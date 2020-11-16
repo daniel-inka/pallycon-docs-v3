@@ -4,8 +4,9 @@ weight: 4
 
 # Page metadata.
 title: AWS Elemental Integration
+summary: This guide explains how to integrate with MediaConvert or MediaPackage service.
 date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+lastmod: "2020-11-03T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
@@ -45,7 +46,7 @@ Please refer to [IAM Settings AWS Guide Document](https://docs.aws.amazon.com/me
 5. Set RoleName to `MediaConvert-role` and click the `create role` button.
 ![iam2](/docs/images/iam-2.png)
 
-### Set MediaConvert IAM role {#mediaconvert-iam-set}
+### Create MediaConvert job and set IAM role {#mediaconvert-iam-set}
 
 1. In the AWS Console, select the MediaConvert service.
 2. Click the `create job` button on the Jobs tab to start job creation.
@@ -68,16 +69,17 @@ Please refer to [IAM Settings AWS Guide Document](https://docs.aws.amazon.com/me
 ![mediaconvert3](/docs/images/mediaconvert-3.png)
 
 4. Select the DRM encryption option, and then enter the Resource ID, System ID, and URL.
-	- Resource ID : It is a value corresponding to the content ID (CID) in the integration specification in [Multi DRM License Integration Guide]({{ %ref "multidrm-license.en.md"%}}).
-	- System ID : The DRM-specific system id value specified in [Dash System ID](http://dashif.org/identifiers/content_protection). You need to set PlayReady and Widevine ID for DASH output(as shown below) and set FairPlay ID for HLS output.
-		- PlayReady : 9A04F079-9840-4286-AB92-E65BE0885F95
-		- Widevine : EDEF8BA9-79D6-4ACE-A3C8-27DCD51D21ED
-		- FairPlay : 94CE86FB-07FF-4F43-ADB8-93D2FA968CA2
-	- URL : Enter the following KMS URL. The `enc-token` at the end of the URL is an API authentication token that is generated when you sign up PallyCon service, and can be found on the [PallyCon Console](https://console.pallycon.com) site.
-
+	- Resource ID: It is a value corresponding to the content ID (CID) in the integration specification in [Multi DRM License Integration Guide]({{%ref "multidrm-license.en.md"%}}).
+	- System ID: The DRM-specific system id value specified in [Dash System ID](http://dashif.org/identifiers/content_protection). You need to set PlayReady and Widevine ID for DASH output(as shown below) and set FairPlay ID for HLS output.
+		- PlayReady: 9A04F079-9840-4286-AB92-E65BE0885F95
+		- Widevine: EDEF8BA9-79D6-4ACE-A3C8-27DCD51D21ED
+		- FairPlay: 94CE86FB-07FF-4F43-ADB8-93D2FA968CA2
+	- Key Provider URL: Enter the following KMS URL. The `enc-token` at the end of the URL is an API authentication token that is generated when you sign up PallyCon service, and can be found on the [PallyCon Console](https://console.pallycon.com) site.
 		```
 		https://kms.pallycon.com/cpix/getKey?enc-token={enc-token}
 		```
+	- Certificate ARN: leave it blank
+	- Play device compatibility: CENC v1
 
 	![mediaconvert4](/docs/images/mediaconvert-4.png)
 
@@ -88,6 +90,23 @@ Please refer to [IAM Settings AWS Guide Document](https://docs.aws.amazon.com/me
 	![mediaconvert6](/docs/images/mediaconvert-6.png)
 
 6. Make public or set permission on the S3 storage to play the generated file stored on it.
+
+### Output group configuration for Apple HLS {#applehls}
+
+If you want to support Apple devices as well as others, you need to create both 'DASH ISO' and 'Apple HLS' output groups for a single input. Please set the below DRM encryption parameters in Apple HLS group.
+
+- Encryption method: Sample AES
+- Key provider type: SPEKE
+- Resource ID: the same content ID as DASH output
+- System ID: DRM system ID for FairPlay (94CE86FB-07FF-4F43-ADB8-93D2FA968CA2)
+- Key provider URL: same as DASH output (PallyCon KMS URL with enc token)
+- the other items: leave them as default
+
+### Notes on CMAF Packaging {#notes-on-cmaf}
+
+In addition to `DASH-ISO` and `Apple HLS`, `CMAF`(Common Media Application Format) type output can also be generated through SPEKE integration.
+
+However, at this time, Apple devices only support `AES CBC encryption` and Windows(Edge, IE browser) only support `AES CTR encryption`, so it is not yet possible to support all platforms with one CMAF content.
 
 ## MediaPackage integration {#mediapackage}
 
@@ -123,56 +142,6 @@ Content can be encrypted in real time in conjunction with services such as AWS M
 7. Click the Save button.
 ![mediapackage1](/docs/images/mediapackage-1.png)
 
-## Integrate PallyCon KMS on AWS API Gateway (Optional)
+### Support for key rotation
 
-- If PallyCon KMS server is set to AWS API Gateway and error occurs during PallyCon KMS server connection, you can check the error.
-
-- PallyCon provides API Gateway construction through AWS CloudFormation for easy integration and building of AWS API Gateway.
-
-> This step is optional and you can apply DRM packaging to AWS Media Services without the following API Gateway integration.
-
-### Confiture CloudFormation {#cloudformation-set}
-
-1. In the AWS Console, select the CloudFormation service.
-
-2. Click the Create new stack button.
-![mediapackage1](/docs/images/cloudformation-1.png)
-
-3. Choose a template, select Upload a template to Amazon S3, enter the template file provided by PallyCon and click the Next button. [Download template](http://sample.pallycon.com/contents/apigateway_https_proxy.zip)
- ![mediapackage2](/docs/images/cloudformation-2.png)
-
-4. Enter the values required to build the API Gateway and click the Next button.
-![mediapackage3](/docs/images/cloudformation-3.png)
-
-5. After setting the Option value, click the Next button.
-![mediapackage4](/docs/images/cloudformation-4.png)
-
-6. Click the Create button.
-![mediapackage5](/docs/images/cloudformation-5.png)
-
-7. When API Gateway is successfully created, the status value of CloudFormation's stack is set to CREATE_COMPLETE.
-![mediapackage6](/docs/images/cloudformation-6.png)
-
-### API Gateway Test {#apigateway-test}
-
-1. In the AWS Console, select the API Gateway service.
-
-2. Click the Test button that appears when you select ANY under {proxy +} in Resources of the api gateway created with CloudFormation.
-![apigateway1](/docs/images/apigateway-1.png)
-
-3. Select "Get" method and click "Test" button after inputting /cpix/getKey/heartbeat in {proxy}. If SUCCESS returns in response body, it means the integration is working correctly.
-![apigateway2](/docs/images/apigateway-2.png)
-
-4. When the gateway setting is completed, change the URL of Encryption setting part of MediaConvert and MediaPackage to URL using API Gateway. The API Gateay URL can be found on the stages tab.
-ex)
-https://***kms.pallycon.com***/cpix/getKey?enc-token=xxxx 
-=> 
-https://***v12n46uhyh.execute-api.ap-northeast-2.amazonaws.com/Production***/cpix/getKey?enc-token=xxxx 
-![apigateway3](/docs/images/apigateway-3.png)
-![apigateway4](/docs/images/apigateway-4.png)
-
-## Support for key rotation
-
-- Key rotation via MediaPackage is currently not supported. It will be updated in the future.
-
-***
+- Key rotation via MediaPackage is currently not supported. Therefore, you must uncheck the `Key rotation` of `Additional Configuration` in the Encryption option of a MediaPackage Endpoint.

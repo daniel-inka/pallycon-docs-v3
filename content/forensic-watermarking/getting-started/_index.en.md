@@ -6,4 +6,4 @@ chapter: true
 pre: "<b>1. </b>"
 ---
 
-bla bla
+This section provides basic conceptual explanations and workflow guides to quickly understand and use PallyCon Forensic Watermarking Service. If you are a first time user, please check the following documents first.
