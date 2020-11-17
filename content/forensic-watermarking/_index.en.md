@@ -64,13 +64,6 @@ Please refer to the following guide for watermarking service.
 </article>
 <article class="card">
     <div class="text">
-        <h3>Visible Watermarking Guide</h3>
-        This document describes how to use PallyCon Visible Watermarking to show user information on the player screen.<p>
-        <a href="{{<ref "visible-watermarking.en.md">}}" target="_self" class="btn btn-default">Read More</a>
-    </div>
-</article>
-<article class="card">
-    <div class="text">
         <h3>Release Notes</h3>
         This document shows release notes for PallyCon Watermarking products.<p>
         <a href="{{<ref "watermarking-release-notes.en.md">}}" target="_self" class="btn btn-default">Read More</a>

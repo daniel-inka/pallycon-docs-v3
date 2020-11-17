@@ -13,7 +13,7 @@ type: book  # Do not modify.
 menu:
   anticapture:
     weight: 2
-    parent: Anti-Capture
+    parent: Other Products
 ---
 
 ## Overview

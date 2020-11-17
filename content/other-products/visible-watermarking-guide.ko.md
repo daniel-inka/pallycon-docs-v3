@@ -1,6 +1,6 @@
 ---
 linktitle: PallyCon Visible Watermarking 가이드
-weight: 2
+weight: 3
 
 # Page metadata.
 title: PallyCon Visible Watermarking 가이드
@@ -12,8 +12,8 @@ type: book  # Do not modify.
 
 menu:
   visiblewatermarking:
-    weight: 2
-    parent: Visible Watermarking
+    weight: 3
+    parent: 기타 제품 가이드
 ---
 
 ## 개요

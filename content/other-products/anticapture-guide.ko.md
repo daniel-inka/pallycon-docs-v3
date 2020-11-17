@@ -13,7 +13,7 @@ type: book  # Do not modify.
 menu:
   anticapture:
     weight: 2
-    parent: 안티캡쳐
+    parent: 기타 제품 가이드
 ---
 
 ## 개요

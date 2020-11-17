@@ -64,13 +64,6 @@ PallyCon 워터마킹 서비스는 클라우드 기반의 SaaS 서비스로, 복
 </article>
 <article class="card">
     <div class="text">
-        <h3>Visible Watermarking 가이드</h3>
-        본 문서는 PallyCon Visible Watermarking 제품으로 재생 중인 영상에 사용자 정보를 표시하는 방법을 설명합니다.<p>
-        <a href="{{<ref "visible-watermarking.ko.md">}}" target="_self" class="btn btn-default">바로 가기</a>
-    </div>
-</article>
-<article class="card">
-    <div class="text">
         <h3>릴리즈 노트</h3>
         PallyCon 워터마킹 관련 각종 제품의 릴리즈 이력입니다.<p>
         <a href="{{<ref "watermarking-release-notes.ko.md">}}" target="_self" class="btn btn-default">바로 가기</a>

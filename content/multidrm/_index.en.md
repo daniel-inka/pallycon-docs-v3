@@ -23,44 +23,54 @@ menu:
 
 PallyCon Multi DRM service is a cloud-based SaaS (Solution as a Service) which consists of packaging solutions that apply DRM to contents, DRM license issuance service, and client solutions for DRM contents playback.
 
-![howitworks](/docs/images/pallycon-howitworks.png)
+{{< figure library="true" numbered="false" src="pallycon-howitworks.png" title="How it works" >}}
 
 You can integrate your content service with PallyCon Multi-DRM service by referring to the following guide documents.
 
-<div class = "cards">
-<article class="card">
-    <div class="text">
-        <h3>DRM Concepts and Terms</h3>
-        This document describes various concepts and terminology related to PallyCon Multi DRM service.<p>
-        <a href="{{<ref "drm-concepts.en.md">}}" target="_self" class="btn btn-default">Read More</a>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Getting Started</h3>
+        <p class="card-text">Provides basic description and quick start guide for quick understanding and experience of PallyCon Multi-DRM service.</p>
+        <a href="./getting-started/" class="btn btn-primary">Read More</a>
+      </div>
     </div>
-</article>
-<article class="card">
-    <div class="text">
-        <h3>Content Packaging</h3>
-        In order to apply PallyCon Multi-DRM service, you must first perform packaging processes to encrypt your contents. This document describes a variety of content packaging methods, including PallyCon Packager, AWS Elemental Media Services, Wowza Streaming Engine, and PallyCon Packaging Services.<p>
-        <a href="{{<ref "./packaging/">}}" target="_self" class="btn btn-default">Read More</a>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Content Packaging</h3>
+        <p class="card-text">In order to apply PallyCon Multi-DRM service, you must first perform packaging processes to encrypt your contents. This document describes a variety of content packaging methods, including PallyCon Packager, AWS Elemental Media Services, Wowza Streaming Engine, and PallyCon Packaging Services.</p>
+        <a href="./packaging/" class="btn btn-primary">Read More</a>
+      </div>
     </div>
-</article>
-<article class="card">
-    <div class="text">
-        <h3>License Issuance Integration</h3>
-        To play the packaged content on a client device, you must acquire a DRM license from that device. This document describes how to issue DRM licenses, such as callback and token methods.<p>
-        <a href="{{<ref "./license/">}}" target="_self" class="btn btn-default">Read More</a>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">License Issuance Integration</h3>
+        <p class="card-text">To play the packaged content on a client device, you must acquire a DRM license from that device. This document describes how to issue DRM licenses, such as callback and token methods.</p>
+        <a href="./license/" class="btn btn-primary">Read More</a>
+      </div>
     </div>
-</article>
-<article class="card">
-    <div class="text">
-        <h3>Client Integration</h3>
-        PallyCon Multi DRM service provides integration APIs and SDKs to support various client environments such as PC, mobile, OTT platform. This document explains how to use the APIs and SDKs for each client type.<p>
-        <a href="{{<ref "./clients/">}}" target="_self" class="btn btn-default">Read More</a>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Client Integration</h3>
+        <p class="card-text">PallyCon Multi DRM service provides integration APIs and SDKs to support various client environments such as PC, mobile, OTT platform. This document explains how to use the APIs and SDKs for each client type.</p>
+        <a href="./clients/" class="btn btn-primary">Read More</a>
+      </div>
     </div>
-</article>
-<article class="card">
-    <div class="text">
-        <h3>Release Notes</h3>
-        This document shows release notes for PallyCon Multi-DRM products.<p>
-        <a href="{{<ref "release-notes.en.md">}}" target="_self" class="btn btn-default">Read More</a>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Release Notes</h3>
+        <p class="card-text">This document shows release notes for PallyCon Multi-DRM products.</p>
+        <a href="./release-notes/" class="btn btn-primary">Read More</a>
+      </div>
     </div>
-</article>
+  </div>
 </div>
