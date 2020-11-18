@@ -21,14 +21,14 @@ You can download `PallyCon CLI Packager` and `PallyCon integration sample` from 
 ## PallyCon CLI Packager
 
 - PallyCon CLI Packager is a Command Line Interface (CLI) based tool that packages original content into encrypted streaming content with Multi-DRM.
-- Please refer to [the guide]({ {%ref "cli-packager.en.md"%}}) for details of PallyCon CLI Packager.
+- Please refer to [the guide]({{%ref "cli-packager.en.md"%}}) for details of PallyCon CLI Packager.
 
 {{% button href="/docs/files/PallyCon-Packager-Cloud-v3.6.3.zip" icon="fas fa-download" %}}Download PallyCon CLI Packager{{% /button %}}
 
 ## Multi-DRM token integration sample
 
 - This sample contains source codes which generates license token data for token-type license integration.
-- Please refer to [the license token guide]({{ %ref "license-token.en.md"%}}) for detailed specification of token-type license integration.
+- Please refer to [the license token guide]({{%ref "license-token.en.md"%}}) for detailed specification of token-type license integration.
  
  {{% button href="/docs/files/drm-token-sample-java-20200710.zip" icon="fas fa-download" %}}Download Java version token sample{{% /button %}}
 

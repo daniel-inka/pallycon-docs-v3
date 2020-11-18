@@ -8,7 +8,7 @@ headless = true  # This file represents a page section.
 active = false  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
-title = "Featured documents"
+title = "Popular Guides"
 subtitle = "These are the main guide documents that customers refer to the most."
 
 [design]

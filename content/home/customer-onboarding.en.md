@@ -55,7 +55,7 @@ subtitle = "We provide onboarding guides for the main products, multi-DRM and fo
 
 PallyCon Multi-DRM service provides multi-DRM licensing and client integration solutions such as PlayReady, Widevine, FairPlay, and NCG DRM to protect multimedia content in various client environments.
 
-[**Read More**](/en/multidrm/getting-started/multidrm-onboarding)
+[**Read More**](./multidrm/getting-started/multidrm-onboarding)
 {{% /callout %}}
 
 {{% callout note %}}
@@ -63,5 +63,5 @@ PallyCon Multi-DRM service provides multi-DRM licensing and client integration s
 
 Premium content such as Hollywood studio content requires forensic watermarking in addition to multi-DRM. This document describes how to apply the PallyCon forensic watermarking cloud service and explains related APIs.
 
-[**Read More**](/en/forensic-watermarking/)
+[**Read More**](./forensic-watermarking/)
 {{% /callout %}}

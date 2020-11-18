@@ -19,21 +19,21 @@ subtitle = "PallyCon Docs 가이드는 아래와 같이 PallyCon 서비스가 �
   icon_pack = "fas"
   name = "멀티DRM"
   description = "콘텐츠 암호화와 사용 권한 관리를 위한 `PallyCon 멀티DRM` 제품의 가이드입니다."  
-  link = "/ko/multidrm/"
+  link = "./multidrm/"
   
 [[feature]]
   icon = "photo-video"
   icon_pack = "fas"
   name = "포렌식 워터마킹"
   description = "보이지 않는 워터마크를 통해 콘텐츠 유출을 추적하는 `포렌식 워터마킹` 제품 가이드입니다."
-  link = "/ko/forensic-watermarking/"
+  link = "./forensic-watermarking/"
 
 [[feature]]
   icon = "desktop"
   icon_pack = "fas"
   name = "기타 제품군"
   description = "`안티 캡처`와 `Visible Watermarking` 등 기타 제품군에 대한 가이드입니다."
-  link = "/ko/other-products/"
+  link = "./other-products/"
 
 # Uncomment to use emoji icons.
 # [[feature]]

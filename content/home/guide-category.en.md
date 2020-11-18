@@ -19,14 +19,14 @@ subtitle = "The PallyCon Docs Guide is organized for each product provided by th
   icon_pack = "fas"
   name = "Multi-DRM"
   description = "Guide documents for `PallyCon Multi-DRM` products"  
-  link = "/en/multidrm/"
+  link = "./multidrm/"
 
 [[feature]]
   icon = "photo-video"
   icon_pack = "fas"
   name = "Forensic Watermarking"
   description = "Guide documents for `PallyCon Forensic Watermarking` products"
-  link = "/en/forensic-watermarking/"
+  link = "./forensic-watermarking/"
 
 [[feature]]
   #icon = "book-open"
@@ -34,7 +34,7 @@ subtitle = "The PallyCon Docs Guide is organized for each product provided by th
   icon_pack = "fas"
   name = "Other Products"
   description = "Guide documents for other products such as `Anti-Capture` and `Visible Watermarking`"
-  link = "/en/other-products/"
+  link = "./other-products/"
 
 # Uncomment to use emoji icons.
 # [[feature]]
