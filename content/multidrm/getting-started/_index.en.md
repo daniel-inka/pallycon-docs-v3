@@ -7,7 +7,7 @@ weight: 1
 # Page metadata.
 title: Getting Started with PallyCon Multi-DRM
 date: "2018-09-09T00:00:00Z"
-lastmod: "2019-10-18T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: false  # Show table of contents? true/false
 type: book  # Do not modify.
@@ -28,9 +28,18 @@ Provides basic description and quick start guide for quick understanding and exp
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
+        <h3 class="card-title">Onboarding Guide</h3>
+        <p class="card-text">You can easily find guide documents that suit your various situations and requirements.</p>
+        <a href="./multidrm-onboarding/" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
         <h3 class="card-title">Concepts and Terms</h3>
         <p class="card-text">Describes various concepts and terms related to PallyCon Multi-DRM service.</p>
-        <a href="./concepts/" class="btn btn-primary">Read More</a>
+        <a href="./drm-concepts/" class="btn btn-primary">Read More</a>
       </div>
     </div>
   </div>

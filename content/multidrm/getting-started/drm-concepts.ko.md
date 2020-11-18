@@ -18,7 +18,7 @@ menu:
 weight: 2
 ---
 
-PallyCon Multi DRM 서비스는 클라우드 기반의 SaaS (Solution as a Service)로 DRM을 콘텐츠에 적용하는 패키징 솔루션, DRM 라이센스 발급 서비스 및 DRM 콘텐츠 재생을위한 클라이언트 솔루션으로 구성됩니다.
+PallyCon Multi DRM 서비스는 클라우드 기반의 SaaS (Solution as a Service)로 DRM을 콘텐츠에 적용하는 패키징 솔루션, DRM 라이센스 발급 서비스 및 DRM 콘텐츠 재생을 위한 클라이언트 솔루션으로 구성됩니다.
 
 ```mermaid
 graph LR;

@@ -41,7 +41,7 @@ PallyCon 멀티 DRM 서비스는 클라우드 기반의 SaaS (Solution as a Serv
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">콘텐츠 패키징</h3>
-        <p class="card-text">PallyCon 서비스를 적용하기 위해서는 가장 먼저 콘텐츠를 암호화하는 패키징 과정을 수행해야 합니다. 본 문서는 PallyCon 패키져, AWS Elemental 미디어 서비스, Wowza Streaming Engine, PallyCon 패키징 서비스 등 다양한 콘텐츠 패키징 방식을 설명합니다.</p>
+        <p class="card-text">PallyCon 서비스를 적용하기 위해서는 가장 먼저 콘텐츠를 암호화하는 패키징 과정을 수행해야 합니다. 본 문서는 PallyCon CLI 패키져와 각종 3rd party 솔루션 등 다양한 콘텐츠 패키징 방식을 설명합니다.</p>
         <a href="./packaging/" class="btn btn-primary">바로가기</a>
       </div>
     </div>

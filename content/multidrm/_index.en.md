@@ -41,7 +41,7 @@ You can integrate your content service with PallyCon Multi-DRM service by referr
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Content Packaging</h3>
-        <p class="card-text">In order to apply PallyCon Multi-DRM service, you must first perform packaging processes to encrypt your contents. This document describes a variety of content packaging methods, including PallyCon Packager, AWS Elemental Media Services, Wowza Streaming Engine, and PallyCon Packaging Services.</p>
+        <p class="card-text">In order to apply PallyCon Multi-DRM service, you must first perform packaging processes to encrypt your contents. This document describes a variety of content packaging methods, including PallyCon CLI Packager and other 3rd party solutions.</p>
         <a href="./packaging/" class="btn btn-primary">Read More</a>
       </div>
     </div>
