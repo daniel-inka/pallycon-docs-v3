@@ -27,7 +27,7 @@ PallyCon Multi DRM can be integrated with the following types of CPIX API depend
 
 - `PallyCon CPIX API`: The CPIX API implemented by PallyCon, allowing encoder/transcoder solution vendors to work with PallyCon Multi DRM with the corresponding API. `Flussonic Media Server` is integrated using `PallyCon CPIX API`.
 
-- `SPEKE API`: The CPIX API implemented by AWS Elemental, which is pre-integrated with PallyCon to easily apply PallyCon Multi DRM to MediaPackage or MediaConvert products of AWS Elemental Media Service. For more information about SPEKE API integration, please refer to [the guide]({{% ref "aws-elemental.en.md"%}}).
+- `SPEKE API`: The CPIX API implemented by AWS Elemental, which is pre-integrated with PallyCon to easily apply PallyCon Multi DRM to MediaPackage or MediaConvert products of AWS Elemental Media Service. For more information about SPEKE API integration, please refer to [the guide](../aws-elemental).
 
 - `Anevia CPIX API`: The CPIX API implemented by Anevia. It can be easily applied to PallyCon Multi DRM with Anevia NEA-DVR solution.
 
@@ -46,7 +46,6 @@ PallyCon CPIX API supports the following content types and functions.
 |:-----:|:-----:|:-----:|:-----:|:-----:|
 | DASH | <i class="fas fa-check"></i> (key rotation supported)| <i class="fas fa-check"></i> (key rotation supported) | | |
 | HLS | | | <i class="fas fa-check"></i> (key rotation supported) | <i class="fa fa-check"></i> (NCG DRM supported)|
-| Smooth Streaming | | | | |
 
 ### KMS URL Specification
 
@@ -318,7 +317,7 @@ Enter the content ID (max 200 alphanumeric characters) in the `cpix:CPIX` tag of
 
 ## SPEKE API
 
-Secure Packager and Encoder Key Exchange (SPEKE) API is the CPIX API implemented by AWS Elemental and is used to interface with AWS Elemental MediaPackage or MediaConvert products. The basic specification is the same as the PallyCon CPIX API except the KMS URL. For details on SPEKE integration, please refer to [the guide]({{% ref "aws-elemental.en.md"%}}).
+Secure Packager and Encoder Key Exchange (SPEKE) API is the CPIX API implemented by AWS Elemental and is used to interface with AWS Elemental MediaPackage or MediaConvert products. The basic specification is the same as the PallyCon CPIX API except the KMS URL. For details on SPEKE integration, please refer to [the guide](../aws-elemental).
 
 ### KMS URL Specification
 
@@ -340,7 +339,6 @@ Multi-DRM integration via Anevia CPIX API supports the following content types a
 |:---:|:-----:|:-----:|:-----:|:-----:|
 | DASH | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | | |
 | HLS | | | <i class="fas fa-check"></i> | |
-| Smooth Streaming | | | | |
 
 ### KMS URL Specification
 
@@ -388,5 +386,3 @@ https://kms.pallycon.com/cpix/anevia/dash/eyJzaXRlX2lkIjoiREVNTyIsICJhY2Nlc3Nfa2
     </cpix:DRMSystemList>
 </cpix:CPIX>
 ```
-
-***

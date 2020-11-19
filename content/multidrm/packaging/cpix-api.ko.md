@@ -27,7 +27,7 @@ PallyCon 멀티 DRM은 API의 구현 주체에 따라 다음과 같은 유형의
 
 - `PallyCon CPIX API`: PallyCon에서 구현한 CPIX API로, 인코더/트랜스코더 솔루션 업체에서 해당 API로 PallyCon 멀티 DRM과 연동할 수 있습니다. `Flussonic Media Server`와의 연동에 PallyCon CPIX API가 적용되었습니다.
 
-- `SPEKE API`: AWS Elemental에서 구현한 CPIX API로, PallyCon과 사전 연동되어 AWS Elemental 미디어 서비스의 MediaPackage 또는 MediaConvert 제품에서 PallyCon 멀티 DRM을 쉽게 적용할 수 있습니다. SPEKE API 연동에 대한 자세한 내용은 [해당 가이드]({{% ref "aws-elemental.ko.md"%}})를 참고하시기 바랍니다.
+- `SPEKE API`: AWS Elemental에서 구현한 CPIX API로, PallyCon과 사전 연동되어 AWS Elemental 미디어 서비스의 MediaPackage 또는 MediaConvert 제품에서 PallyCon 멀티 DRM을 쉽게 적용할 수 있습니다. SPEKE API 연동에 대한 자세한 내용은 [해당 가이드](../aws-elemental)를 참고하시기 바랍니다.
 
 - `Anevia CPIX API`: Anevia에서 구현한 CPIX API로, Anevia NEA-DVR 솔루션과 사전 연동되어 PallyCon 멀티 DRM을 쉽게 적용할 수 있습니다.
 
@@ -46,7 +46,6 @@ PallyCon CPIX API를 통한 연동은 아래와 같은 콘텐츠와 기능을 �
 |:-----:|:-----:|:-----:|:-----:|:-----:|
 | DASH | <i class="fas fa-check"></i> (키 로테이션 지원)| <i class="fas fa-check"></i> (키 로테이션 지원) | | |
 | HLS | | | <i class="fas fa-check"></i> (키 로테이션 지원) | <i class="fa fa-check"></i> (NCG DRM 지원)|
-| Smooth Streaming | | | ||
 
 ### KMS 연동 URL 규격
 
@@ -318,7 +317,7 @@ PallyCon CPIX API를 이용해 콘텐츠를 패키징할 때, 콘텐츠 서비�
 
 ## SPEKE API
 
-Secure Packager and Encoder Key Exchange (SPEKE) API는 AWS Elemental에서 구현한 CPIX API로, AWS Elemental MediaPackage 또는 MediaConvert 제품과의 연동에 사용됩니다. 연동 URL 이외에 기본 규격은 PallyCon CPIX API와 동일하며, 상세한 연동 방법은 [해당 가이드]({{% ref "aws-elemental.ko.md"%}})를 참고하시기 바랍니다.
+Secure Packager and Encoder Key Exchange (SPEKE) API는 AWS Elemental에서 구현한 CPIX API로, AWS Elemental MediaPackage 또는 MediaConvert 제품과의 연동에 사용됩니다. 연동 URL 이외에 기본 규격은 PallyCon CPIX API와 동일하며, 상세한 연동 방법은 [해당 가이드](../aws-elemental)를 참고하시기 바랍니다.
 
 ### KMS 연동 URL 규격
 
@@ -340,7 +339,6 @@ Anevia CPIX API를 통한 연동은 아래와 같은 콘텐츠와 기능을 지�
 |:---:|:-----:|:-----:|:-----:|:-----:|
 | DASH | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | | |
 | HLS | | | <i class="fas fa-check"></i> | |
-| Smooth Streaming | | | | |
 
 ### KMS 연동 URL 규격
 
@@ -388,5 +386,3 @@ https://kms.pallycon.com/cpix/anevia/dash/eyJzaXRlX2lkIjoiREVNTyIsICJhY2Nlc3Nfa2
     </cpix:DRMSystemList>
 </cpix:CPIX>
 ```
-
-***

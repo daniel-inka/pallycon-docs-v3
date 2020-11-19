@@ -142,5 +142,3 @@ Execute run_example.bat with the name of the java source file as first parameter
 ```bash
 run-example.bat CencDrmContentProtectionByPallyCon BITMOVIN_API_KEY=your-api-key HTTP_INPUT_HOST=my-storage.biz
 ```
-
-***

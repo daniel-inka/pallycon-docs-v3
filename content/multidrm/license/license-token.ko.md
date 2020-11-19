@@ -65,7 +65,7 @@ sequenceDiagram
 (4) 라이선스 요청
 
 - 클라이언트는 서비스 사이트로부터 전달받은 토큰(base64 문자열)을 pallycon-customdata-v2에 담아 PallyCon 클라우드 서버에 라이선스를 요청합니다.
-- CustomData를 통한 라이선스 요청은 [멀티 DRM 라이선스 연동 가이드]({{%ref "multidrm-license.ko.md"%}}) 또는 [클라이언트 연동 가이드]({{%ref "../clients"%}})를 참조하시기 바랍니다.
+- CustomData를 통한 라이선스 요청은 [멀티 DRM 라이선스 연동 가이드](../multidrm-native-integration/#pallycon-custom-data-v2) 또는 [클라이언트 연동 가이드](../../clients)를 참조하시기 바랍니다.
 
 (5) 라이선스 발급
 

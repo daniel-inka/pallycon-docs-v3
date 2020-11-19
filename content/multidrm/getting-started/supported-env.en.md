@@ -68,5 +68,3 @@ PallyCon Multi-DRM product supports the following client platforms and operating
 ## HTTPS Requirement
 
 In accordance with the security policy of web browsers such as Google Chrome, all URLs related to content services, such as streaming URLs, should be applied HTTPS by default. (ex: DASH mpd URL, HLS m3u8 URL, NCG file URL)
-
-***

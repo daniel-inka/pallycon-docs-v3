@@ -33,6 +33,15 @@ PallyCon Multi DRM service provides integration APIs and SDKs to support various
       </div>
     </div>
   </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Multi-DRM Native Integration Guide</h3>
+        <p class="card-text">Customers have an option to integrate PallyCon multi-DRM with native DRM client on their own, without using PallyCon client SDKs. This document explains how to integrate multi-DRM license issuance without the SDKs.</p>
+        <a href="./multidrm-native-integration/" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
   <div class="col-sm-6">    
     <div class="card">
       <div class="card-body">

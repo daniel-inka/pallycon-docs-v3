@@ -34,7 +34,7 @@ weight: 80
 
 - PallyCon Multi-DRM이 적용된 콘텐츠를 Custom Receiver 앱에서 재생하기 위해서는, 라이선스 발급에 사용되는 Custom data를 Custom Receiver 앱으로 전송해야 합니다.
 
-  - Custom data에 대한 자세한 정보는 [여기]({{%ref "multidrm-license.ko.md#pallycon-custom-data-v2"%}})를 방문하여 확인하십시요.
+  - Custom data에 대한 자세한 정보는 [여기](../multidrm-native-integration/#pallycon-custom-data-v2)를 방문하여 확인하십시요.
   - Sender 앱에서 Receiver 앱으로 Custom data를 전송하는 방법은 PallyCon 샘플 앱을 참고하십시요.
   - Receiver 앱에서 Custom data를 처리하는 방법은 [Google Cast Guides - DRM](https://developers.google.com/cast/docs/player#drm-playreadywidevine)과 PallyCon Custom Receiver 앱을 참고하십시요.
   
@@ -43,5 +43,3 @@ weight: 80
 - Sender 및 Receiver 앱 개발에 관한 자세한 내용은 [Google Cast Guides](https://developers.google.com/cast/docs/developers) 및 PallyCon SDK 샘플 앱을 참고하십시요.
 
 - Custom Receiver 앱 등록에 관한 자세한 내용은 [Google Cast Guides - Registration](https://developers.google.com/cast/docs/registration)을 참고하십시요.
-
-***

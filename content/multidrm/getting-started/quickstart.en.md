@@ -41,7 +41,7 @@ Quick Start requires a trial account on the PallyCon service site. If you haven'
 
 Go to the PallyCon console site [login page](https://login.pallycon.com) and click on the 'Sign up' button. Fill out the sign up form as shown below and click the 'Sign Up' button.
 
-![pallycon-signup](/docs/images/drm-quickstart-pallycon-signup-en.png)
+{{< figure library="true" numbered="true" src="drm-quickstart-pallycon-signup-en.png" title="PallyCon sign up" >}}
 
 > PallyCon Console : This is a site where various settings and inquiries regarding PallyCon service subscription and integration can be performed. You will need to verify your email after joining the site. Newly signed up accounts will be automatically applied to the trial plan.
 > {{% button href="https://console.pallycon.com/" %}}Go to PallyCon Console{{% /button %}}
@@ -54,7 +54,7 @@ You will receive the welcome email on your email account used for the sign up. C
 
 Sign in to PallyCon Console site and go to `Integration Settings` page under `Site Settings` menu. Copy and paste the `Site ID`, `Site Key`, and `Access Key` values on a text editor such as Notepad. These values will be used in later stages for the DRM integration.
 
-![console-siteinfo](/docs/images/drm-quickstart-console-siteinfo-en.png)
+{{< figure library="true" numbered="true" src="drm-quickstart-console-siteinfo-en.png" title="PallyCon Console site info" >}}
 
 ### 1-4. Preparing a test web server
 
@@ -68,7 +68,7 @@ You need to package a video to test DRM content playback on the player. Follow t
 
 ### 2-1. Download and install PallyCon CLI Packager
 
-Download PallyCon CLI Packager from [Packager and Sample Downloads page]({{ %ref "/getting-started/downloads"%}}). Create a folder on a test PC or server to perform the content packaging. And copy the CLI executable file located in `bin` folder of the downloaded zip file. (e.g. ~/pallycon-test/PallyConPackager)
+Download PallyCon CLI Packager from [Packager and Sample Downloads page](../downloads/). Create a folder on a test PC or server to perform the content packaging. And copy the CLI executable file located in `bin` folder of the downloaded zip file. (e.g. ~/pallycon-test/PallyConPackager)
 
 > PallyCon CLI Packager supports 64bit Windows and Linux(Ubuntu, CentOS) OS. Gcc and g++ libraries (6.0 or later) are required for Linux OS.
 
@@ -86,7 +86,7 @@ Run the command as below to perform a DASH content packaging. Please refer to th
 ./PallyConPackager --site_id --access_key --content_id --dash -i -o
 ```
 
-| Parameter | Input value | Specification | Example |
+| <div style="width:90px">Parameter</div> | Input value | Specification | Example |
 | :-------- | :------- | :---- | :---- |
 | --site_id | The trial site ID which is shown on `Integration Settings` page of PallyCon Console site. | Four uppercase alphanumeric characters | ABCD |
 | --access_key | The access key string which is shown on `Integration Settings` page of PallyCon Console site. | 32-length characters | H24FS8wdo3C7CWrSjcIhPYWpYaFu6Lh3 |
@@ -101,7 +101,7 @@ Run the command as below to perform a DASH content packaging. Please refer to th
 
 After the packaging is successfully completed, the history will be displayed on the `DRM Packaging History` page of the PallyCon console site as shown below.
 
-![packaging-result](/docs/images/drm-quickstart-packaging-result-en.png)
+{{< figure library="true" numbered="true" src="drm-quickstart-packaging-result-en.png" title="Packaging result" >}}
 
 ### 2-3. Upload the packaged DASH content on a test web server
 
@@ -127,9 +127,9 @@ In this tutorial, you will use the `Create token` function provided on the `Deve
 
 - `Create token` test page : https://sample.pallycon.com/dev/devconsole/customData.do?lang=en#create-token
 
-![devconsole-token](/docs/images/drm-quickstart-devconsole-token-en.png)
+{{< figure library="true" numbered="true" src="drm-quickstart-devconsole-token-en.png" title="DevConsole token page" >}}
 
-| Item | Input value | Specification | Example |
+| <div style="width:90px">Item</div> | Input value | Specification | Example |
 | :------ | :------- | :---- | :---- |
 | SITE ID | The trial site ID which is shown on `Integration Settings` page of PallyCon Console site. | Four uppercase alphabet characters | ABCD |
 | SITE Key | The site key string which is shown on `Integration Settings` page of PallyCon Console site. | 32-length characters | 3H24FS8wdo3C7CWrSjcIhPYWpYaFu6Lh |
@@ -153,7 +153,7 @@ Enter the `DASH URL` and `pallycon-customdata-v2` fields as shown below in the t
 - DASH URL: Enter the manifest file (.mpd) URL of the DASH content you uploaded to the test web server in step 2.
 - pallycon-customdata-v2: Enter the license token string created in step 3-1
 
-![playback-test](/docs/images/drm-quickstart-playback-test-en.png)
+{{< figure library="true" numbered="true" src="drm-quickstart-playback-test-en.png" title="DevConsole playback test" >}}
 
 > The input values in the above screenshot are examples of a demonstration content. In the actual quick start, the values created in the previous step must be entered.
 
@@ -192,8 +192,6 @@ Congratulations! If you have progressed to this point, you have experienced the 
 
 Please refer to the guides below to proceed to the next step.
 
-- [Content Packaging Guide]({{ %ref "/multidrm/packaging"%}}): Guides you through various content packaging methods.
-- [License Integration Guide]({{ %ref "/multidrm/license"%}}): This section describes how to integrate DRM licenses.
-- [Client Integration Guide]({{ %ref "/multidrm/clients"%}}): Instructions on how to play DRM content on various client devices.
-
-***
+- [Content Packaging Guide](../../packaging): Guides you through various content packaging methods.
+- [License Integration Guide](../../license): This section describes how to integrate DRM licenses.
+- [Client Integration Guide](../../clients): Instructions on how to play DRM content on various client devices.

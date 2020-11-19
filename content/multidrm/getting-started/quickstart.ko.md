@@ -68,7 +68,7 @@ DRM 콘텐츠의 재생을 테스트하기 위해서는 해당 콘텐츠 파일�
 
 ### 2-1. CLI 패키져 다운로드 및 설치
 
-본 사이트의 [패키져 / 샘플 다운로드 페이지](https://pallycon.com/docs/ko/getting-started/downloads/)에서 `PallyCon Packager 다운로드` 버튼을 클릭해 CLI 패키저를 다운로드 합니다.
+본 사이트의 [패키져 / 샘플 다운로드 페이지](../downloads/)에서 `PallyCon Packager 다운로드` 버튼을 클릭해 CLI 패키저를 다운로드 합니다.
 
 콘텐츠 패키징을 수행할 테스트 PC 또는 서버에 임의의 폴더를 생성하고, 다운받은 패키져 압축파일 내 `bin` 폴더의 OS별 실행 파일을 복사합니다. (예: ~/pallycon-test/PallyConPackager )
 
@@ -88,7 +88,7 @@ DRM 패키징과 재생 테스트에 사용할 MP4 (H264 AVC) 동영상 파일�
 ./PallyConPackager --site_id --access_key --content_id --dash -i -o
 ```
 
-| 파라미터 | 입력 값 | 규격 | 예시 |
+|<div style="width:90px">파라미터</div> | 입력 값 | 규격 | 예시 |
 | :-------- | :------- | :---- | :---- |
 | --site_id | 1단계에서 PallyCon 콘솔 사이트의 `연동 설정` 화면에 표시된 트라이얼 사이트 ID | 네자리 영대문자 | ABCD |
 | --access_key | PallyCon 콘솔 사이트의 `연동 설정` 화면에 표시된 액세스 키 | 32자리 문자열 | H24FS8wdo3C7CWrSjcIhPYWpYaFu6Lh3 |
@@ -131,8 +131,8 @@ DRM 패키징과 재생 테스트에 사용할 MP4 (H264 AVC) 동영상 파일�
 
 {{< figure library="true" numbered="true" src="drm-quickstart-devconsole-token-ko.png" title="데브콘솔 토큰 생성 페이지" >}}
 
-| 항목 | 입력 값 | 규격 | 예시 |
-| :------ | :------- | :---- | :---- |
+|<div style="width:90px">항목</div>| 입력 값 | 규격 | 예시 |
+|-------|-------------------|----|----|
 | SITE ID | 1단계에서 PallyCon 콘솔 사이트의 `연동 설정` 화면에 표시된 트라이얼 사이트 ID | 4자리 영대문자 | ABCD |
 | SITE Key | PallyCon 콘솔 사이트의 `연동 설정` 화면에 표시된 사이트 키 | 32자리 문자열 | 3H24FS8wdo3C7CWrSjcIhPYWpYaFu6Lh |
 | ACCESS Key | PallyCon 콘솔 사이트의 `연동 설정` 화면에 표시된 액세스 키 | 32자리 문자열 | gktt7xArRiSrWXEvrommuBdUD6Ktk3cP |
@@ -192,6 +192,6 @@ DRM 콘텐츠와 웹 플레이어의 URL 도메인이 다를 경우, 콘텐츠�
 
 다음 단계로의 진행을 위해서는 아래 가이드들을 참고하시기 바랍니다.
 
-- [콘텐츠 패키징 가이드](/ko/multidrm/packaging): 다양한 콘텐츠 패키징 방법들을 안내합니다.
-- [라이선스 연동 가이드](/ko/multidrm/license): DRM 라이선스 발급을 위한 연동 방식들을 설명합니다.
-- [클라이언트 연동 가이드](/ko/multidrm/clients): 다양한 클라이언트 기기들에서 DRM 콘텐츠를 재생하는 방법을 안내합니다.
+- [콘텐츠 패키징 가이드](../../packaging): 다양한 콘텐츠 패키징 방법들을 안내합니다.
+- [라이선스 연동 가이드](../../license): DRM 라이선스 발급을 위한 연동 방식들을 설명합니다.
+- [클라이언트 연동 가이드](../../clients): 다양한 클라이언트 기기들에서 DRM 콘텐츠를 재생하는 방법을 안내합니다.

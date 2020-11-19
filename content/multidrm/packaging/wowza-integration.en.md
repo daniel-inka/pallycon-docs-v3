@@ -17,7 +17,7 @@ menu:
     parent: Content Packaging
 ---
 
-![wowza-logo](/docs/images/wowza-streaming-engine-logo.png)
+ {{< figure library="true" numbered="false" src="wowza-streaming-engine-logo.png" >}}
 
 ## Overview
 
@@ -195,5 +195,3 @@ For PallyCon FairPlay integration, you need to change the Wowza setting so that 
 Restart the Wowza Application after completing the settings and it will work with the set information.
 
 > Note: HTTPS must be applied to all streaming-related URLs, such as DASH (.mpd) or HLS (.m3u8) URLs. (enforced by browser)
-
-***

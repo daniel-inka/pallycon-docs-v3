@@ -17,7 +17,7 @@ menu:
     parent: 콘텐츠 패키징
 ---
 
-![wowza-logo](/docs/images/wowza-streaming-engine-logo.png)
+ {{< figure library="true" numbered="false" src="wowza-streaming-engine-logo.png">}}
 
 ## 개요
 
@@ -195,5 +195,3 @@ PallyCon FairPlay 연동을 위해서는 해당 값에 세션 ID가 추가되지
 세팅 완료 후 Wowza Application 을 재시작하면 세팅한 정보로 동작합니다.
 
 > 참고 : DASH(.mpd) 또는 HLS(.m3u8) URL 등의 모든 스트리밍 관련 URL에는 HTTPS가 필수적으로 적용되어야 합니다. (브라우저 강제 사항)
-
-***

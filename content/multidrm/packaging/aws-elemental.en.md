@@ -41,35 +41,35 @@ Please refer to [IAM Settings AWS Guide Document](https://docs.aws.amazon.com/me
 2. Click the `Roles` tab and select `create role`.
 3. Select `MediaConvert` and click the `Next: permission` button.
 4. Confirm the S3 Access and APIGateway access permissions and click `Next: Review` button.
-![iam1](/docs/images/iam-1.png)
+{{< figure library="true" numbered="true" src="iam-1.png" title="IAM role" >}}
 
 5. Set RoleName to `MediaConvert-role` and click the `create role` button.
-![iam2](/docs/images/iam-2.png)
+{{< figure library="true" numbered="true" src="iam-2.png" title="Create role" >}}
 
 ### Create MediaConvert job and set IAM role {#mediaconvert-iam-set}
 
 1. In the AWS Console, select the MediaConvert service.
 2. Click the `create job` button on the Jobs tab to start job creation.
 3. Select the `MediaConvert-role` created in the previous step in the IAM role setting section of the Job settings screen.
-![mediaconvert0](/docs/images/mediaconvert-0.png)
+{{< figure library="true" numbered="true" src="mediaconvert-0.png" title="MediaConvert role" >}}
 
 ### Set MediaConvert Input {#mediaconvert-input}
 
 1. In the Input field, enter the content path to be packaged in s3.
-![mediaconvert1](/docs/images/mediaconvert-1.png)
+{{< figure library="true" numbered="true" src="mediaconvert-1.png" title="MediaConvert input" >}}
 
 ### Set MediaConvert Output groups {#mediaconvert-outputgroups}
 
 1. Add the ouptput to the output groups by pressing the Add button. (Dash ISO for PlayReady and Widevine, Apple HLS for FairPlay)
-![mediaconvert2](/docs/images/mediaconvert-2.png)
+{{< figure library="true" numbered="true" src="mediaconvert-2.png" title="MediaConvert output" >}}
 
 2. In Custom group name, enter a name that is easy for you to identify.
 
 3. In the Destination field, type the path on s3 that contains the package-completed file.
-![mediaconvert3](/docs/images/mediaconvert-3.png)
+{{< figure library="true" numbered="true" src="mediaconvert-3.png" title="MediaConvert output" >}}
 
 4. Select the DRM encryption option, and then enter the Resource ID, System ID, and URL.
-	- Resource ID: It is a value corresponding to the content ID (CID) in the integration specification in [Multi DRM License Integration Guide]({{%ref "multidrm-license.en.md"%}}).
+	- Resource ID: It is a value corresponding to the content ID (CID) in the integration specification in [DRM Token  Guide](../../license/license-token).
 	- System ID: The DRM-specific system id value specified in [Dash System ID](http://dashif.org/identifiers/content_protection). You need to set PlayReady and Widevine ID for DASH output(as shown below) and set FairPlay ID for HLS output.
 		- PlayReady: 9A04F079-9840-4286-AB92-E65BE0885F95
 		- Widevine: EDEF8BA9-79D6-4ACE-A3C8-27DCD51D21ED
@@ -80,14 +80,12 @@ Please refer to [IAM Settings AWS Guide Document](https://docs.aws.amazon.com/me
 		```
 	- Certificate ARN: leave it blank
 	- Play device compatibility: CENC v1
-
-	![mediaconvert4](/docs/images/mediaconvert-4.png)
+	{{< figure library="true" numbered="true" src="mediaconvert-4.png" title="DRM encryption" >}}
 
 5. Set the Outputs and click the Create button.
 	- In case of widevine, it is mandatory to create the video and audio track separately because there are clients that can not play if you do not divide video and audio tracks into output. (click 'add output' button to add track)
-
-	![mediaconvert5](/docs/images/mediaconvert-5.png)
-	![mediaconvert6](/docs/images/mediaconvert-6.png)
+	{{< figure library="true" numbered="true" src="mediaconvert-5.png" title="MediaConvert output 1" >}}
+	{{< figure library="true" numbered="true" src="mediaconvert-6.png" title="MediaConvert output 2" >}}
 
 6. Make public or set permission on the S3 storage to play the generated file stored on it.
 
@@ -119,17 +117,17 @@ Content can be encrypted in real time in conjunction with services such as AWS M
 1. Create the same as [MediaConvert IAM Authorization](#mediaconvert-iam), and create only Role Name with SPEKEAccess.
 
 2. On the Roles tab, select SPEKEAccess role and click the Edit trust relationship button on the Trust relationships tab.
-![iam3](/docs/images/iam-3.png)
+ {{< figure library="true" numbered="true" src="iam-3.png" title="SPEKEAccess role" >}}
 
 3. Change the value of Principal.Service to mediapackage.amazonaws.com and click the Update button.
- ![iam4](/docs/images/iam-4.png)
+ {{< figure library="true" numbered="true" src="iam-4.png" title="Update role" >}}
 
 ### Create MediaPackage Channel {#mediapackage-channel}
 
 1. In the AWS Console, select the MediaPackage service.
 
 2. Create a channel.
- ![mediapackage0](/docs/images/mediapackage-0.png)
+ {{< figure library="true" numbered="true" src="mediapackage-0.png" title="Create channel" >}}
 
 3. At the endpoints, press the Add button to set the endpoint.
 
@@ -140,7 +138,7 @@ Content can be encrypted in real time in conjunction with services such as AWS M
 6. Enter the SPEKEAccess Role created in Role ARN.
 
 7. Click the Save button.
-![mediapackage1](/docs/images/mediapackage-1.png)
+ {{< figure library="true" numbered="true" src="mediapackage-1.png" title="MediaPackage options" >}}
 
 ### Support for key rotation
 

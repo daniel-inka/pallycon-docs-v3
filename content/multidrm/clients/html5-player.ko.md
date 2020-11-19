@@ -16,7 +16,7 @@ featured: true
 2. HLS FPS(FairPlay Streaming) 콘텐츠
  - SAMPLE AES 방식으로 암호화되어 FairPlay Streaming을 통해 보호되는 HTTP Live Streaming 콘텐츠입니다. 맥 OS X(10.10 이상)에서 구동되는 사파리 브라우저에 적용됩니다.
 
-HTML5 플레이어에서 멀티DRM 라이선스를 발급받기 위해서는 PallyCon 클라우드와 고객사 서비스 사이트와의 연동을 통해 사용자 인증을 해야 하며, 라이선스 발급을 위한 멀티DRM 연동은 [멀티 DRM 라이선스 연동 가이드]({{%ref "multidrm-license.ko.md"%}}) 문서를 참고하시기 바랍니다.
+HTML5 플레이어에서 멀티DRM 라이선스를 발급받기 위해서는 PallyCon 클라우드와 고객사 서비스 사이트와의 연동을 통해 사용자 인증을 해야 하며, 라이선스 발급을 위한 멀티DRM 연동은 [멀티DRM 네이티브 연동 가이드](../multidrm-native-integration/) 문서를 참고하시기 바랍니다.
 
 ## 기본 연동 방식
 
@@ -42,7 +42,7 @@ FairPlay Streaming 연동을 위해서는 라이선스 요청 주소와 Custom H
 | SERVER_CERTIFICATE | Widevine server에서 발급 된 인증서 | chrome58 버젼 이상의 브라우저에서 widevine 컨텐츠 재생 시 사용. 없을 경우 서버로 인증서를 요청 후 라이센스를 요청하게 됨.|
 | PALLYCON_LA_URL | PallyCon 클라우드 서비스의 라이선스 요청용 URL. `https://license.pallycon.com/ri/licenseManager.do` | 동일한 주소로 Widevine, PlayReady, FairPlay 각각 설정. PlayReady는 생략 가능하며, 생략 시 DASH 패키징 과정에서 pssh에 설정된 URL이 사용됨. |
 | CUSTOM_HEADER_NAME | LA URL로 라이선스 요청과 함께 전달될 Custom HTTP Header의 이름. `pallycon-customdata-v2` 사용 | 구 버전 연동 규격의 경우 `pallycon-customdata` 사용 |
-| CUSTOM_HEADER_VALUE | 사용자 인증 방식에 따라 custom data 또는 token 값을 사용<br /> 1) base64 encoding ([PallyCon Custom Data v2 Format]({{%ref "multidrm-license.ko.md#pallycon-custom-data-v2"%}}) 참조)<br /> 2) 라이선스 토큰 문자열 ([라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}}) 참조) | DRM 유형에 따라 값이 다름 |
+| CUSTOM_HEADER_VALUE | 사용자 인증 방식에 따라 custom data 또는 token 값을 사용<br /> 1) base64 encoding ([PallyCon Custom Data v2 Format](../multidrm-native-integration/#pallycon-custom-data-v2) 참조)<br /> 2) 라이선스 토큰 문자열 ([라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}}) 참조) | DRM 유형에 따라 값이 다름 |
 | HLS_PLAYLIST_URL | FPS 규격으로 패키징된 HLS 콘텐츠의 playlist(m3u8) 파일 URL |  |
 | PALLYCON_FPS_CERT_URL | FPS Certification 파일의 다운로드 URL `https://license.pallycon.com/ri/fpsKeyManager.do?siteId='Site_ID'` |Site_ID는 PallyCon에서 발급된 서비스 사이트 ID(4byte)를 입력 |
 

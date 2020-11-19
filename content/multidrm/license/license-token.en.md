@@ -65,7 +65,7 @@ sequenceDiagram
 (4) Request for a license
 
 - The client places the received token(base64 string) in pallycon-customdata-v2 and requests license to PallyCon cloud server.
-> For licensing requests through CustomData, please refer to the [Multi-DRM License Integration Guide]({{%ref "multidrm-license.en.md"%}}) or [Client SDK Guide]({{%ref "../clients"%}}).
+> For licensing requests through CustomData, please refer to the [Multi-DRM Native Integration Guide](../multidrm-native-integration/#pallycon-custom-data-v2) or [Client SDK Guide](../../clients).
 
 (5) Issuing a license
 

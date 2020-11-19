@@ -16,7 +16,7 @@ This document explains how to play streaming content (DASH or HLS) protected wit
 2. HLS FPS(FairPlay Streaming) content
  - HTTP Live Streaming content encrypted with Sample AES and protected by FairPlay Streaming. Applies to Safari browsers running on Mac OS X (10.10 or later).
 
-In order to issue multi-DRM licenses in HTML5 player, user authentication must be performed through the integration with PallyCon cloud and customer service site. Please check [Multi-DRM License Integration]({{%ref "multidrm-license.en.md"%}}) for license issuance integration.
+In order to issue multi-DRM licenses in HTML5 player, user authentication must be performed through the integration with PallyCon cloud and customer service site. Please check [Multi-DRM Native Integration](../multidrm-native-integration/) for license issuance integration.
 
 ## Basic integration method
 
@@ -42,7 +42,7 @@ Please refer to the description below for the input values ​​used in each pl
 | SERVER_CERTIFICATE | Certificate data which is issued by Widevine server. | Used for CENC with Widevine DRM running on Chrome 58 or later version. If this data is missing, the certificate will be requested to PallyCon Cloud before license acquisition.|
 | PALLYCON_LA_URL | License acquisition URL of PallyCon Cloud. `https://license.pallycon.com/ri/licenseManager.do` | same for Widevine and PlayReady. LA URL for PlayReady is optional, and the URL set in pssh is used if it is omitted in setting. |
 | CUSTOM_HEADER_NAME | Name of Custom HTTP Header which is sent to LA URL with license request. use `pallycon-customdata-v2` | For old version spec, use `pallycon-customdata` |
-| CUSTOM_HEADER_VALUE | Custom data or License token <br> 1) base64 encoding ([PallyCon Custom Data v2 Format]({{%ref "multidrm-license.en.md#pallycon-custom-data-v2"%}})) <br> 2) License token string ([License Token Guide]({{%ref "license-token.en.md"%}})) | . |
+| CUSTOM_HEADER_VALUE | Custom data or License token <br> 1) base64 encoding ([PallyCon Custom Data v2 Format](../multidrm-native-integration/#pallycon-custom-data-v2)) <br> 2) License token string ([License Token Guide]({{%ref "license-token.en.md"%}})) | . |
 | HLS_PLAYLIST_URL | Manifest(m3u8) file URL of HLS content which is packaged by FPS spec. |  |
 | PALLYCON_FPS_CERT_URL | Download URL of FPS certification file `https://license.pallycon.com/ri/fpsKeyManager.do?siteId='Site_ID'` | Input Site_ID which is issued by PallyCon Cloud service. (4byte) |
 

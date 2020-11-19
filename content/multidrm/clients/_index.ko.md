@@ -33,6 +33,15 @@ PallyCon 멀티DRM 서비스는 PC, 모바일, OTT 플랫폼 등 다양한 클�
       </div>
     </div>
   </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">멀티DRM 네이티브 연동</h3>
+        <p class="card-text">고객사는 PlayReady, Widevine, FairPlay 등 멀티DRM을 지원하는 클라이언트 환경에서 PallyCon 클라이언트 SDK를 사용하지 않고 직접 네이티브 DRM 클라이언트를 연동할 수도 있습니다. 본 문서는 이와 같은 경우에 클라이언트에서 멀티DRM 라이선스를 발급 받기 위한 연동 방법을 설명합니다.</p>
+        <a href="./multidrm-native-integration/" class="btn btn-primary">바로가기</a>
+      </div>
+    </div>
+  </div>
   <div class="col-sm-6">    
     <div class="card">
       <div class="card-body">

@@ -34,7 +34,7 @@ This document describes how to integrate Chrome Cast with the FairPlay iOS SDK a
 
 - In order to play PallyCon Multi-DRM applied contents in Custom Receiver app, custom data used for license issuance must be transferred to Custom Receiver app.
 
-  - For more information on custom data, please visit [here]({{%ref "multidrm-license.en.md#pallycon-custom-data-v2"%}}).
+  - For more information on custom data, please visit [here](../multidrm-native-integration/#pallycon-custom-data-v2).
   - Refer to the PallyCon sample app for sending custom data from the Sender app to the Receiver app.
   - Please refer to [Google Cast Guides - DRM](https://developers.google.com/cast/docs/player#drm-playreadywidevine) and PallyCon Custom Receiver app for handling custom data in Receiver app.
   
@@ -43,5 +43,3 @@ This document describes how to integrate Chrome Cast with the FairPlay iOS SDK a
 - For more information on developing Sender and Receiver apps, see [Google Cast Guides](https://developers.google.com/cast/docs/developers) and the PallyCon SDK sample app.
 
 - For more information on registering your Custom Receiver app, please refer to [Google Cast Guides - Registration](https://developers.google.com/cast/docs/registration).
-
-***

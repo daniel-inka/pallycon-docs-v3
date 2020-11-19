@@ -40,7 +40,7 @@ There are five types of content packaging:
 
 ## Integration architecture and supported environments
 
-![flow1](/docs/images/cli-packager-flow1.png)
+{{< figure library="true" numbered="true" src="cli-packager-flow1.png" title="Packaging Flow" >}}
 
 PallyCon CLI Packager works in conjunction with PallyCon Multi DRM Cloud Server. PallyCon cloud server manages the content key information for each service site, and when a client requests DRM license information, it finds the key (CEK) information associated with the CID and issues a license.
 
@@ -63,36 +63,36 @@ PallyCon CLI Packager is based on Google's Shaka Packager. Please refer to [Gith
 
 ### Command parameters
 
-| Name | Type | Required | Description |
-| :--- | :---- | :--- | :--------------|
-| `--site_id` | string | Y | Service site ID (4 bytes) issued by PallyCon |
-| `--access_key` | string | Y | Authentication key issued to the service site. <br> Can be checked on PallyCon Console site. |
-| `--content_id` | string | Y | Unique ID of the content being packaged. Enter the ID value managed by the customer's CMS, and the same CID must be used in the subsequent client integration step. (Maximum 200 bytes)<br> |
-| `--cmaf` | bool | Y | Perform CMAF(Widevine, PlayReady, FPS) packaging |
-| `--dash` | bool | Y | Perform DASH-CENC(Widevine, PlayReady) packaging |
-| `--hls` | bool | Y | Perform HLS-AES (FPS) packaging |
-| `--ncg` | bool | Y | Perform NCG packaging |
-| `--hls_ncg` | bool | Y | Perform HLS-AES (NCG) packaging. Generate HLS-AES content to protect keys using NCG DRM. |
-| `-i (--input_file)` | string | Y | Source filename. Enable adaptive streaming if two or more files are input. <br> [Additional options] name : track name (:name=value) lang : audio track language (:lang=value) video_bitrate : video track bandwidth (:video_bitrate:value) |
-| `-o (--output_dir)` | string | N | Output folder name.<br>Default: Create an output directory at the current location (add the -f command to allow folders and files to be overwritten) |
-| `--config_file` | string | N | Config filename with fixed options such as Site ID and access key. Json and XML standards are supported. The default is Json (xml parsing is applied if the file extension is xml) |
-| `--clear_lead` | string | N | Encryption disabled section. Default: 0 (second) |
-| `--skip_audio_encryption` | bool | N | Disable audio track encryption. Default: false(encrypt audio) |
-| `--multi_key` | bool | N | Apply multiple key sets for each track. |
-| `--max_sd_height` | number | N | Max resolution to be packaged as SD track. Default: 480 |
-| `--max_hd_height` | number | N | Max resolution to be packaged as HD track. Default: 1080 |
-| `--max_uhd1_height` | number | N | Max resolution to be packaged as UHD track. Default: 2160 |
-| `--fragment_duration` | string | N | Fragment duration (seconds) |
-| `--segment_duration` | string | N | Segment duration (seconds) |
-| `--on_demand` | bool | N | Apply on-demand profile in DASH packaging.<br>If omitted or 'N', live profile is used. |
-| `--output_single_file` | bool | N | Set HLS packaging output as fMP4 file |
-| `--mpd_filename` | string | N | Filename of DASH manifest (.mpd) |
-| `--m3u8_filename` | string | N | Filename of HLS master manifest (.m3u8) |
-| `--subtitle` | string | N | Filename of subtitles |
-| `--generate_tracktype_manifests` | bool | N | Create multiple manifest (playlist) files for multi-key packaging. For adaptive streams containing SD to UHD tracks, three manifests are created: 'SD_ONLY', 'SD_HD', and 'SD_UHD'. |
-| `--enable_average_bandwidth_mpd` | bool | N | Apply the bandwidth of each track in the MPD file as an average value instead of the maximum value (default: false) |
-| `--stop_indicator` | bool | N | Hide packaging status indicator |
-| `--quiet` | bool | N | Hide packaging logs |
+|Name |<div style="width:60px">Type</div> |<div style="width:40px">Required</div> |Description |
+|:---|:----|:---|:--------------|
+|`--site_id` | string | Y | Service site ID (4 bytes) issued by PallyCon |
+|`--access_key` | string | Y | Authentication key issued to the service site. <br> Can be checked on PallyCon Console site. |
+|`--content_id` | string | Y | Unique ID of the content being packaged. Enter the ID value managed by the customer's CMS, and the same CID must be used in the subsequent client integration step. (Maximum 200 bytes)<br> |
+|`--cmaf` | bool | Y | Perform CMAF(Widevine, PlayReady, FPS) packaging |
+|`--dash` | bool | Y | Perform DASH-CENC(Widevine, PlayReady) packaging |
+|`--hls` | bool | Y | Perform HLS-AES (FPS) packaging |
+|`--ncg` | bool | Y | Perform NCG packaging |
+|`--hls_ncg` | bool | Y | Perform HLS-AES (NCG) packaging. Generate HLS-AES content to protect keys using NCG DRM. |
+|`-i (--input_file)` | string | Y | Source filename. Enable adaptive streaming if two or more files are input. <br> [Additional options] name : track name (:name=value) lang : audio track language (:lang=value) video_bitrate : video track bandwidth (:video_bitrate:value) |
+|`-o (--output_dir)` | string | N | Output folder name.<br>Default: Create an output directory at the current location (add the -f command to allow folders and files to be overwritten) |
+|`--config_file` | string | N | Config filename with fixed options such as Site ID and access key. Json and XML standards are supported. The default is Json (xml parsing is applied if the file extension is xml) |
+|`--clear_lead` | string | N | Encryption disabled section. Default: 0 (second) |
+|`--skip_audio_encryption` | bool | N | Disable audio track encryption. Default: false(encrypt audio) |
+|`--multi_key` | bool | N | Apply multiple key sets for each track. |
+|`--max_sd_height` | number | N | Max resolution to be packaged as SD track. Default: 480 |
+|`--max_hd_height` | number | N | Max resolution to be packaged as HD track. Default: 1080 |
+|`--max_uhd1_height` | number | N | Max resolution to be packaged as UHD track. Default: 2160 |
+|`--fragment_duration` | string | N | Fragment duration (seconds) |
+|`--segment_duration` | string | N | Segment duration (seconds) |
+|`--on_demand` | bool | N | Apply on-demand profile in DASH packaging.<br>If omitted or 'N', live profile is used. |
+|`--output_single_file` | bool | N | Set HLS packaging output as fMP4 file |
+|`--mpd_filename` | string | N | Filename of DASH manifest (.mpd) |
+|`--m3u8_filename` | string | N | Filename of HLS master manifest (.m3u8) |
+|`--subtitle` | string | N | Filename of subtitles |
+|`--generate_tracktype_manifests` | bool | N | Create multiple manifest (playlist) files for multi-key packaging. For adaptive streams containing SD to UHD tracks, three manifests are created: 'SD_ONLY', 'SD_HD', and 'SD_UHD'. |
+|`--enable_average_bandwidth_mpd` | bool | N | Apply the bandwidth of each track in the MPD file as an average value instead of the maximum value (default: false) |
+|`--stop_indicator` | bool | N | Hide packaging status indicator |
+|`--quiet` | bool | N | Hide packaging logs |
 
 ### Options for using external keys
 
@@ -100,15 +100,15 @@ This option is used when packaging with a key that is managed separately by the 
 
 > `--site_id` and `--access_key` options are not used when using external keys.
  
-| Name | Type | Required | Description |
-| :--- | :---- | :--- | :--------------|
-| `--enable_raw_key_encryption` | bool | Y | Enable the use of external key  |
-| `--provider` | string | N | DRM Provider name for Widevine PSSH<br>Default: inkaentworks |
-| `--license_url` | string | N | License acquisition URL <br>Default: https://license.pallycon.com/ri/licenseManager.do |
-| `--keys` | string | Y | Encryption key and key ID pair (HEX) |
-| `--ncg_cek` | string | Y (NCG DRM packaging) | 32 bytes key for NCG DRM (HEX) |
-| `--iv` | string | N | 16 bytes initial vector (HEX) |
-| `--pssh` | string | Y | PlayReady, Widevine PSSH data |
+|Name |<div style="width:60px">Type</div> |Required |Description |
+|:---|:----|:---|:--------------|
+|`--enable_raw_key_encryption` | bool | Y | Enable the use of external key  |
+|`--provider` | string | N | DRM Provider name for Widevine PSSH<br>Default: inkaentworks |
+|`--license_url` | string | N | License acquisition URL <br>Default: https://license.pallycon.com/ri/licenseManager.do |
+|`--keys` | string | Y | Encryption key and key ID pair (HEX) |
+|`--ncg_cek` | string | Y (NCG DRM packaging) | 32 bytes key for NCG DRM (HEX) |
+|`--iv` | string | N | 16 bytes initial vector (HEX) |
+|`--pssh` | string | Y | PlayReady, Widevine PSSH data |
 
 ## Error code
 

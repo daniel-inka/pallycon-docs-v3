@@ -68,5 +68,3 @@ PallyCon 멀티 DRM 제품은 다음과 같은 클라이언트 플랫폼과 OS�
 ## HTTPS 필수 적용
 
 구글 크롬 등 웹 브라우저의 보안 강화 방침에 따라, 스트리밍 URL 등 콘텐츠 서비스와 관련된 **모든 URL에는 기본적으로 HTTPS가 적용**되어야 합니다. (예: DASH 스트리밍용 mpd URL, HLS 스트리밍용 m3u8 URL, NCG 다운로드/PD용 ncg 파일 URL)
-
-***

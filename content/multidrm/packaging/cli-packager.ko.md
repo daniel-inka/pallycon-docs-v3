@@ -40,7 +40,7 @@ menu:
 
 ## 연동 구조 및 설치 환경
 
-![flow1](/docs/images/cli-packager-flow1.png)
+{{< figure library="true" numbered="true" src="cli-packager-flow1.png" title="패키징 플로우" >}}
 
 PallyCon CLI 패키져는 PallyCon 멀티 DRM 클라우드 서버와 연동되어 동작 합니다. PallyCon 클라우드 서버는 서비스 사이트 별 콘텐츠 키 정보를 관리하며, 클라이언트에서 DRM 라이선스 정보 요청 시 CID에 연결된 키(CEK) 정보를 찾아서 라이선스를 발급합니다. 
 
@@ -63,7 +63,7 @@ PallyCon CLI 패키져는 구글의 Shaka Packager를 기반으로 개발되었�
 
 ### 명령어 옵션 목록
 
-| Name | Type | Required | Description |
+| Name |<div style="width:60px">Type</div> | Required | Description |
 | :--- | :---- | :--- | :--------------|
 | `--site_id` | string | Y | PallyCon 서비스 사이트 ID (4바이트) |
 | `--access_key` | string | Y | 서비스 사이트에 발급되는 인증 키 <br>PallyCon 콘솔 사이트에서 확인 |

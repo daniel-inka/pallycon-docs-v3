@@ -142,5 +142,3 @@ run-example.sh CencDrmContentProtectionByPallyCon BITMOVIN_API_KEY=your-api-key 
 ```bash
 run-example.bat CencDrmContentProtectionByPallyCon BITMOVIN_API_KEY=your-api-key HTTP_INPUT_HOST=my-storage.biz
 ```
-
-***
