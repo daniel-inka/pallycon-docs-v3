@@ -1,9 +1,21 @@
 ---
-title: "HTML5 Player Integration"
-date: 2018-08-28T16:12:37+09:00
+title: HTML5 Player Integration Guide
+linktitle: HTML5 Player Integration
+summary: This document explains how to play streaming content (DASH or HLS) protected with multi-DRM (PlayReady, Widevine, FairPlay Streaming) using the HTML5 player from the web page of the service site.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 10
 featured: true
+
+menu:
+  multidrm:
+    parent: 클라이언트 연동
+    weight: 20
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 20
 ---
 
 ## Overview

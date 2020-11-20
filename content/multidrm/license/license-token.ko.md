@@ -1,9 +1,20 @@
 ---
-title: "라이선스 토큰 가이드"
-date: 2018-08-28T16:12:37+09:00
+title: 라이선스 토큰 가이드
+linktitle: 라이선스 토큰 가이드
+summary: 토큰 방식의 DRM 라이선스 연동에 대한 가이드입니다.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
+menu:
+  multidrm:
+    parent: 라이선스 발급 연동
+    weight: 10
+    name: 라이선스 토큰 가이드
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10
-featured: true
 ---
 
 ## 개요 {#intro}
@@ -65,7 +76,7 @@ sequenceDiagram
 (4) 라이선스 요청
 
 - 클라이언트는 서비스 사이트로부터 전달받은 토큰(base64 문자열)을 pallycon-customdata-v2에 담아 PallyCon 클라우드 서버에 라이선스를 요청합니다.
-- CustomData를 통한 라이선스 요청은 [멀티 DRM 라이선스 연동 가이드](../multidrm-native-integration/#pallycon-custom-data-v2) 또는 [클라이언트 연동 가이드](../../clients)를 참조하시기 바랍니다.
+- CustomData를 통한 라이선스 요청은 [멀티 DRM 라이선스 연동 가이드](../../clients/multidrm-native-integration/#pallycon-custom-data-v2) 또는 [클라이언트 연동 가이드](../../clients)를 참조하시기 바랍니다.
 
 (5) 라이선스 발급
 
@@ -120,7 +131,7 @@ sequenceDiagram
 
 서비스 사이트(CMS)는 클라이언트로부터의 요청에 대하여 아래와 같은 JSON 값을 생성하고, 해당 값을 Base64로 인코딩한 문자열을 클라이언트에 전달합니다.
 
-> 토큰 데이터 생성 샘플 코드는 [샘플 다운로드 페이지]({{%ref "downloads.ko.md"%}})에서 다운로드할 수 있습니다.
+> 토큰 데이터 생성 샘플 코드는 [샘플 다운로드 페이지](../../getting-started/downloads)에서 다운로드할 수 있습니다.
 
 ### 토큰 JSON 형식
 
@@ -138,7 +149,7 @@ sequenceDiagram
 }
 ```
 
-| **Name** | **Value** | **Required** | **Description** |
+|<div style="width:90px">**Name**</div> | **Type** | <div style="width:70px">**Required**</div> | **Description** |
 | --- | --- | --- | --- |
 | drm_type | string | No | DRM 종류 ("NCG", "Widevine", "PlayReady", "FairPlay"), 기본값: PlayReady |
 | site_id | string | Yes | PallyCon 서비스에서 발급받은 서비스 사이트 ID |
@@ -265,7 +276,7 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 ### 전체 구성
 
-| **Name** | **Value** | **Description** |
+|<div style="width:120px">**Name**</div> | **Type** | **Description** |
 | --- | --- | --- |
 | policy_version | 2 | 라이선스 정책 규격의 버전 정보 (고정값) |
 | playback_policy | json | 재생과 관련된 정책 설정 |
@@ -278,14 +289,14 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 - 해상도 별 트랙이 나누어진 콘텐츠의 경우, playback policy는 모든 트랙에 동일하게 적용됩니다.
 
-| **Name** | **Value** | **Default** | **Description** |
+|<div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | persistent | boolean | false | 오프라인용 라이선스 저장 여부. <br>true : 라이선스 유지, false : 재생 후 라이선스 제거(스트리밍) <br> false로 설정 시 license_duration과 expire_date 옵션은 정상 동작하지 않습니다. |
 | license_duration | int | 0 | 라이선스 유효 기간 (단위: 초) 0으로 설정 시 무제한. 이 옵션과 아래 만료 날짜 옵션 중 하나만 설정 가능합니다. |
 | expire_date | string |  | 라이선스 만료 날짜, GMT 표기 'yyyy-mm-ddThh:mm:ssZ' <br> license_duration 항목과 함께 사용된 경우, 이 항목은 무시됩니다. |
 | rental_duration | int | 0 | 오프라인 렌탈 시나리오 사용 시 설정. (persistent true 필요) 다운로드 후 최초 재생 시작 시점까지 라이선스 유효 기간 (단위: 초)|
 | playback_duration | int | 0 | 오프라인 렌탈 시나리오 사용 시 설정. (persistent true 필요) 최초 재생 시작 이후 라이선스 유효 기간 (단위: 초) |
-| allowed_track_types | string ("ALL", "SD_ONLY", "SD_HD", "SD_UHD1", "SD_UHD2") | ALL | 라이선스에 포함될 트랙 별 콘텐츠 키를 제어. (예: SD_ONLY - SD와 AUDIO 트랙의 키만 라이선스에 포함되어 HD 이상 트랙은 재생 불가) |
+| allowed_track_types | string | ALL | 라이선스에 포함될 트랙 별 콘텐츠 키를 제어.<br> -입력값: "ALL", "SD_ONLY", "SD_HD", "SD_UHD1", "SD_UHD2" 중 하나 <br> -예: SD_ONLY - SD와 AUDIO 트랙의 키만 라이선스에 포함되어 HD 이상 트랙은 재생 불가 |
 
 ### security_policy 
 
@@ -294,9 +305,9 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 - 해상도 별 트랙이 나누어진 콘텐츠의 경우, 모든 트랙에 동일하게 적용하거나 트랙 별 설정이 가능합니다.
 - 기존 규격에서 지원되지 않던 각종 외부 출력 보호 옵션을 각 DRM 별로 설정 가능합니다.
 
-| **Name** | **Value** | **Default** | **Description** |
+|<div style="width:120px">**Name**</div> | **Type** | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| track_type | string ("ALL", "ALL_VIDEO", "AUDIO", "SD",  "HD",  "UHD1", "UHD2") | ALL | 아래 각종 보안 정책이 적용될 트랙을 정의 |
+| track_type | string | ALL | 아래 각종 보안 정책이 적용될 트랙을 정의<br> - 입력값: "ALL", "ALL_VIDEO", "AUDIO", "SD",  "HD",  "UHD1", "UHD2" 중 하나 |
 | widevine | json |  | Widevine DRM에 해당되는 보안 옵션 |
 | playready | json |  | PlayReady DRM에 해당되는 보안 옵션 |
 | fairplay | json |  | FairPlay DRM에 해당되는 보안 옵션 |
@@ -304,41 +315,41 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 #### security_policy.widevine 
 
-| **Name** | **Value** | **Default** | **Description** |
+| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| security_level | int (1, 2, 3, 4, 5) | 1 (WV L3) | 해당 트랙에 대한 Widevine security level 설정 (1:SW_SECURE_CRYPTO, 2:SW_SECURE_DECODE, 3:HW_SECURE_CRYPTO, 4:HW_SECURE_DECODE, 5:HW_SECURE_ALL) <br> 5로 설정하면 Widevine L1 기기에서만 재생 가능 |
-| required_hdcp_version | string ("HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT") | HDCP_NONE (HDCP 미적용) | 디지털 출력에 대한 보안(HDCP) 레벨 설정 |
-| required_cgms_flags | string ("CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER") | CGMS_NONE | 아날로그 출력에 대한 보안(CGMS-A) 레벨 설정 |
+| security_level | int | 1 (WV L3) | 해당 트랙에 대한 Widevine security level 설정 (1:SW_SECURE_CRYPTO, 2:SW_SECURE_DECODE, 3:HW_SECURE_CRYPTO, 4:HW_SECURE_DECODE, 5:HW_SECURE_ALL) <br> 5로 설정하면 Widevine L1 기기에서만 재생 가능 |
+| required_hdcp_version | string | "HDCP_NONE" (HDCP 미적용) | 디지털 출력에 대한 보안(HDCP) 레벨 설정<br> - 입력값: "HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT" 중 하나 |
+| required_cgms_flags | string | "CGMS_NONE" | 아날로그 출력에 대한 보안(CGMS-A) 레벨 설정<br> - 입력값: "CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER" 중 하나 |
 | disable_analog_output | boolean | false | 아날로그 출력 허용 여부 (false: 아날로그 출력 허용) |
-| hdcp_srm_rule | string ("HDCP_SRM_RULE_NONE", "CURRENT_SRM") | HDCP_SRM_RULE_NONE | HDCP 기기가 SRM(System Renewability Message)을 처리하지 못하는 경우에 해당 트랙의 재생 여부 설정. CURRENT_SRM: 최신 SRM 적용 안되는 기기에서는 해당 트랙 재생 안됨 |
+| hdcp_srm_rule | string | "HDCP_SRM_RULE_NONE" | HDCP 기기가 SRM(System Renewability Message)을 처리하지 못하는 경우에 해당 트랙의 재생 여부 설정. CURRENT_SRM: 최신 SRM 적용 안되는 기기에서는 해당 트랙 재생 안됨 <br> - 입력값: "HDCP_SRM_RULE_NONE", "CURRENT_SRM" 중 하나 |
 
 #### security_policy.playready 
 
-| **Name** | **Value** | **Default** | **Description** |
+|<div style="width:120px">**Name**</div> | **Type** | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| security_level | int (150, 2000, 3000) | 150 | 해당 트랙에 대한 PlayReady security level. 하드웨어 DRM 적용 시 3000으로 설정. |
-| digital_video_protection_level | int (100, 250, 270, 300, 301) | 100 | 디지털 비디오 출력에 대한 보안 레벨 설정 |
-| analog_video_protection_level | int (100, 150, 200, 201) | 100 | 아날로그 비디오 출력에 대한 보안 레벨 설정|
-| digital_audio_protection_level | int (100, 250, 300, 301) | 100 | 디지털 오디오 출력에 대한 보안 레벨 설정 |
+| security_level | int | 150 | 해당 트랙에 대한 PlayReady security level. (150, 2000, 3000) 하드웨어 DRM 적용 시 3000으로 설정. |
+| digital_video_protection_level | int | 100 | 디지털 비디오 출력에 대한 보안 레벨 설정 (100, 250, 270, 300, 301) |
+| analog_video_protection_level | int | 100 | 아날로그 비디오 출력에 대한 보안 레벨 설정 (100, 150, 200, 201)|
+| digital_audio_protection_level | int | 100 | 디지털 오디오 출력에 대한 보안 레벨 설정 (100, 250, 300, 301) |
 | require_hdcp_type_1 | boolean | false | OPL 설정에 따라 HDCP가 적용될 때, Type 1(HDCP V2.2 이상)이 요구되는지 여부를 설정. (true 설정 시 HDCP 2.2 이상 필요) |
 
 > PlayReady Output Protection Level 설정값에 대한 자세한 정보는 [이곳](https://docs.microsoft.com/en-us/playready/overview/output-protection-levels)을 참고하시기 바랍니다.
 
 #### security_policy.fairplay 
 
-| **Name** | **Value** | **Default** | **Description** |
+| **Name** | **Type** | **Default** | **Description** |
 | --- | --- | --- | --- |
-| hdcp_enforcement | int (-1, 0, 1) | -1 (HDCP 미적용) | 해당 트랙에 대한 HDCP 적용 여부 및 HDCP 버전. <br> -1: HDCP 미적용, 0: HDCP Type 0(버전 무관), 1: HDCP Type 1(2.2 이상 필요) |
+| hdcp_enforcement | int | -1 (HDCP 미적용) | 해당 트랙에 대한 HDCP 적용 여부 및 HDCP 버전. <br> -1: HDCP 미적용, 0: HDCP Type 0(버전 무관), 1: HDCP Type 1(2.2 이상 필요) |
 | allow_airplay | boolean | true | AirPlay 허용 여부 |
 | allow_av_adapter | boolean | true | 디지털 AV 어댑터를 통한 출력 허용 여부 |
 
 #### security_policy.ncg 
 
-| **Name** | **Value** | **Default** | **Description** |
+| **Name** | **Type** | **Default** | **Description** |
 | --- | --- | --- | --- |
 | allow_mobile_abnormal_device | boolean | false | 탈옥 또는 루팅된 모바일 기기에서의 재생 허용 여부 |
 | allow_external_display | boolean | false | 외부 출력 허용 여부 |
-| control_hdcp | int (0, 1, 2) | 0 | 외부 출력 시 HDCP 적용 설정. 0: HDCP 미적용, 1: HDCP 1.4, 2: HDCP 2.2 |
+| control_hdcp | int | 0 | 외부 출력 시 HDCP 적용 설정. 0: HDCP 미적용, 1: HDCP 1.4, 2: HDCP 2.2 |
 
 ### external_key 
 
@@ -347,7 +358,7 @@ PallyCon 서비스에서 관리하지 않는 외부 키로 패키징된 콘텐�
 - CENC(PlayReady, Widevine), AES(FairPlay), 또는 NCG 카테고리로 나누어 각각의 외부 키 데이터를 설정합니다.
 - CENC와 AES의 경우에는 트랙 별로 다른 키를 설정할 수 있습니다.
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | mpeg_cenc | json | No | CENC 외부 키 정보 설정 - PlayReady/Widevine ([상세 규격](#external-key-cenc) 참조) |
 | hls_aes | json | No | HLS AES 외부 키 정보 설정 - FairPlay Streaming ([상세 규격](#external-key-aes) 참조) |
@@ -355,24 +366,24 @@ PallyCon 서비스에서 관리하지 않는 외부 키로 패키징된 콘텐�
 
 #### external_key.mpeg_cenc
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| track_type | string ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") | Yes | 아래 외부 키가 적용될 트랙을 정의 |
+| track_type | string | Yes | 아래 외부 키가 적용될 트랙을 정의 ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2")|
 | key_id | hex-string | Yes | DASH CENC 패키징(PlayReady/Widevine) 시 사용한 key ID 16byte hex string 값 |
 | key | hex-string | Yes | DASH CENC 패키징 시 사용한 key 16byte hex string 값 |
 | iv | hex-string | No | DASH CENC 패키징 시 사용한 iv 16byte hex string 값 |
 
 #### external_key.hls_aes 
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| track_type | string ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") | Yes | 아래 외부 키가 적용될 트랙을 정의 |
+| track_type | string | Yes | 아래 외부 키가 적용될 트랙을 정의 ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2")|
 | key | hex-string | Yes | HLS Sample AES 패키징(FairPlay Streaming) 시 사용한 key 16byte hex string 값 |
 | iv | hex-string | Yes | HLS Sample AES 패키징 시 사용한 iv 16byte hex string 값 |
 
 #### external_key.ncg 
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | cek | hex-string | Yes | NCG 패키징 시 사용한 cek 32byte hex string 값 |
 
@@ -596,5 +607,3 @@ QkM4NDVGMDMxRUE4MDM0NUMzQUE4MTgyMTA4QTQ2QjQyNEFBNTJCNkQ1QjhGODg1NUE1MDI2NjQ2NkE2
 - iv : 16 byte ( 0123456789abcdef )
 - padding : pkcs7
 ```
-
-***

@@ -1,8 +1,20 @@
 ---
-title: "FairPlay 인증서 등록 자습서"
-date: 2020-02-05T16:12:37+09:00
+title: FairPlay 인증서 등록 자습서
+linktitle: FairPlay 인증서 자습서
+summary: FPS 인증서를 발급 받고 등록하는 과정에 대한 자습서입니다.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
-weight: 35
+menu:
+  multidrm:
+    parent: 라이선스 발급 연동
+    weight: 30
+    name: FairPlay 인증서 자습서
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 30
 ---
 
 ## 개요
@@ -37,7 +49,7 @@ weight: 35
 > 본 과정을 수행하는 PC 또는 서버 환경에 OpenSSL이 설치되어 있어야 합니다.
 
 1. 개인키(privatekey.pem) 생성
-  ![generate-private-key](/docs/images/fps_tutorial_01_PrivateKeyFile(pem).png)
+  {{< figure library="true" src="fps_tutorial_01_PrivateKeyFile(pem).png" >}}
   - 다음 CLI 명령어를 실행해 개인키를 생성합니다.
   ```
   openssl genrsa -aes256 -out privatekey.pem 1024
@@ -46,7 +58,7 @@ weight: 35
   - 개인키 암호는 최대 32자까지 지원하며, 특수문자는 지원되지 않습니다.
 
 2. 인증서 서명 요청 파일 생성
-  ![create-csr](/docs/images/fps_tutorial_02_CertificateSigningRequestFile(csr).png)
+  {{< figure library="true" src="fps_tutorial_02_CertificateSigningRequestFile(csr).png" >}}
   - 다음 명령어를 실행합니다. -subj 파라미터의 내용은 고객사에 맞게 수정할 수 있습니다.
   ```
   openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectName/OU=OrganizationalUnit/O=Organization/C=US"
@@ -56,28 +68,28 @@ weight: 35
 ## 3단계: 애플 개발자 포털에서 FPS 인증서 생성
 
 1. 아래 화면과 같이 애플 개발자 포털에 로그인해 `Certificate, IDs & Profiles` 메뉴로 이동합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_03_AppleDeveloperPortalLogin.png)
+  {{< figure library="true" src="fps_tutorial_03_AppleDeveloperPortalLogin.png" >}}
 
 2. 해당 메뉴 화면에서 `+` 버튼을 눌러 `Create a New Certificate` 화면으로 이동합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_04_CertificatesList.png)
+  {{< figure library="true" src="fps_tutorial_04_CertificatesList.png" >}}
 
 3. `FairPlay Streaming Certificate` 항목을 선택하고 `Continue` 버튼을 클릭합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_05_CertTypeSelect.png)
+  {{< figure library="true" src="fps_tutorial_05_CertTypeSelect.png" >}}
 
 4. `Choose File`을 클릭하고 이전 단계에서 생성한 `certreq.csr` 파일을 선택한 뒤 `Continue` 버튼을 클릭합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_06_ChooseCsrFile.png)
+  {{< figure library="true" src="fps_tutorial_06_ChooseCsrFile.png" >}}
 
 5. `Application Secret Key(ASK)` 문자열을 복사해 별도로 기록한 후에 아래 빈 칸에 붙여넣고 `Continue` 버튼을 클릭합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_07_ASKValueCheck.png)
+  {{< figure library="true" src="fps_tutorial_07_ASKValueCheck.png" >}}
 
 6. ASK 문자열을 별도로 기록해두었는지 확인하는 팝업이 표시됩니다. `Generate` 버튼을 클릭합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_08_ASKSavedCheckPopup.png)
+  {{< figure library="true" src="fps_tutorial_08_ASKSavedCheckPopup.png" >}}
 
 7. 위 과정이 완료되면 `Certificate` 목록에 `FairPlay Streaming` 유형으로 생성된 인증서가 표시됩니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_09_ChecklistofAddedFPSCert.png)
+  {{< figure library="true" src="fps_tutorial_09_ChecklistofAddedFPSCert.png" >}}
 
 8. `Download` 버튼을 클릭해 `FPS 인증서 파일`(fairplay.cer)을 저장합니다.
-  ![apple-portal-login](/docs/images/fps_tutorial_10_DownloadCert.png)
+  {{< figure library="true" src="fps_tutorial_10_DownloadCert.png" >}}
 
 ## 4단계: PallyCon 콘솔 사이트에 인증서 등록
 
@@ -95,8 +107,6 @@ weight: 35
 
 이상으로 `FairPlay 인증서 등록 자습서`를 마칩니다.
 
-`FPS Cert 등록`을 완료한 후에는 [콘텐츠 패키징](/docs/ko/multidrm/packaging)을 통해 FairPlay DRM으로 보호되는 HLS 콘텐츠를 생성하고 [클라이언트 플레이어 연동](/docs/ko/multidrm/clients)으로 재생을 확인합니다.
+`FPS Cert 등록`을 완료한 후에는 [콘텐츠 패키징](../../packaging)을 통해 FairPlay DRM으로 보호되는 HLS 콘텐츠를 생성하고 [클라이언트 플레이어 연동](../../clients)으로 재생을 확인합니다.
 
 > 클라이언트 연동 시 FPS Certification 파일의 다운로드 URL은 `https://license.pallycon.com/ri/fpsKeyManager.do?siteId='Site_ID'` 입니다. `Site_ID`는 PallyCon에서 발급된 서비스 사이트 ID(4byte)를 입력합니다.
-
-***

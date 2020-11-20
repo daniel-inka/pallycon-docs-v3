@@ -1,8 +1,20 @@
 ---
-title: "FairPlay Cert Registration Tutorial"
-date: 2020-02-05T16:12:37+09:00
+title: FairPlay Cert Registration Tutorial
+linktitle: FairPlay Cert Tutorial
+summary: This document provides a tutorial for FPS cert registration.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
-weight: 35
+menu:
+  multidrm:
+    parent: License Issuance
+    weight: 30
+    name: FairPlay Cert Tutorial
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 30
 ---
 
 ## Overview
@@ -37,7 +49,7 @@ Create a private key (privatekey.pem) file and a certificate signing request (ce
 > OpenSSL must be installed on the PC or server environment where this process is performed.
 
 1. Create a private key (privatekey.pem) file
-  ![generate-private-key](/docs/images/fps_tutorial_01_PrivateKeyFile(pem).png)
+  {{< figure library="true" src="fps_tutorial_01_PrivateKeyFile(pem).png" >}}
   - Run the following command to generate the private key:
   ```
   openssl genrsa -aes256 -out privatekey.pem 1024
@@ -45,8 +57,8 @@ Create a private key (privatekey.pem) file and a certificate signing request (ce
   - Enter any password for the private key and make a note of it for later use.
   - The password should be shorter than 32 characters and special characters are not allowed.
 
-1. Create a certificate signing request file
-  ![create-csr](/docs/images/fps_tutorial_02_CertificateSigningRequestFile(csr).png)
+2. Create a certificate signing request file
+    {{< figure library="true" src="fps_tutorial_02_CertificateSigningRequestFile(csr).png" >}}
   - Run the following command: The contents of the -subj parameter can be modified to suit your organization.
   ```
   openssl req -new -sha1 -key privatekey.pem -out certreq.csr -subj "/CN=SubjectName/OU=OrganizationalUnit/O=Organization/C=US"
@@ -56,28 +68,28 @@ Create a private key (privatekey.pem) file and a certificate signing request (ce
 ## Step 3: Create FPS Cert at Apple Developer Portal
 
 1. Log in to the Apple Developer Portal as shown below and go to the `Certificate, IDs & Profiles` menu.
-  ![apple-portal-login](/docs/images/fps_tutorial_03_AppleDeveloperPortalLogin.png)
+  {{< figure library="true" src="fps_tutorial_03_AppleDeveloperPortalLogin.png" >}}
 
 2. Press the `+` button on the menu screen to move to the `Create a New Certificate` screen.
-  ![apple-portal-login](/docs/images/fps_tutorial_04_CertificatesList.png)
+  {{< figure library="true" src="fps_tutorial_04_CertificatesList.png" >}}
 
 3. Select the `FairPlay Streaming Certificate` item and click the `Continue` button.
-  ![apple-portal-login](/docs/images/fps_tutorial_05_CertTypeSelect.png)
+  {{< figure library="true" src="fps_tutorial_05_CertTypeSelect.png" >}}
 
 4. Click `Choose File`, select the `certreq.csr` file created in the previous step and click the `Continue` button.
-  ![apple-portal-login](/docs/images/fps_tutorial_06_ChooseCsrFile.png)
+  {{< figure library="true" src="fps_tutorial_06_ChooseCsrFile.png" >}}
 
 5. Copy the `Application Secret Key (ASK)` string, record it separately, paste it in the space below and click the `Continue` button.
-  ![apple-portal-login](/docs/images/fps_tutorial_07_ASKValueCheck.png)
+  {{< figure library="true" src="fps_tutorial_07_ASKValueCheck.png" >}}
 
 6. A pop-up will appear to confirm that you have recorded the ASK string separately. Click the `Generate` button.
-  ![apple-portal-login](/docs/images/fps_tutorial_08_ASKSavedCheckPopup.png)
+  {{< figure library="true" src="fps_tutorial_08_ASKSavedCheckPopup.png" >}}
 
 7. When the above process is completed, the certificate created with `FairPlay Streaming` type will be displayed in the `Certificate` list.
-  ![apple-portal-login](/docs/images/fps_tutorial_09_ChecklistofAddedFPSCert.png)
+  {{< figure library="true" src="fps_tutorial_09_ChecklistofAddedFPSCert.png" >}}
 
 8. Click the `Download` button to save the `FPS certificate file` (fairplay.cer).
-  ![apple-portal-login](/docs/images/fps_tutorial_10_DownloadCert.png)
+  {{< figure library="true" src="fps_tutorial_10_DownloadCert.png" >}}
 
 ## Step 4: Register FPS Cert at PallyCon Console Site
 
@@ -95,8 +107,6 @@ Create a private key (privatekey.pem) file and a certificate signing request (ce
 
 This completes the `FairPlay Cert Registration Tutorial`.
 
-After the `FPS Cert Registration`, create FairPlay DRM-protected HLS content through [Content Packaging](/docs/en/multidrm/packaging) and [Integrate Client Player](/docs/en/multidrm/clients) to check playback.
+After the `FPS Cert Registration`, create FairPlay DRM-protected HLS content through [Content Packaging](../../packaging) and [Integrate Client Player](../../clients) to check playback.
 
 > The download URL of FPS certification file is `https://license.pallycon.com/ri/fpsKeyManager.do?siteId='Site_ID'`. Input your `Site_ID` which is issued by PallyCon Cloud service. (4byte)
-
-***

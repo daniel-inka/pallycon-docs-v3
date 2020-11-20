@@ -1,9 +1,21 @@
 ---
-title: "HTML5 플레이어 연동 가이드"
-date: 2018-08-28T16:12:37+09:00
+title: HTML5 플레이어 연동 가이드
+linktitle: HTML5 플레이어 연동
+summary: 본 문서는 서비스 사이트의 웹 페이지에서 HTML5 플레이어를 이용해 멀티DRM(PlayReady, Widevine, FairPlay Streaming)으로 보호된 스트리밍 콘텐츠(DASH 또는 HLS)를 재생하는 방법을 설명합니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 10
 featured: true
+
+menu:
+  multidrm:
+    parent: 클라이언트 연동
+    weight: 10
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 10
 ---
 
 ## 개요

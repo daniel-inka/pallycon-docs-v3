@@ -1,11 +1,25 @@
 ---
-title: "라이선스 관련 에러코드"
-date: 2018-08-28T16:12:37+09:00
+title: 라이선스 관련 에러코드
+linktitle: 라이선스 관련 에러코드
+summary: DRM 라이선스 연동과 관련한 에러코드 목록입니다.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
+menu:
+  multidrm:
+    parent: 라이선스 발급 연동
+    weight: 40
+    name: 라이선스 관련 에러코드
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 40
 ---
 
-## 에러 코드 {#error-code}
+DRM 라이선스 연동과 관련한 에러코드 목록입니다.
+
+## 에러 코드 목록 {#error-code}
 
 |에러 코드 |에러 메시지 |
 |---|---|
@@ -76,5 +90,3 @@ weight: 40
 |8716 |APS 설정 값이 잘못되었습니다. |
 |9001 |요청 파라미터가 없습니다. |
 |9999 |지원하지 않는 모드입니다. |
-
-***

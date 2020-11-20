@@ -1,8 +1,20 @@
 ---
-title: "License Token Tutorial"
-date: 2018-08-28T16:12:37+09:00
+title: License Token Tutorial
+linktitle: License Token Tutorial
+summary: This document provides a tutorial for token-type DRM license integration.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
-weight: 25
+menu:
+  multidrm:
+    parent: License Issuance
+    weight: 20
+    name: License Token Tutorial
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 20
 ---
 
 ## Overview {#intro}
@@ -204,5 +216,3 @@ base64 encoded token : eyJkcm1fdHlwZSI6IldpZGV2aW5lIiwic2l0ZV9pZCI6IlRVVE8iLCJ1c
 This completes the license token tutorial.
 
 To play the actual DRM content using the created token, please refer to the [Bitmovin HTML5 Player Tutorial](https://pallycon.com/blog/how-to-integrate-pallycon-multi-drm-with-bitmovin-video-player) posted on the PallyCon blog site.
-
-***

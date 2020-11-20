@@ -1,13 +1,25 @@
 ---
-title: "라이선스 토큰 자습서"
-date: 2018-08-28T16:12:37+09:00
+title: 라이선스 토큰 자습서
+linktitle: 라이선스 토큰 자습서
+summary: 토큰 방식의 DRM 라이선스 연동에 대한 자습서입니다.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
-weight: 25
+menu:
+  multidrm:
+    parent: 라이선스 발급 연동
+    weight: 20
+    name: 라이선스 토큰 자습서
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 20
 ---
 
 ## 개요 {#intro}
 
-본 문서는 PallyCon 클라우드 서버에서 멀티 DRM(FPS, Widevine, PlayReady, NCG) 라이선스를 발급하는 방식인 토큰을 생성하는 방법에 대하여, 샘플 코드와 함께 단계 별로 상세 설명합니다. 토큰 방식 라이선스 연동 프로세스와 토큰 생성 규격에 대해서는 [라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}})를 참고하시기 바랍니다.
+본 문서는 PallyCon 클라우드 서버에서 멀티 DRM(FPS, Widevine, PlayReady, NCG) 라이선스를 발급하는 방식인 토큰을 생성하는 방법에 대하여, 샘플 코드와 함께 단계 별로 상세 설명합니다. 토큰 방식 라이선스 연동 프로세스와 토큰 생성 규격에 대해서는 [라이선스 토큰 가이드](../license-token)를 참고하시기 바랍니다.
 
 ## 유의 사항 {#notice}
 
@@ -204,5 +216,3 @@ base64 encoded token : eyJkcm1fdHlwZSI6IldpZGV2aW5lIiwic2l0ZV9pZCI6IlRVVE8iLCJ1c
 이상으로 라이선스 토큰 자습서를 마칩니다.
 
 본 자습서에서 생성한 토큰을 이용해 실제 DRM 콘텐츠를 재생해보려면 PallyCon 블로그 사이트에 포스팅된 [Bitmovin HTML5 플레이어 자습서](https://pallycon.com/ko/blog/pallycon-%eb%a9%80%ed%8b%b0-drm%ea%b3%bc-bitmovin-%ed%94%8c%eb%a0%88%ec%9d%b4%ec%96%b4-%ec%97%b0%eb%8f%99-%ed%95%98%ea%b8%b0)을 참고하시기 바랍니다.
-
-***

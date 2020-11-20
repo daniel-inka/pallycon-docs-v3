@@ -1,9 +1,20 @@
 ---
-title: "License Token Guide"
-date: 2018-08-28T16:12:37+09:00
+title: License Token Guide
+linktitle: License Token Guide
+summary: This document provides guide for token-type DRM license integration.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
+menu:
+  multidrm:
+    parent: License Issuance
+    weight: 10
+    name: License Token Guide
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10
-featured: true
 ---
 
 ## Overview {#intro}
@@ -65,7 +76,7 @@ sequenceDiagram
 (4) Request for a license
 
 - The client places the received token(base64 string) in pallycon-customdata-v2 and requests license to PallyCon cloud server.
-> For licensing requests through CustomData, please refer to the [Multi-DRM Native Integration Guide](../multidrm-native-integration/#pallycon-custom-data-v2) or [Client SDK Guide](../../clients).
+> For licensing requests through CustomData, please refer to the [Multi-DRM Native Integration Guide](../../clients/multidrm-native-integration/#pallycon-custom-data-v2) or [Client SDK Guide](../../clients).
 
 (5) Issuing a license
 
@@ -120,7 +131,7 @@ sequenceDiagram
 
 The service site (CMS) should generates the following JSON token for the request from the client and sends the base64 encoded string as the response.
 
-> Sample codes for generating token data are available on [Sample Download page]({{%ref "downloads.en.md"%}})
+> Sample codes for generating token data are available on [Sample Download page](../../getting-started/downloads)
 
 ### Token JSON Format
 
@@ -138,7 +149,7 @@ The service site (CMS) should generates the following JSON token for the request
 }
 ```
 
-| **Name** | **Value** | **Required** | **Description** |
+|<div style="width:90px">**Name**</div> | **Type** | <div style="width:70px">**Required**</div> | **Description** |
 | --- | --- | --- | --- |
 | drm_type | string | No | Type of DRM ("NCG", "Widevine", "PlayReady", "FairPlay"), case sensitive, Default : "PlayReady" |
 | site_id | string | Yes | Service Site ID which is issued by PallyCon Console |
@@ -265,7 +276,7 @@ You need to AES256 encrypt the JSON value composed in the format below, and the 
 
 ### Overall structure
 
-| **Name** | **Value** | **Description** |
+|<div style="width:120px">**Name**</div> | **Type** | **Description** |
 | --- | --- | --- |
 | policy_version | 2 | Version of license policy specification (fixed value) |
 | playback_policy | json | Policies related with playback (refer to [spec](#playback-policy)) |
@@ -278,14 +289,14 @@ Set policies related to replay, such as license validity period and whether it i
 
 - In the case of content with divided tracks by resolution, the playback policy is applied equally to all tracks.
 
-| **Name** | **Value** | **Default** | **Description** |
+|<div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | persistent | boolean | No | Whether the license is persistent for offline scenario. (default: false) <br>true : keep license, false : remove license after play(for streaming) |
 | duration | int | 0 | License validity period. (Unit: second) Unlimited when set to 0. <br> **'expire\_date' is ignored if 'duration' is set.** |
 | expire\_date | string |  | date of license expiration, GMT Time &#39;yyyy-mm-ddThh:mm:ssZ&#39; This setting cannot be used with 'duration'. |
 | rental_duration | int | 0 | Set when using an offline rental scenario. (persistent true required) License validity period until the first playback starts after downloading (unit: second) |
 | playback_duration | int | 0 | Set when using an offline rental scenario. (requires persistent true) License validity period after first playback starts (unit: second) |
-| allowed_track_types | string ("ALL", "SD_ONLY", "SD_HD", "SD_UHD1", "SD_UHD2") | ALL | Control the content key for each track to be included in the license. (Example: SD_ONLY-Only keys of SD and AUDIO tracks are included in the license, and HD or higher tracks cannot be played.) |
+| allowed_track_types | string | ALL | Control the content key for each track to be included in the license.<br> - Value: "ALL", "SD_ONLY", "SD_HD", "SD_UHD1", "SD_UHD2"<br> - Example: SD_ONLY-Only keys of SD and AUDIO tracks are included in the license, and HD or higher tracks cannot be played. |
 
 ### security_policy {#security-policy}
 
@@ -294,9 +305,9 @@ Set policies related to security such as hardware DRM and output protection leve
 - In the case of content that has tracks divided by resolution, it can be applied equally to all tracks or set by tracks.
 - Various output protection options are added to the version 2.0 specification.
 
-| **Name** | **Value** | **Default** | **Description** |
+|<div style="width:120px">**Name**</div> | **Type** | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| track_type | string ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") | ALL | Defines the track to which the below security policies are applied |
+| track_type | string | ALL | Defines the track to which the below security policies are applied<br> - Value: "ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2" |
 | widevine | json |  | Security policies for Widevine DRM |
 | playready | json |  | Security policies for PlayReady DRM |
 | fairplay | json |  | Security policies for FairPlay DRM |
@@ -304,41 +315,41 @@ Set policies related to security such as hardware DRM and output protection leve
 
 #### security_policy.widevine 
 
-| **Name** | **Value** | **Default** | **Description** |
+| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:90px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| security_level | int (1, 2, 3, 4, 5) | 1 (WV L3) | Widevine security level setting for the track <br> (1: SW_SECURE_CRYPTO, 2: SW_SECURE_DECODE, 3: HW_SECURE_CRYPTO, 4: HW_SECURE_DECODE, 5: HW_SECURE_ALL) <br>If set to 5, playback is possible only on Widevine L1 devices. |
-| required_hdcp_version | string ("HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT") | HDCP_NONE | Sets the required HDCP version for digital output |
-| required_cgms_flags | string ("CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER") | CGMS_NONE | Sets the security level for analog outputs |
+| security_level | int | 1 (WV L3) | Widevine security level setting for the track <br> (1: SW_SECURE_CRYPTO, 2: SW_SECURE_DECODE, 3: HW_SECURE_CRYPTO, 4: HW_SECURE_DECODE, 5: HW_SECURE_ALL) <br>If set to 5, playback is possible only on Widevine L1 devices. |
+| required_hdcp_version | string | "HDCP_NONE" | Sets the required HDCP version for digital output <br> - Value: "HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT"|
+| required_cgms_flags | string | "CGMS_NONE" | Sets the security level for analog outputs<br> - Value: "CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER" |
 | disable_analog_output | boolean | false | Whether analog output is allowed (false: analog output is allowed) |
-| hdcp_srm_rule | string ("HDCP_SRM_RULE_NONE", "CURRENT_SRM") | HDCP_SRM_RULE_NONE | Whether to allow the playback of the track when the HDCP device cannot process the System Renewability Message (SRM). CURRENT_SRM: The track does not play on devices that do not have the latest SRM |
+| hdcp_srm_rule | string | "HDCP_SRM_RULE_NONE" | Whether to allow the playback of the track when the HDCP device cannot process the System Renewability Message (SRM).<br> - Value: "HDCP_SRM_RULE_NONE", "CURRENT_SRM" <br> CURRENT_SRM: The track does not play on devices that do not have the latest SRM |
 
 #### security_policy.playready 
 
-| **Name** | **Value** | **Default** | **Description** |
+|<div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| security_level | int (150, 2000, 3000) | 150 | PlayReady security level for the track. Set to 3000 when applying hardware DRM. |
-| digital_video_protection_level | int (100, 250, 270, 300, 301) | 100 | Output protection level for digital video |
-| analog_video_protection_level | int (100, 150, 200, 201) | 100 | Output protection level for analog video |
-| digital_audio_protection_level | int (100, 250, 300, 301) | 100 | Output protection level for digital audio |
+| security_level | int | 150 | PlayReady security level for the track. (150, 2000, 3000) Set to 3000 when applying hardware DRM. |
+| digital_video_protection_level | int | 100 | Output protection level for digital video (100, 250, 270, 300, 301)|
+| analog_video_protection_level | int | 100 | Output protection level for analog video (100, 150, 200, 201)|
+| digital_audio_protection_level | int | 100 | Output protection level for digital audio (100, 250, 300, 301)|
 | require_hdcp_type_1 | boolean | false | Sets whether Type 1 (HDCP V2.2 or higher) is required when HDCP is applied according to OPL settings. (When you enable this option, HDCP 2.2 or higher is required to play the content) |
 
 > Please refer to [this link](https://docs.microsoft.com/en-us/playready/overview/output-protection-levels) for more details of PlayReady output protection level.
 
 #### security_policy.fairplay 
 
-| **Name** | **Value** | **Default** | **Description** |
+| **Name** | **Type** | **Default** | **Description** |
 | --- | --- | --- | --- |
-| hdcp_enforcement | int (-1, 0, 1) | -1 (No HDCP requirement) | HDCP version required for the track. <br> -1: HDCP not applied, 0: HDCP Type 0 (version independent), 1: HDCP Type 1 (requires 2.2 or higher) |
+| hdcp_enforcement | int | -1 (No HDCP requirement) | HDCP version required for the track. <br> -1: HDCP not applied, 0: HDCP Type 0 (version independent), 1: HDCP Type 1 (requires 2.2 or higher) |
 | allow_airplay | boolean | true | Whether to allow AirPlay |
 | allow_av_adapter | boolean | true | Whether to allow av adapter |
 
 #### security_policy.ncg 
 
-| **Name** | **Value** | **Default** | **Description** |
+| **Name** | **Type** | **Default** | **Description** |
 | --- | --- | --- | --- |
 | allow_mobile_abnormal_device | boolean | false | Whether to allow playback on jailbroken or rooted mobile devices |
 | allow_external_display | boolean | false | Whether external display is allowed. (default: false) |
-| control_hdcp | int (0, 1, 2) | 0 | Setting for applying HDCP. (default: 0) <br>0 : No HDCP, 1 : HDCP 1.4, 2 : HDCP 2.2 |
+| control_hdcp | int | 0 | Setting for applying HDCP. (default: 0) <br>0 : No HDCP, 1 : HDCP 1.4, 2 : HDCP 2.2 |
 
 ### external_key {#external-key}
 
@@ -347,7 +358,7 @@ Used to issue licenses for content packaged with foreign keys not managed by the
 - It is divided into CENC (PlayReady, Widevine), AES (FairPlay), or NCG category to set each foreign key data.
 - For CENC and AES, different keys can be set for each track.
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | mpeg_cenc | json | No | CENC external key setting for PlayReady/Widevine (refer to [spec](#external-key-cenc)) |
 | hls_aes | json | No | HLS AES external key setting for FairPlay Streaming (refer to [spec](#external-key-aes)) |
@@ -355,24 +366,24 @@ Used to issue licenses for content packaged with foreign keys not managed by the
 
 #### external_key.mpeg\_cenc {#external-key-cenc}
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| track_type | string ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") | Yes | Defines the track to which the below external key is applied |
+| track_type | string | Yes | Defines the track to which the below external key is applied ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") |
 | key\_id | hex-string | Yes | Key ID for DASH CENC packaging(PlayReady/Widevine). 16byte hex string |
 | key | hex-string | Yes | Key for DASH CENC packaging. 16byte hex string |
 | iv | hex-string | No | IV for DASH CENC packaging. 16byte hex string |
 
 #### external_key.hls\_aes {#external-key-aes}
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
-| track_type | string ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") | Yes | Defines the track to which the below external key is applied |
+| track_type | string | Yes | Defines the track to which the below external key is applied ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2")|
 | key | hex-string | Yes | Key for HLS Sample AES packaging(FairPlay Streaming). 16byte hex string |
 | iv | hex-string | Yes | IV for HLS Sample AES packaging. 16byte hex string |
 
 #### external_key.ncg {#external-key-ncg}
 
-| **Name** | **Value** | **Required** | **Description** |
+| **Name** | **Type** | **Required** | **Description** |
 | --- | --- | --- | --- |
 | cek | hex-string | Yes | CEK for NCG packaging. 32byte hex string |
 
@@ -598,5 +609,3 @@ AES256 Encryption
 - iv : 16 byte (0123456789abcdef)
 - padding : pkcs7
 ```
-
-***

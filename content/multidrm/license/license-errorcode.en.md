@@ -1,11 +1,25 @@
 ---
-title: "License Error Code"
-date: 2018-08-28T16:12:37+09:00
+title: License Error Code
+linktitle: License Error Code
+summary: This document provides a list of error code about DRM license integration.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
+menu:
+  multidrm:
+    parent: License Issuance
+    weight: 40
+    name: License Error Code
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 40
 ---
 
-## Error Code {#error-code}
+This document provides a list of error code about DRM license integration.
+
+## Error Code List {#error-code}
 
 |Error Code |Error Message |
 |---|---|
@@ -76,5 +90,3 @@ weight: 40
 |8716 |Invalid APS setting. |
 |9001 |Missing request parameter. |
 |9999 |Unsupported mode. |
-
-***
