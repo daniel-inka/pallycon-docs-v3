@@ -2,7 +2,7 @@
 title: 멀티DRM 온보딩 가이드
 linktitle: 멀티DRM 온보딩
 summary: 고객사의 다양한 상황과 요구사항에 맞는 가이드 문서를 쉽게 찾을 수 있도록 멀티DRM 제품에 대한 온보딩 가이드를 제공합니다.
-toc: false
+toc: true
 type: book
 date: "2019-05-05T00:00:00+01:00"
 lastmod: "2020-11-10T00:00:00Z"
@@ -17,6 +17,8 @@ weight: 1
 ---
 
 고객사의 다양한 상황과 요구사항에 맞는 가이드 문서를 쉽게 찾을 수 있도록 멀티DRM 제품에 대한 온보딩 가이드를 제공합니다. 아래 순서도의 각 단계별로 링크된 가이드 중에서 원하는 항목을 클릭해 해당 페이지로 이동할 수 있습니다.
+
+## 1단계 - 콘텐츠 패키징
 
 ```mermaid
 graph TD;
@@ -43,16 +45,36 @@ graph TD;
   wowza_live --> packaging_done
   bitmovin_live --> packaging_done
   cpix --> packaging_done
-  
-  packaging_done --> drm_license[2단계 - 서버 측 DRM 연동]
-  drm_license --> apple_support{FairPlay DRM을 통한 <br>애플 기기 지원 필요?}
+
+  click cli_packager "../../packaging/cli-packager"
+  click mediaconvert "../../packaging/aws-elemental/#mediaconvert"
+  click mediapackage "../../packaging/aws-elemental/#mediapackage"
+  click wowza_live "../../packaging/wowza-integration"
+  click wowza_vod "../../packaging/wowza-integration"
+  click bitmovin_vod "../../packaging/bitmovin-encoder-guide"
+  click bitmovin_live "../../packaging/bitmovin-encoder-guide"
+  click cpix "../../packaging/cpix-api"
+```
+
+## 2단계 - 서버 측 DRM 연동
+
+```mermaid
+graph TD;
+  drm_license[2단계 - 서버 측 DRM 연동] --> apple_support{FairPlay DRM을 통한 <br>애플 기기 지원 필요?}
   apple_support -->|예| fps_cert(FairPlay 인증서 신청 및 등록 .)
   apple_support -->|아니오| license_token(라이선스 토큰 생성 로직 구현 .)
   fps_cert --> license_token
   license_token --> license_test[라이선스 토큰 연동 테스트 .<br>- 2단계 완료]
 
-  license_test -->drm_client[3단계 - 클라이언트 연동 .]
-  drm_client --> web_client{"HTML5 Player 선택<br>(웹 브라우저 지원 시) ."}
+  click license_token "../../license/license-token"
+  click fps_cert "../../license/fps-cert-tutorial"
+```
+
+## 3단계 - 클라이언트 연동
+
+```mermaid
+graph TD;
+  drm_client[3단계 - 클라이언트 연동 .] --> web_client{"HTML5 Player 선택<br>(웹 브라우저 지원 시) ."}
   web_client --> shaka_player(Shaka Player)  
   web_client --> bitmovin_player(Bitmovin Player)
   web_client --> theo_player(THEO Player)
@@ -68,13 +90,13 @@ graph TD;
   mobile_sdk --> fps_ios(FPS<br>iOS SDK)
   mobile_sdk --> ncg_android(NCG<br>Android SDK)
   mobile_sdk --> ncg_ios(NCG<br>iOS SDK)
-  mobile_sdk --> multidrm_license(멀티DRM<br>라이선스 연동 .)
+  mobile_sdk --> multidrm_native(멀티DRM<br>네이티브 연동 .)
 
   widevine_android --> ott_devices{"OTT SDK 선택<br>(OTT 기기 지원 시) ."}
   fps_ios --> ott_devices
   ncg_android --> ott_devices
   ncg_ios --> ott_devices
-  multidrm_license --> ott_devices
+  multidrm_native --> ott_devices
   ott_devices -->|안드로이드TV .| widevine_androidtv(Widevine<br>AndroidTV SDK)
   ott_devices -->|애플TV| fps_tvos(FPS<br>tvOS SDK)
   ott_devices -->|XBox| playready_uwp(PlayReady<br>UWP SDK)
@@ -87,28 +109,18 @@ graph TD;
 
   playback_test --> finish_onboarding(멀티DRM 온보딩 완료)
 
-  click cli_packager "/ko/multidrm/packaging/cli-packager"
-  click mediaconvert "/ko/multidrm/packaging/aws-elemental/#mediaconvert"
-  click mediapackage "/ko/multidrm/packaging/aws-elemental/#mediapackage"
-  click wowza_live "/ko/multidrm/packaging/wowza-integration"
-  click wowza_vod "/ko/multidrm/packaging/wowza-integration"
-  click bitmovin_vod "/ko/multidrm/packaging/bitmovin-encoder-guide"
-  click bitmovin_live "/ko/multidrm/packaging/bitmovin-encoder-guide"
-  click cpix "/ko/multidrm/packaging/cpix-api"
-  click license_token "/ko/multidrm/license/license-token"
-  click fps_cert "/ko/multidrm/license/fps-cert-tutorial"
-  click shaka_player "/ko/multidrm/clients/html5-player/#shaka"
-  click bitmovin_player "/ko/multidrm/clients/html5-player/#bitmovin"
-  click theo_player "/ko/multidrm/clients/html5-player/#theo"
-  click videojs "/ko/multidrm/clients/html5-player/#videojs"
-  click html5_player "/ko/multidrm/clients/html5-player"
-  click widevine_android "/ko/multidrm/clients/widevine-android"
-  click fps_ios "/ko/multidrm/clients/fairplay-ios"
-  click ncg_android "/ko/multidrm/clients/ncg-android"
-  click ncg_ios "/ko/multidrm/clients/ncg-ios"
-  click multidrm_license "/ko/multidrm/license/multidrm-license"
-  click widevine_androidtv "/ko/multidrm/clients/widevine-androidtv"
-  click playready_uwp "/ko/multidrm/clients/playready-uwp"
-  click chromecast "/ko/multidrm/clients/chromecast-integration"
+  click shaka_player "../../clients/html5-player/#shaka"
+  click bitmovin_player "../../clients/html5-player/#bitmovin"
+  click theo_player "../../clients/html5-player/#theo"
+  click videojs "../../clients/html5-player/#videojs"
+  click html5_player "../../clients/html5-player"
+  click widevine_android "../../clients/widevine-android"
+  click fps_ios "../../clients/fairplay-ios"
+  click ncg_android "../../clients/ncg-android"
+  click ncg_ios "../../clients/ncg-ios"
+  click multidrm_native "../../clients/multidrm-native-integration"
+  click widevine_androidtv "../../clients/widevine-androidtv"
+  click playready_uwp "../../clients/playready-uwp"
+  click chromecast "../../clients/chromecast-integration"
 
 ```
