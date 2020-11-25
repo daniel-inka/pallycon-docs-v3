@@ -23,7 +23,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### DRM 라이선스 서버
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.10.22 | 4.8.0 |- 키 로테이션 기능 제어를 위한 Policy 추가 <br>- FPS iOS 10 오프라인 시나리오 적용 <br>- Widevine override revocation 제어 policy 추가 및 Widevine proxy 통신 에러코드 추가|
 | 2020.09.07 | 4.7.0 |- Widevine 라이선스 발급: 구글 보안 기준 미달 기기에 라이선스 발급 가능하게 패치<br>- 콜백 게이트웨이 Timeout 5초 -> 3초로 변경 |
@@ -41,7 +41,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### KMS 서버
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.11.11 | 1.6.0 |- PallyCon KMS V2 싱글키 지원<br>- Widevine response에 PSSH DATA Element 추가|
 | 2020.04.29 | 1.5.0 |- 멀티키 패키징 지원 (KMS V2), PallyCon CPIX API에 멀티키 기능 추가(V2)<br>- Bitmovin Encoder SDK, PallyCon CPIX V2 연동 샘플 제공 |
@@ -49,7 +49,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### CLI 패키져
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.09.17 | 3.6.3 |- DASH mpd의 각 트랙에 평균 대역폭을 적용하는 기능 추가<br>- 서버에서 PSSH를 전달받는 대신 패키저에서 직접 생성하도록 변경 |
 | 2020.07.10 | 3.6.2 |- CMAF(cbcs) 기능을 위해 PlayReady 헤더 4.3.0.0 버전 지원 |
@@ -68,7 +68,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### Wowza 연동 SDK
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2018.12.06 | 1.2.2 |- HLS 라이브 스트림에 NCG 적용 시 버그 수정 |
 | 2018.06.15 | 1.2.0 |- FairPlay Streaming 용 HLS 패키징 지원 |
@@ -79,7 +79,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### Widevine Android SDK
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.09.25 | 1.12.0 |- ExoPlayer 2.11.8 버전을 지원합니다.|
 | 2020.08.12 | 1.11.0 |- 멀티 키 콘텐츠와 오프라인 렌탈 시나리오를 지원합니다.<br>- v1.10.1에 추가되었던 existDownloadLicense 함수가 제거되고, 새롭게 getOfflineLicenseExpireDate 함수가 추가되었습니다.|
@@ -100,7 +100,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### FPS iOS SDK
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.09.25 | 1.9.0 |- 1.8.5 버전에 추가되었던 existDownloadedLicense 함수가 제거되었습니다. 새로 추가된 getOfflineLicenseExpireDate 함수를 통해 라이선스 유무와 만료 날짜를 알 수 있습니다.<br>- getOfflineLicenseExpireDate 함수가 추가되었습니다.<br>- 멀티키로 패키징된 콘텐츠의 라이선스 획득과 재생을 지원합니다.|
 | 2020.07.06 | 1.8.8 |- SDK가 Xcode 11.5 와 swift 5.2.4가 반영 됩니다.<br>- XCframework SDK 가 추가됩니다. |
@@ -122,7 +122,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### NCG Android SDK
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.09.03 | 2.6.3 |- SDK Sample 프로젝트에 scoped storage 권한이 추가됩니다.|
 | 2020.08.12 | 2.6.2 |- Token으로 라이선스 획득이 가능한 API가 추가됩니다.|
@@ -141,7 +141,7 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### NCG iOS SDK
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2019.10.08 | 2.5.0 |- 로컬 웹서버에서 크래시 발생을 제거했습니다. |
 | 2019.01.22 | 2.4.2 |- 토큰 방식의 라이선스 획득을 위한 새로운 함수가 추가 되었습니다. (acquireLicenseByToken) |
@@ -150,8 +150,6 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 
 ### 윈도우즈용 안티 캡쳐 SDK
 
-|날짜 |버전 |내용 |
+|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
 |:---|:---|:---|
 | 2020.05.21 | 1.0.0 |- 안티 캡쳐 SDK 최초 릴리즈 |
-
-***

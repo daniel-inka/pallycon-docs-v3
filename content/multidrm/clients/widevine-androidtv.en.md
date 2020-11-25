@@ -1,15 +1,28 @@
 ---
-title: "Widevine AndroidTV SDK Guide"
-date: 2018-08-28T16:12:37+09:00
+title: Widevine AndroidTV SDK Guide
+linktitle: Widevine AndroidTV SDK
+summary: This document describes how to use the libraries and sample project included in the SDK.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 70
+featured: true
+
+menu:
+  multidrm:
+    parent: Client Integration
+    weight: 80
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 80
 ---
 
 ## Overview
 
 PallyCon Widevine Android TV SDK makes it easy to apply Google's Widevine Modular DRM when developing media service apps for Android TV platform. This document describes how to use the libraries and sample project included in the SDK.
 
-Details of PallyCon Multi DRM service integration are provided in [License Token Guide]({{%ref "license-token.en.md"%}}). For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
+Details of PallyCon Multi DRM service integration are provided in [License Token Guide](../../license/license-token). For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
 
 > SDK products can be requested when subscribing to PallyCon cloud commercial service. Then SDK can be downloaded from the `Download` page of PallyCon Console site.
 
@@ -305,5 +318,3 @@ You can apply PallyCon Widevine Android TV SDK to your development project by fo
 ## API References
 
  > Please refer to the doc/en/api_reference.html file of the SDK zip file for detailed explanation of each API.
-
-***

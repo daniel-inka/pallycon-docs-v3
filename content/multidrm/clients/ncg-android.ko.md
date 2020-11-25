@@ -1,15 +1,28 @@
 ---
-title: "NCG Android SDK 가이드"
-date: 2018-08-28T16:12:37+09:00
+title: NCG Android SDK 가이드
+linktitle: NCG Android SDK
+summary: 본 문서는 NCG Android SDK에 포함된 라이브러리와 샘플 프로젝트의 사용법을 설명합니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 50
+featured: true
+
+menu:
+  multidrm:
+    parent: 클라이언트 연동
+    weight: 60
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 60
 ---
 
 ## 개요
 
 PallyCon NCG Android SDK는 안드로이드용 미디어 서비스 앱을 개발할 때 잉카엔트웍스의 NCG(Netsync Content Guard) DRM을 쉽게 적용할 수 있게 해주는 제품입니다. 본 문서는 SDK에 포함된 라이브러리와 샘플 프로젝트의 사용법에 대해 설명합니다.
 
-NCG DRM 클라이언트와 연동되는 PallyCon 멀티 DRM 서비스에 대한 설명은 [라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}})를 참고하시기 바랍니다.
+NCG DRM 클라이언트와 연동되는 PallyCon 멀티 DRM 서비스에 대한 설명은 [라이선스 토큰 가이드](../../license/license-token)를 참고하시기 바랍니다.
 SDK 사용과 관련한 기술 문의는 [헬프데스크](https://pallycon.zendesk.com) 사이트를 이용해 주시기 바랍니다.
 
 > **NOTE** :
@@ -498,5 +511,3 @@ try {
     errorMsg = e.getMessage();
 }
 ```
-
-***

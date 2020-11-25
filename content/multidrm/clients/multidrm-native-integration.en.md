@@ -1,8 +1,21 @@
 ---
-title: "Multi-DRM License Integration"
-date: 2018-08-28T16:12:37+09:00
+title: Multi-DRM Native Client Integration Guide
+linktitle: Native Client Integration
+summary: This document guides how to acquire DRM license from PallyCon Multi-DRM Cloud Server to playback content on various multi-drm client platforms without using PallyCon client SDKs.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 30
+featured: true
+
+menu:
+  multidrm:
+    parent: Client Integration
+    weight: 40
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 40
 ---
 
 ## Overview
@@ -16,7 +29,7 @@ There are two types of methods for issuing multi-DRM (FPS, Widevine, PlayReady, 
    - In the case of a request from an authorized user, the service site returns information such as authentication, usage rights (unlimited, fixed period) and various security options to the PallyCon cloud server through the callback web page.
    - PallyCon cloud server receives the response from the callback page and issues the license to the client.
 
-2. Token type (refer to [License Token Guide]({{%ref "license-token.en.md"%}}))
+2. Token type (refer to [License Token Guide](../../license/license-token)
    - When a multi-DRM client tries to play DRM content, the service site can create license token with pre-defined specification and send the token to the client.
    - The service site can set usage rights (expiration date or unlimited) and various security options through the token data.
    - When a client requests a license with a token, the PallyCon cloud server validates the token and issues a license.
@@ -25,7 +38,7 @@ This document guides how to acquire DRM license from PallyCon Multi-DRM Cloud Se
 
 ## Multi-DRM License Issuance {#workflow}
 
-![overview](/docs/images/Integration_Multi_DRM_Overview_en.png)
+{{< figure library="true" src="Integration_Multi_DRM_Overview_en.png" >}}
 
 1) Prepare Playback
    - Client (Player) receives DRM integration data (PallyCon CustomData or token) from the service site to play DRM contents and attempts to play DRM contents.
@@ -55,7 +68,7 @@ This document guides how to acquire DRM license from PallyCon Multi-DRM Cloud Se
 
 |Name |Value |
 |---|---|
-|pallycon-customdata-v2 | Use custom data or token values depending on the user authentication method. <br> 1) base64 encode([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2)) <br> 2) license token string (refer to [License Token Guide]({{%ref "license-token.en.md"%}})) |
+|pallycon-customdata-v2 | Use custom data or token values depending on the user authentication method. <br> 1) base64 encode([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2)) <br> 2) license token string (refer to [License Token Guide](../../license/license-token)) |
 
 > POST body : License Challenge Data created by platform’s native DRM client 
 
@@ -133,7 +146,7 @@ To implement FPS, client app should download FPS Certificate(.cer) file from Pal
 
 |Name |Value |
 |---|---|
-|pallycon-customdata-v2 | Use custom data or token values depending on the user authentication method. <br> 1) base64 encode([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2)) <br> 2) license token string (refer to [License Token Guide]({{%ref "license-token.en.md"%}})) |
+|pallycon-customdata-v2 | Use custom data or token values depending on the user authentication method. <br> 1) base64 encode([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2)) <br> 2) license token string (refer to [License Token Guide](../../license/license-token)) |
 
 - POST body : spc='base64 encoding(spc data)'
 
@@ -302,5 +315,3 @@ setRequestHeader("pallycon-customdata", "WDEMO4wvWFelCQ4ynPUaCSWeb1fcNuFUFqFhEH0
 
 license url = "https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata=WDEMO4wvWFelCQ4ynPUaCSWeb1fcNuFUFqFhEH0jivn11OStvVPP/05wUkNhdKCGchNz1"
 ```
-
-***

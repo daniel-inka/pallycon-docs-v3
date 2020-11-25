@@ -1,7 +1,20 @@
 ---
-title: "FairPlay iOS SDK Guide"
-date: 2018-08-28T16:12:37+09:00
+title: FairPlay iOS SDK Guide
+linktitle: FairPlay iOS SDK
+summary: This document describes how to use the libraries and sample project included in the FairPlay iOS SDK.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
+featured: true
+
+menu:
+  multidrm:
+    parent: Client Integration
+    weight: 30
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 30
 ---
 
@@ -9,7 +22,7 @@ weight: 30
 
 PallyCon FairPlay iOS SDK makes it easy to apply Apple's FairPlay Streaming DRM when developing media service apps for iOS. This document describes how to use the libraries and sample projects included in the SDK.
 
-Details of PallyCon Multi DRM service integration are provided in [License Token Guide]({{%ref "license-token.en.md"%}}). For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
+Details of PallyCon Multi DRM service integration are provided in [License Token Guide](../../license/license-token). For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
 
 > SDK products can be requested when subscribing to PallyCon cloud commercial service. Then SDK can be downloaded from the `Download` page of PallyCon Console site.
 
@@ -155,5 +168,3 @@ let customData = pallyconSdk.getCustomDataForChromcast(token: "Token String")
 ## API References
 
 > For descriptions of all the APIs provided by PallyCon FPS iOS SDK, see the API reference documentation included in the SDK file.
-
-***

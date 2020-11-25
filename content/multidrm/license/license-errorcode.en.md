@@ -21,7 +21,7 @@ This document provides a list of error code about DRM license integration.
 
 ## Error Code List {#error-code}
 
-|Error Code |Error Message |
+|<div style="width:70px">Error Code</div> |Error Message |
 |---|---|
 |1002 |Trial plan’s license limit or user limit exceeded. |
 |1003 |Cannot find the Site ID. |

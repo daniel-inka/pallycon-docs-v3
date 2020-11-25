@@ -1,8 +1,21 @@
 ---
-title: "Chromecast Integration Guide"
-date: 2018-08-28T16:12:37+09:00
+title: Chromecast Integration Guide
+linktitle: Chromecast Integration
+summary: This document describes how to integrate Chrome Cast with the FairPlay iOS SDK and Widevine Android SDK.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 80
+featured: true
+
+menu:
+  multidrm:
+    parent: Client Integration
+    weight: 90
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 90
 ---
 
 ## Overview

@@ -1,15 +1,28 @@
 ---
-title: "NCG Android SDK Guide"
-date: 2018-08-28T16:12:37+09:00
+title: NCG Android SDK Guide
+linktitle: NCG Android SDK
+summary: This document describes how to use the libraries and sample projects included in the SDK.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 50
+featured: true
+
+menu:
+  multidrm:
+    parent: Client Integration
+    weight: 60
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 60
 ---
 
 ## Overview
 
 PallyCon NCG Android SDK makes it easy to apply INKA's NCG(Netsync Content Guard) DRM when developing media service apps for Android. This document describes how to use the libraries and sample project included in the SDK.
 
-Details of PallyCon Multi DRM service integration are provided in [License Token Guide]({{%ref "license-token.en.md"%}}) guides. For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
+Details of PallyCon Multi DRM service integration are provided in [License Token Guide](../../license/license-token) guides. For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
 
 > SDK products can be requested when subscribing to PallyCon cloud commercial service. Then SDK can be downloaded from the `Download` page of PallyCon Console site.
 
@@ -490,5 +503,3 @@ try {
     errorMsg = e.getMessage();
 }
 ```
-
-***

@@ -1,8 +1,21 @@
 ---
-title: "멀티DRM 라이선스 연동"
-date: 2018-08-28T16:12:37+09:00
+title: 멀티DRM 네이티브 클라이언트 연동 가이드
+linktitle: 네이티브 클라이언트 연동
+summary: 본 문서는 PallyCon 클라이언트 SDK를 사용하지 않고 직접 각 기기의 네이티브 DRM을 사용해 개발할 경우에 PallyCon 멀티DRM 클라우드 서버로부터 라이선스를 발급받기 위한 연동 가이드 문서입니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 30
+featured: true
+
+menu:
+  multidrm:
+    parent: 클라이언트 연동
+    weight: 40
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 40
 ---
 
 ## 개요
@@ -15,13 +28,13 @@ PallyCon 멀티DRM 클라우드 서버는 Google Widevine Modular, Apple FairPla
 
 2. 토큰 방식
    - 서비스 사이트에서 미리 정의된 규격에 따라 라이선스 토큰을 생성해 클라이언트에 전달하고, 클라이언트는 해당 토큰을 이용해 라이선스를 발급받는 방식입니다.
-   - [라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}}) 참조
+   - [라이선스 토큰 가이드](../../license/license-token) 참조
 
 본 문서는 멀티DRM 클라이언트(HTML5 플레이어, iOS/Android 앱, 스마트TV, 셋탑박스 등)에서 PallyCon 클라이언트 SDK를 사용하지 않고 직접 각 기기의 네이티브 DRM을 사용해 개발할 경우에 PallyCon 멀티DRM 클라우드 서버로부터 라이선스를 발급받기 위한 연동 가이드 문서입니다.
 
 ## 멀티DRM 라이선스 발급 과정 {#workflow}
 
-![overview](/docs/images/Integration_Multi_DRM_Overview_ko.png)
+{{< figure library="true" src="Integration_Multi_DRM_Overview_ko.png" >}}
 
 1) 콘텐츠 재생 준비
 
@@ -50,7 +63,7 @@ PallyCon 멀티DRM 클라우드 서버는 Google Widevine Modular, Apple FairPla
 
 |Name |Value    |
 |---|---|
-|pallycon-customdata-v2| 사용자 인증 방식에 따라 custom data 또는 token 값을 사용합니다.<br> 1) base64 encoding ([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2) 참조) <br> 2) 라이선스 토큰 문자열 ([License Token Guide]({{%ref "license-token.ko.md"%}}) 참조) |
+|pallycon-customdata-v2| 사용자 인증 방식에 따라 custom data 또는 token 값을 사용합니다.<br> 1) base64 encoding ([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2) 참조) <br> 2) 라이선스 토큰 문자열 ([License Token Guide](../../license/license-token) 참조) |
 
 > POST body : Native DRM Client 모듈에서 생성한 License Challenge Data
 
@@ -128,7 +141,7 @@ FPS 클라이언트에서는 FPS 연동을 하기 위해 사전에 등록된 FPS
 
 |Name |Value |
 |---|---|
-|pallycon-customdata-v2 | 사용자 인증 방식에 따라 custom data 또는 token 값을 사용합니다.<br> 1) base64 encoding ([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2) 참조) <br> 2) 라이선스 토큰 문자열 ([License Token API]({{%ref "license-token.ko.md"%}}) 참조) |
+|pallycon-customdata-v2 | 사용자 인증 방식에 따라 custom data 또는 token 값을 사용합니다.<br> 1) base64 encoding ([PallyCon Custom Data v2 Format](#pallycon-custom-data-v2) 참조) <br> 2) 라이선스 토큰 문자열 ([License Token API](../../license/license-token) 참조) |
 
 - POST body : spc='base64 encoding(spc data)'
 
@@ -303,5 +316,3 @@ setRequestHeader("pallycon-customdata", "WDEMO4wvWFelCQ4ynPUaCSWeb1fcNuFUFqFhEH0
 license url = "https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata=WDEMO4wvWFelCQ4ynPUaCSWeb1fcNuFUFqFhEH0jivn11OStvVPP/05wUkNhdKCGchNz1"
 
 ```
-
-***

@@ -1,8 +1,21 @@
 ---
-title: "크롬캐스트 연동 가이드"
-date: 2018-08-28T16:12:37+09:00
+title: 크롬캐스트 연동 가이드
+linktitle: 크롬캐스트 연동
+summary: 본 문서는 FairPlay iOS SDK와 Widevine Android SDK에서 크롬캐스트를 연동하는 방법을 설명합니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 80
+featured: true
+
+menu:
+  multidrm:
+    parent: 클라이언트 연동
+    weight: 90
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 90
 ---
 
 ## 개요

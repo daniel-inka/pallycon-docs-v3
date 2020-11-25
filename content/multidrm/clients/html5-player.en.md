@@ -11,11 +11,11 @@ featured: true
 
 menu:
   multidrm:
-    parent: 클라이언트 연동
-    weight: 20
+    parent: Client Integration
+    weight: 10
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 20
+weight: 10
 ---
 
 ## Overview
@@ -54,13 +54,13 @@ Please refer to the description below for the input values ​​used in each pl
 | SERVER_CERTIFICATE | Certificate data which is issued by Widevine server. | Used for CENC with Widevine DRM running on Chrome 58 or later version. If this data is missing, the certificate will be requested to PallyCon Cloud before license acquisition.|
 | PALLYCON_LA_URL | License acquisition URL of PallyCon Cloud. `https://license.pallycon.com/ri/licenseManager.do` | same for Widevine and PlayReady. LA URL for PlayReady is optional, and the URL set in pssh is used if it is omitted in setting. |
 | CUSTOM_HEADER_NAME | Name of Custom HTTP Header which is sent to LA URL with license request. use `pallycon-customdata-v2` | For old version spec, use `pallycon-customdata` |
-| CUSTOM_HEADER_VALUE | Custom data or License token <br> 1) base64 encoding ([PallyCon Custom Data v2 Format](../multidrm-native-integration/#pallycon-custom-data-v2)) <br> 2) License token string ([License Token Guide]({{%ref "license-token.en.md"%}})) | . |
+| CUSTOM_HEADER_VALUE | Custom data or License token <br> 1) base64 encoding ([PallyCon Custom Data v2 Format](../multidrm-native-integration/#pallycon-custom-data-v2)) <br> 2) License token string ([License Token Guide](../../license/license-token)) | . |
 | HLS_PLAYLIST_URL | Manifest(m3u8) file URL of HLS content which is packaged by FPS spec. |  |
 | PALLYCON_FPS_CERT_URL | Download URL of FPS certification file `https://license.pallycon.com/ri/fpsKeyManager.do?siteId='Site_ID'` | Input Site_ID which is issued by PallyCon Cloud service. (4byte) |
 
 ## Shaka Player Integration {#shaka}
 
-![shaka](/docs/images/shaka-logo.png)
+{{< figure library="true" src="shaka-logo.png" >}}
 
 Shaka player is an HTML5 player that supports HLS and MPEG-DASH. It supports CENC content playback via Widevine and PlayReady, and HLS content via FairPlay. For more information about Shaka player, please see the links below.
 
@@ -254,11 +254,11 @@ player.getNetworkingEngine().registerResponseFilter(function(type, response) {
 
 registerResponseFilter is applied to both Widevine and PlayReady. When applying to your service site, please use the above example code as reference to deal with errors in a way that is appropriate for the service.
 
-For the list of error codes and corresponding message contents, please refer to the [License Error Code]({{%ref "license-errorcode.en.md"%}}) page.
+For the list of error codes and corresponding message contents, please refer to the [License Error Code](../../license/license-errorcode) page.
 
 ## Bitmovin Player Integration {#bitmovin}
 
-![bitmovin](/docs/images/bitmovin-logo.png)
+{{< figure library="true" src="bitmovin-logo.png" >}}
 
 Bitmovin player is an HTML5 player that supports HLS and MPEG-DASH. For more information on the Bitmovin player, please refer to the links below.
 
@@ -431,11 +431,11 @@ var conf = {
 
 The above example shows the processing for the Widevine license response, and if necessary, apply the same process for the prepareLicense API of the PlayReady and FairPlay Streaming as well. When applying to your service site, please use the above example code as reference to deal with errors in a way that is appropriate for the service.
 
-For the list of error codes and corresponding message contents, please refer to the [License error code]({{%ref "license-errorcode.en.md"%}}).
+For the list of error codes and corresponding message contents, please refer to the [License error code](../../license/license-errorcode).
 
 ## Viblast Player Integration {#viblast}
 
-![viblast](/docs/images/viblast-player-logo.png)
+{{< figure library="true" src="viblast-player-logo.png" >}}
 
 Viblast player is an HTML5 player that supports HLS and MPEG-DASH and supports P2P content delivery. It supports CENC content playback via Widevine and PlayReady, but **does not yet support FPS.** (coming soon) For more information about Viblast player, please see the links below.
 
@@ -542,11 +542,11 @@ viblast('#player').setup({
 
 Load Event Listener is applied to both Widevine and PlayReady. When applying to your service site, please use the above example code as reference to deal with errors in a way that is appropriate for the service.
 
-For the list of error codes and corresponding message contents, please refer to the [Error code]({{%ref "license-errorcode.en.md"%}}) page.
+For the list of error codes and corresponding message contents, please refer to the [Error code](../../license/license-errorcode) page.
 
 ## THEOplayer Integration {#theo}
 
-![theoplayer](/docs/images/theoplayer-logo.png)
+{{< figure library="true" src="theoplayer-logo.png" >}}
 
 THEOplayer is a cross-platform video player that supports HLS and MPEG-DASH playback in web, mobile apps, and smart TV environments. DASH CENC content protection via Widevine and PlayReady and HLS content protection through FairPlay Streaming. For more information about THEOplayer, please see the links below.
 
@@ -678,11 +678,11 @@ player.addEventListener("contentprotectionerror", function(data){
 
 Event Listener is applied to both Widevine and PlayReady. When applying to your service site, please use the above example code as reference to deal with errors in a way that is appropriate for the service.
 
-For the list of error codes and corresponding message contents, please refer to the [Error code]({{%ref "license-errorcode.en.md"%}}) page.
+For the list of error codes and corresponding message contents, please refer to the [Error code](../../license/license-errorcode) page.
 
 ## VideoJS Player integration {#videojs}
 
-![videojs](/docs/images/videojs-logo.png)
+{{< figure library="true" src="videojs-logo.png" >}}
 
 VideoJS player is an HTML5 player that supports HLS and MPEG-DASH. For more information on the VideoJS player, please refer to the links below.
 
@@ -748,5 +748,3 @@ player.ready(function(){
 });
 player.play();
 ```
-
-***

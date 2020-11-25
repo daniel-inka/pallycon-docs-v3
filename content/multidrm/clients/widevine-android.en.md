@@ -1,7 +1,20 @@
 ---
-title: "Widevine Android SDK Guide"
-date: 2018-08-28T16:12:37+09:00
+title: Widevine Android SDK Guide
+linktitle: Widevine Android SDK
+summary: This document describes how to use the libraries and sample project included in the Widevine Android SDK.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
+featured: true
+
+menu:
+  multidrm:
+    parent: Client Integration
+    weight: 20
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 20
 ---
 
@@ -9,7 +22,7 @@ weight: 20
 
 PallyCon Widevine Android SDK makes it easy to apply Google's Widevine Modular DRM when developing media service apps for Android. This document describes how to use the libraries and sample project included in the SDK.
 
-Details of PallyCon Multi DRM service integration are provided in [License Token Guide]({{%ref "license-token.en.md"%}}). For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
+Details of PallyCon Multi DRM service integration are provided in [License Token Guide](../../license/license-token). For technical questions about using the SDK, please visit our [Helpdesk site](https://pallycon.zendesk.com).
 
 > SDK products can be requested when subscribing to PallyCon cloud commercial service. Then SDK can be downloaded from the `Download` page of PallyCon Console site.
 
@@ -280,5 +293,3 @@ You can apply PallyCon Widevine Android SDK to your development project by follo
 ## API References
 
  > Please refer to the doc/en/api_reference.html file of the SDK zip file for detailed explanation of each API.
-
-***

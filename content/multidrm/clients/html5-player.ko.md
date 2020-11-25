@@ -54,13 +54,13 @@ FairPlay Streaming 연동을 위해서는 라이선스 요청 주소와 Custom H
 | SERVER_CERTIFICATE | Widevine server에서 발급 된 인증서 | chrome58 버젼 이상의 브라우저에서 widevine 컨텐츠 재생 시 사용. 없을 경우 서버로 인증서를 요청 후 라이센스를 요청하게 됨.|
 | PALLYCON_LA_URL | PallyCon 클라우드 서비스의 라이선스 요청용 URL. `https://license.pallycon.com/ri/licenseManager.do` | 동일한 주소로 Widevine, PlayReady, FairPlay 각각 설정. PlayReady는 생략 가능하며, 생략 시 DASH 패키징 과정에서 pssh에 설정된 URL이 사용됨. |
 | CUSTOM_HEADER_NAME | LA URL로 라이선스 요청과 함께 전달될 Custom HTTP Header의 이름. `pallycon-customdata-v2` 사용 | 구 버전 연동 규격의 경우 `pallycon-customdata` 사용 |
-| CUSTOM_HEADER_VALUE | 사용자 인증 방식에 따라 custom data 또는 token 값을 사용<br /> 1) base64 encoding ([PallyCon Custom Data v2 Format](../multidrm-native-integration/#pallycon-custom-data-v2) 참조)<br /> 2) 라이선스 토큰 문자열 ([라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}}) 참조) | DRM 유형에 따라 값이 다름 |
+| CUSTOM_HEADER_VALUE | 사용자 인증 방식에 따라 custom data 또는 token 값을 사용<br /> 1) base64 encoding ([PallyCon Custom Data v2 Format](../multidrm-native-integration/#pallycon-custom-data-v2) 참조)<br /> 2) 라이선스 토큰 문자열 ([라이선스 토큰 가이드](../../license/license-token) 참조) | DRM 유형에 따라 값이 다름 |
 | HLS_PLAYLIST_URL | FPS 규격으로 패키징된 HLS 콘텐츠의 playlist(m3u8) 파일 URL |  |
 | PALLYCON_FPS_CERT_URL | FPS Certification 파일의 다운로드 URL `https://license.pallycon.com/ri/fpsKeyManager.do?siteId='Site_ID'` |Site_ID는 PallyCon에서 발급된 서비스 사이트 ID(4byte)를 입력 |
 
 ## Shaka 플레이어 연동 {#shaka}
 
-![shaka](/docs/images/shaka-logo.png)
+{{< figure library="true" src="shaka-logo.png" >}}
 
 Shaka 플레이어는 HLS와 MPEG-DASH를 지원하는 HTML5 플레이어입니다. Widevine과 PlayReady를 통한 CENC 콘텐츠 재생과 FairPlay HLS 재생을 지원합니다. Shaka 플레이어에 대한 자세한 내용은 아래 링크들을 참조하시기 바랍니다.
 
@@ -251,11 +251,11 @@ player.getNetworkingEngine().registerResponseFilter(function(type, response) {
 
 registerResponseFilter는 Widevine과 PlayReady 모두에 적용되며, 실제 서비스에 적용 시에는 위 예제 코드를 활용하여 서비스에 적합한 방식으로 에러 처리를 해 주시기 바랍니다.
 
-에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드]({{%ref "license-errorcode.ko.md"%}})를 참조하시기 바랍니다.
+에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드](../../license/license-errorcode)를 참조하시기 바랍니다.
 
 ## Bitmovin 플레이어 연동 {#bitmovin}
 
-![bitmovin](/docs/images/bitmovin-logo.png)
+{{< figure library="true" src="bitmovin-logo.png" >}}
 
 Bitmovin 플레이어는 HLS와 MPEG-DASH를 지원하는 HTML5 플레이어입니다. Bitmovin 플레이어에 대한 자세한 내용은 아래 링크들을 참조하시기 바랍니다.
 
@@ -426,11 +426,11 @@ var conf = {
 
 위 예제는 Widevine 라이선스 응답에 대한 처리를 보여주고 있으며, 필요 시 PlayReady와 FairPlay Streaming 항목의 prepareLicense API도 동일하게 처리해 주어야 합니다. 실제 서비스에 적용 시에는 위 예제 코드를 활용하여 서비스에 적합한 방식으로 에러 처리를 해 주시기 바랍니다.
 
-에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드]({{%ref "license-errorcode.ko.md"%}})를 참조하시기 바랍니다.
+에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드](../../license/license-errorcode)를 참조하시기 바랍니다.
 
 ## Viblast 플레이어 연동 {#viblast}
 
-![viblast](/docs/images/viblast-player-logo.png)
+{{< figure library="true" src="viblast-player-logo.png" >}}
 
 Viblast 플레이어는 HLS와 MPEG-DASH를 지원하며 P2P 방식의 콘텐츠 전송 기능을 지원하는 HTML5 플레이어입니다. Widevine과 PlayReady를 통한 CENC 콘텐츠 재생을 지원하지만, **아직 FPS는 지원하지 않습니다.** (향후 지원 예정) Viblast 플레이어에 대한 자세한 내용은 아래 링크들을 참조하시기 바랍니다.
 
@@ -534,11 +534,11 @@ viblast('#player').setup({
 
 Load Event Listener는 Widevine과 PlayReady 모두에 적용되며, 실제 서비스에 적용 시에는 위 예제 코드를 활용하여 서비스에 적합한 방식으로 에러 처리를 해 주시기 바랍니다.
 
-에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드]({{%ref "license-errorcode.ko.md"%}})를 참조하시기 바랍니다.
+에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드](../../license/license-errorcode)를 참조하시기 바랍니다.
 
 ## THEOplayer 플레이어 연동 {#theo}
 
-![theoplayer](/docs/images/theoplayer-logo.png)
+{{< figure library="true" src="theoplayer-logo.png" >}}
 
 THEOplayer는 Web, 모바일 앱, 스마트TV 등의 환경에서 HLS와 MPEG-DASH 재생을 지원하는 크로스플랫폼 비디오 플레이어입니다. Widevine과 PlayReady를 통한 DASH CENC 콘텐츠 보호와 FairPlay Streaming을 통한 HLS 콘텐츠 보호를 지원합니다. THEOplayer에 대한 자세한 내용은 아래 링크들을 참조하시기 바랍니다.
 
@@ -668,11 +668,11 @@ player.addEventListener("contentprotectionerror", function(data){
 
 Event Listener는 Widevine과 PlayReady 모두에 적용되며, 실제 서비스에 적용 시에는 위 예제 코드를 활용하여 서비스에 적합한 방식으로 에러 처리를 해 주시기 바랍니다.
 
-에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드]({{%ref "license-errorcode.ko.md"%}})를 참조하시기 바랍니다.
+에러 코드 목록과 해당 메시지 내용은 [멀티 DRM 라이선스 에러코드](../../license/license-errorcode)를 참조하시기 바랍니다.
 
 ## VideoJS 플레이어 연동 {#videojs}
 
-![videojs](/docs/images/videojs-logo.png)
+{{< figure library="true" src="videojs-logo.png" >}}
 
 VideoJS 플레이어는 HLS와 MPEG-DASH를 지원하는 HTML5 플레이어입니다. VideoJS 플레이어에 대한 자세한 내용은 아래 링크들을 참조하시기 바랍니다.
 
@@ -738,5 +738,3 @@ player.ready(function(){
 });
 player.play();
 ```
-
-***

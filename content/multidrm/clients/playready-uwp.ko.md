@@ -1,15 +1,28 @@
 ---
-title: "PlayReady UWP SDK 가이드"
-date: 2018-08-28T16:12:37+09:00
+title: PlayReady UWP SDK 가이드
+linktitle: PlayReady UWP SDK
+summary: 본 문서는 PallyCon PlayReady UWP SDK에 포함된 라이브러리와 샘플 프로젝트의 사용법을 설명합니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-09-16T00:00:00Z"
 draft: false
-weight: 40
+featured: true
+
+menu:
+  multidrm:
+    parent: 클라이언트 연동
+    weight: 50
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 50
 ---
 
 ## 개요
 
 **PallyCon PlayReady UWP SDK**는 Universal Windows Platform (UWP) 환경에서 미디어 서비스 앱을 개발할 때 Microsoft사의 PlayReady DRM을 쉽게 적용할 수 있게 해주는 제품입니다. 본 문서는 PallyCon PlayReady UWP SDK에 포함된 라이브러리와 샘플 프로젝트의 사용법을 설명합니다.
 
-SDK와 연동되는 PallyCon 멀티 DRM 서비스에 대한 설명은 [라이선스 토큰 가이드]({{%ref "license-token.ko.md"%}})를 참고하시기 바랍니다.
+SDK와 연동되는 PallyCon 멀티 DRM 서비스에 대한 설명은 [라이선스 토큰 가이드](../../license/license-token)를 참고하시기 바랍니다.
 SDK 사용과 관련한 기술 문의는 [헬프데스크](https://pallycon.zendesk.com) 사이트를 이용해 주시기 바랍니다.
 
 ## 지원 환경
@@ -183,5 +196,3 @@ namespace UWPImplementation
 ## PlayReady 하드웨어 DRM
 
 하드웨어 기반 PlayReady DRM은 Windows 10 PC와 스마트TV, XBOX 콘솔, 태블릿 등의 다양한 디바이스에서 지원됩니다. Windows PC가 PlayReady 하드웨어 DRM을 지원하려면 Windows 10을 실행하고 있어야 하고 지원되는 하드웨어 구성을 포함해야 합니다. 하드웨어 DRM에 대한 보다 자세한 사항은 [Microsoft PlayReady Hardware DRM](https://docs.microsoft.com/ko-kr/windows/uwp/audio-video-camera/hardware-drm)에서 확인하시기 바랍니다.
-
-***
