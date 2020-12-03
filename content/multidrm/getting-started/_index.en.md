@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: 1. Getting Started
 summary: Provides basic description and quick start guide for quick understanding and experience of PallyCon Multi-DRM service.
-weight: 1
+weight: 10
 
 # Page metadata.
 title: Getting Started with PallyCon Multi-DRM
@@ -19,7 +19,7 @@ menu:
   multidrm:
     parent: Multi-DRM Guide
     name: Getting Started
-    weight: 1
+    weight: 10
 ---
 
 Provides basic description and quick start guide for quick understanding and experience of PallyCon Multi-DRM service. If this is your first time, please check out the below documents first.

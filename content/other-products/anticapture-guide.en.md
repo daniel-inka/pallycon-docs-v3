@@ -1,6 +1,6 @@
 ---
 linktitle: PallyCon Anti-Capture Guide
-weight: 2
+weight: 10
 
 # Page metadata.
 title: PallyCon Anti-Capture Guide
@@ -11,8 +11,8 @@ toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
 menu:
-  anticapture:
-    weight: 2
+  otherproducts:
+    weight: 10
     parent: Other Products
 ---
 
@@ -32,7 +32,7 @@ This document explains how to download and install the Anti-Capture product, exp
 
 - PallyCon AntiCapture Service: Windows service based application
 
-![Anti Capture Modules](/docs/images/pallycon-anti-capture-modules.png)
+{{< figure library="true" src="pallycon-anti-capture-modules.png" >}}
 
 On the web page, the `PallyConLib.js` API sends a message to the extension and an anti-capture program installed on the PC. The anti capture program returns the results to the extension in the requested message, and the extension returns the results back to the web page.
 
@@ -71,7 +71,7 @@ The relevant program must be installed on the client system as follows:
 
 When you play an HTML5 video with Anti Capture in the above client environment, the following process is repeated continuously to monitor the screen recording.
 
-![Anti Capture Process](/docs/images/pallycon-anti-capture-process.png)
+{{< figure library="true" src="pallycon-anti-capture-process.png" >}}
 
 1. The player playing the content calls the PallyConLib.js API to send a message to the extension.
 
@@ -96,7 +96,7 @@ Node.js can be used to test `PallyCon Anti-Capture` locally.
 
 4. In your browser, call the URL `http://localhost:3000/index.htm`.
 
-![Anti Capture Setup](/docs/images/pallycon-anti-capture-setup.png)
+{{< figure library="true" src="pallycon-anti-capture-setup.png" >}}
 
 ### Applying to Your Website
 
@@ -224,5 +224,3 @@ Even if the user doesn't record, if the screen capture extension is installed, t
 Web applications have many security vulnerabilities due to code exposure and debugging. Therefore, once development is complete, basic protection is required by obfuscating code, and it is recommended to obfuscate files that call PallyConLib.js API.
 
 > Recommendation: https://obfuscator.io/
-
-***

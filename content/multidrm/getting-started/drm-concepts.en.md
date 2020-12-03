@@ -12,10 +12,10 @@ featured: true
 menu:
   multidrm:
     parent: Getting Started
-    weight: 2
+    weight: 20
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 2
+weight: 20
 ---
 
 PallyCon Multi DRM service is a cloud-based SaaS (Solution as a Service) which consists of packaging solutions that apply DRM to contents, DRM license issuance service, and client solutions for DRM contents playback.

@@ -1,6 +1,6 @@
 ---
 linktitle: Bitmovin Encoder Integration
-weight: 6
+weight: 60
 
 # Page metadata.
 title: Bitmovin Encoder Integration Guide
@@ -13,7 +13,7 @@ type: book  # Do not modify.
 
 menu:
   multidrm:
-    weight: 6
+    weight: 60
     parent: Content Packaging
 ---
 

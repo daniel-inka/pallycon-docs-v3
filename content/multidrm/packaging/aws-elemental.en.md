@@ -1,6 +1,6 @@
 ---
 linktitle: AWS Elemental Integration
-weight: 4
+weight: 40
 
 # Page metadata.
 title: AWS Elemental Integration
@@ -13,7 +13,7 @@ type: book  # Do not modify.
 
 menu:
   multidrm:
-    weight: 4
+    weight: 40
     parent: Content Packaging
 ---
 

@@ -10,10 +10,10 @@ draft: false
 menu:
   multidrm:
     parent: 멀티DRM 시작하기
-    weight: 3
+    weight: 30
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 3
+weight: 30
 ---
 
 PallyCon 서비스를 이용하는데 필요한 `콘텐츠 패키저`와 `연동 샘플 소스`를 다운로드 받을 수 있습니다.

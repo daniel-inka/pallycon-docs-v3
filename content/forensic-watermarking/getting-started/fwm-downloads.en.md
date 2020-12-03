@@ -1,24 +1,26 @@
 ---
-title: Sample Downloads
+title: Forensic Watermarking Sample Downloads
 linktitle: Sample Downloads
+summary: You can download sample codes to integrate PallyCon Forensic Watermarking service with your service site.
 toc: true
 type: book
 date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-11-10T00:00:00Z"
 draft: false
 menu:
   multidrm:
     parent: Getting Started
-    weight: 4
+    weight: 30
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 4
+weight: 30
 ---
 
 You can download sample codes to integrate PallyCon Forensic Watermarking service with your service site.
 
 ## Forensic Watermarking API request sample
 
-- Common sample codes of API request for [Watermark Packaging API]({{ %ref "packaging-api.en.md"%}}), [Akamai CDN Session API]({{ %ref "akamai-session-manager.en.md"%}}), and [Amazon CloudFront CDN Session API]({{ %ref "cloudfront-session-manager.en.md"%}}).
+- Common sample codes of API request for [Watermark Packaging API](../../preprocessing/packaging-api) and [Session API](../../embedding/session-manager) for Akamai and Amazon CloudFront CDN integration.
 - For the request JSON specifications, please check the linked API guides above.
 
 |Sample Type |GitHub Link |
@@ -32,8 +34,8 @@ You can download sample codes to integrate PallyCon Forensic Watermarking servic
 
 - You can download the Lambda@Edge sample source for the Amazon CloudFront CDN integration from the link below.
 
-  {{% button href="/docs/files/pallycon-watermark-lambda-v2.2.0.zip" icon="fas fa-download" %}}Download CloudFront Lambda sample{{% /button %}}
+  {{% button href="../../../files/pallycon-watermark-lambda-v2.2.0.zip" icon="fas fa-download" %}}Download CloudFront Lambda sample{{% /button %}}
 
 > In case of Akamai CDN, you don't need this kind of integration module. If you need to use a CDN other than CloudFront and Akamai, please contact us.
 
-<a href="https://www.pallycon.com/contact/" target="_blank" class="btn btn-default">Contact Us</a>
+<a href="https://www.pallycon.com/contact/" target="_blank" class="btn btn-primary">Contact Us</a>

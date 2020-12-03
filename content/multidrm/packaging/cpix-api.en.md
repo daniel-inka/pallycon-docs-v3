@@ -1,6 +1,6 @@
 ---
 linktitle: CPIX API Guide
-weight: 3
+weight: 30
 
 # Page metadata.
 title: CPIX API Guide
@@ -13,7 +13,7 @@ type: book  # Do not modify.
 
 menu:
   multidrm:
-    weight: 3
+    weight: 30
     parent: Content Packaging
 ---
 

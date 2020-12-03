@@ -1,12 +1,26 @@
 ---
-title: "워터마크 삽입"
-date: 2018-08-28T16:52:08+09:00
-weight: 20
-chapter: true
-pre: "<b>2. </b>"
----
+# Course title, summary, and position.
+linktitle: 3. 워터마크 삽입
+summary: 재생 세션에 대한 고유 정보를 영상에 보이지 않게 삽입하는 방법에 대해서 설명합니다.
+weight: 30
 
-# 워터마크 삽입
+# Page metadata.
+title: 워터마크 삽입
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: false  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 30
+    parent: 포렌식 워터마킹
+    name: 워터마크 삽입
+---
 
 PallyCon 포렌식 워터마킹은 '0'과 '1'로 각각 마크된 두 가지 버전(A/B Variants)의 영상을 재생 시점에 실시간으로 조합합니다. 사용자 ID와 같은 세션 정보를 이진 형식으로 변환하고, 이에 따라 DASH 또는 HLS 스트림의 세그먼트를 조합하여 출력 스트림을 구성합니다.
 
@@ -35,21 +49,23 @@ sequenceDiagram
 
 아래 문서들을 참고하여 워터마크 삽입에 필요한 세션 매니저 API와 워터마크 삽입 모듈을 연동할 수 있습니다.
 
-<div class="cards">
-<article class="card">
-    <div class="text">
-        <h3>세션 매니저 API 가이드</h3>
-        본 문서는 PallyCon 세션 매니저 API를 통하여 워터마크 삽입에 필요한 세션 URL을 연동하는 방법을 설명합니다. <p>
-        <a href="{{<ref "session-manager.ko.md">}}" target="_self" class="btn btn-default">바로 가기</a>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">세션 매니저 API 가이드</h3>
+        <p class="card-text">본 문서는 PallyCon 세션 매니저 API를 통하여 워터마크 삽입에 필요한 세션 URL을 연동하는 방법을 설명합니다. </p>
+        <a href="./session-manager/" class="btn btn-primary">바로가기</a>
+      </div>
     </div>
-</article>
-<article class="card">
-    <div class="text">
-        <h3>CloudFront 워터마크 삽입 모듈 가이드</h3>
-        본 문서는 Amazon CloudFront CDN에 연동되는 Lambda@Edge 방식의 워터마크 삽입 모듈에 대하여 설명합니다. <p>
-        <a href="{{<ref "cloudfront-embedder.ko.md">}}" target="_self" class="btn btn-default">바로 가기</a>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">CloudFront 워터마크 삽입 모듈 가이드</h3>
+        <p class="card-text">본 문서는 Amazon CloudFront CDN에 연동되는 Lambda@Edge 방식의 워터마크 삽입 모듈에 대하여 설명합니다. </p>
+        <a href="./cloudfront-embedder/" class="btn btn-primary">바로가기</a>
+      </div>
     </div>
-</article>
+  </div>
 </div>
-
-***

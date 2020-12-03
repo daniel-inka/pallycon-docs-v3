@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: CLI Packager Guide
-weight: 2
+weight: 20
 
 # Page metadata.
 title: CLI Packager Guide
@@ -17,7 +17,7 @@ type: book  # Do not modify.
 # - weight: Position of link in menu.
 menu:
   multidrm:
-    weight: 2
+    weight: 20
     parent: Content Packaging
 ---
 

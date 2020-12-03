@@ -1,8 +1,24 @@
 ---
-title: "Packaging API Guide"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: Packaging API Guide
+summary: You can preprocess and package your content using our HTTP-based APIs instead of building a separate server using the CLI Preprocessor or library.
 weight: 40
+
+# Page metadata.
+title: Packaging API Guide
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 40
+    parent: Watermark Preprocessing
 ---
 
 You can preprocess and package your content using our HTTP-based APIs instead of building a separate server using the CLI Preprocessor or library.
@@ -26,7 +42,7 @@ The packaging storage and job management APIs use the following common specifica
 
 The HTTP API requests used by the PallyCon service follow the specifications below.
 
-> Please find the API request sample code in [Packager and Sample Download page]({{%ref "downloads.en.md"%}}).
+> Please find the API request sample code in [Sample Download page](../../getting-started/fwm-downloads).
 
 ### Request
 
@@ -585,5 +601,3 @@ The below JSON data will be sent to the callback URL in POST method without any 
 |WM900020|S3 put object process failed.|
 |WM900021|Upload file empty.|
 |WM900022|Media info get failed.|
-
-***

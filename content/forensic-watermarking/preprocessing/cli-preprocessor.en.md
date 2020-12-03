@@ -1,8 +1,24 @@
 ---
-title: "CLI Preprocessor Guide"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: CLI Preprocessor Guide
+summary: PallyCon CLI Preprocessor is a command line interface (CLI) tool for watermark preprocessing on an encoded video file.
 weight: 10
+
+# Page metadata.
+title: CLI Preprocessor Guide
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 10
+    parent: Watermark Preprocessing
 ---
 
 PallyCon CLI Preprocessor is a command line interface (CLI) tool for watermark preprocessing on an encoded video file.
@@ -175,9 +191,9 @@ For content that applies both forensic watermarking and DRM, you can package the
 
 For details on DRM packaging and watermark mixing, please refer to the following guide documents.
 
-- [DRM Packaging Guide]({{% ref "../../multidrm/packaging"%}})
+- [DRM Packaging Guide](../../../multidrm/packaging)
 
-- [Watermark Embedding Guide]({{% ref "../embedding"%}})
+- [Watermark Embedding Guide](../../embedding)
 
 ### Sample mixer
 
@@ -201,5 +217,3 @@ You can create a sample mixed video(output_mix.mp4) with a payload data 'testmsg
   ```sh
   sampleMixer ~/demo/output_0.mp4 ~/demo/output_1.mp4 ~/demo/output_mix.mp4 testmsg
   ```
-
-***

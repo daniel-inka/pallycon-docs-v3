@@ -1,6 +1,6 @@
 ---
 linktitle: PallyCon 안티 캡쳐 가이드
-weight: 2
+weight: 10
 
 # Page metadata.
 title: PallyCon 안티 캡쳐 가이드
@@ -11,8 +11,8 @@ toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
 menu:
-  anticapture:
-    weight: 2
+  otherproducts:
+    weight: 10
     parent: 기타 제품 가이드
 ---
 
@@ -30,7 +30,7 @@ menu:
 - PallyCon AntiCapture 확장 프로그램 - 크롬 브라우저 확장 (크롬 웹 스토어에서 설치)
 - PallyCon AntiCapture Service - 윈도우즈 서비스 기반 어플리케이션
 
-![Anti Capture Modules](/docs/images/pallycon-anti-capture-modules.png)
+{{< figure library="true" src="pallycon-anti-capture-modules.png" >}}
 
 웹 페이지에서 `PallyConLib.js` API는 확장 프로그램으로 메시지를 보내고 PC에 설치된 안티캡쳐 프로그램에 메시지를 보냅니다. 안티캡쳐 프로그램은 요청된 메시지에 결과를 확장 프로그램에 반환하고 확장 프로그램은 다시 결과를 웹 페이지에 반환됩니다.
 
@@ -67,7 +67,7 @@ menu:
 
 위와 같은 클라이언트 환경에서 안티 캡쳐가 적용된 HTML5 영상을 재생하면, 아래와 같은 과정이 지속적으로 반복되면서 화면 녹화를 모니터링 합니다.
 
-![Anti Capture Process](/docs/images/pallycon-anti-capture-process.png)
+{{< figure library="true" src="pallycon-anti-capture-process.png" >}}
 
 1. 콘텐츠를 재생하는 플레이어가 PallyConLib.js API를 호출하여 확장 프로그램에게 메시지를 보냅니다.
 
@@ -92,7 +92,7 @@ Node.js를 활용하여 `PallyCon 안티 캡쳐` 제품을 로컬에서 테스�
 
 4. 브라우저에서 `http://localhost:3000/index.htm` URL을 호출합니다.
 
-![Anti Capture Setup](/docs/images/pallycon-anti-capture-setup.png)
+{{< figure library="true" src="pallycon-anti-capture-setup.png" >}}
 
 ### 상용 서비스 적용
 
@@ -221,5 +221,3 @@ PallyCon 안티 캡쳐 제품을 이용하려는 고객은 별도 컨택을 통�
 웹 어플리케이션은 코드 노출과 디버깅으로 보안 취약요소가 많습니다. 따라서 개발이 완료되면 코드 난독화로 기본적인 보호가 필수이며, PallyConLib.js API를 호출하는 파일도 난독화를 권장합니다.
 
 > 난독화 사이트 추천: https://obfuscator.io/
-
-***

@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 2. 콘텐츠 패키징
-weight: 2
+weight: 20
 
 # Page metadata.
 title: 콘텐츠 패키징
@@ -17,7 +17,7 @@ type: book  # Do not modify.
 # - weight: Position of link in menu.
 menu:
   multidrm:
-    weight: 2
+    weight: 20
     parent: 멀티DRM 가이드
     name: 콘텐츠 패키징
 ---

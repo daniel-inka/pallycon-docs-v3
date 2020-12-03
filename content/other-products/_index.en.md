@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: Other Products
-weight: 3
+weight: 30
 
 # Page metadata.
 title: Other Products
@@ -17,7 +17,7 @@ type: book  # Do not modify.
 menu:
   otherproducts:
     name: Other Products
-    weight: 1
+    weight: 30
 ---
 
 `PallyCon Anti-Capture` is a product that can monitor and block recording programs when playing Widevine DRM video in Windows Chrome browser.

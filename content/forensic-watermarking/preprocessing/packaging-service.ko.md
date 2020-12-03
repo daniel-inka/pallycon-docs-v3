@@ -1,8 +1,24 @@
 ---
-title: "패키징 서비스 가이드"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: 패키징 서비스 가이드
+summary: PallyCon 워터마크 패키징 서비스는 클라우드 SaaS 형태로 제공되는 전처리 및 패키징 서비스입니다.
 weight: 30
+
+# Page metadata.
+title: 패키징 서비스 가이드
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 30
+    parent: 워터마크 전처리
 ---
 
 PallyCon 워터마크 패키징 서비스는 클라우드 SaaS 형태로 제공되는 전처리 및 패키징 서비스입니다. CLI 전처리기 또는 전처리 라이브러리를 이용한 별도의 서버를 구축할 필요 없이, 인코딩 결과물을 대상으로 PallyCon 클라우드 서비스를 이용하여 워터마크 전처리 및 패키징 작업을 수행할 수 있습니다.
@@ -22,8 +38,6 @@ sequenceDiagram
 
 패키징 서비스는 PallyCon 콘솔 사이트의 웹 UI 또는 별도의 HTTP API를 통해 사용할 수 있습니다.
 
-> API를 통한 워터마크 패키징 연동에 대해서는 별도로 문의하시기 바랍니다.
-
 ## 웹 콘솔을 통한 패키징 가이드
 
 [PallyCon 콘솔 사이트](https://console.pallycon.com)에서 웹 UI를 이용해 워터마크 전처리 과정을 포함한 콘텐츠 패키징을 수행할 수 있습니다. 아래와 같은 과정을 통하여 원본 MP4 파일을 워터마크 적용된 0/1 두 벌의 DASH 또는 HLS 콘텐츠로 패키징합니다.
@@ -34,7 +48,7 @@ sequenceDiagram
 
 콘솔 사이트에 로그인 후 `사이트 설정` > `연동 설정` 화면으로 이동해 `포렌식 워터마킹 설정` 항목의 `패키징 서비스 리전`에서 사용할 리전을 설정합니다.
 
-![region-setting](/docs/images/fw-settings-ko.png)
+{{< figure library="true" numbered="true" src="fw-settings-ko.png" title="리전 설정" >}}
 
 > 패키징 서비스 리전 목록에는 현재 시점에 패키징 작업에 필요한 인스턴스 타입이 지원되는 리전만 표시됩니다. 목록에 표시되지 않은 리전의 스토리지는 패키징 작업에 사용할 수 없습니다.
 
@@ -42,11 +56,11 @@ sequenceDiagram
 
 화면 좌측의 `포렌식 워터마킹` 메뉴에서 `패키징 서비스` > `스토리지 설정` 화면으로 이동해 `등록` 버튼을 클릭합니다.
 
-![storage-setting](/docs/images/fw-storage-setting-ko.png)
+{{< figure library="true" numbered="true" src="fw-storage-setting-ko.png" title="스토리지 설정" >}}
 
 `스토리지 등록` 화면의 각 항목들을 아래와 같이 입력합니다.
 
-![storage-reg](/docs/images/fw-storage-reg-ko.png)
+{{< figure library="true" numbered="true" src="fw-storage-reg-ko.png" title="스토리지 등록" >}}
 
 - `타입`: 등록할 스토리지의 타입을 선택합니다. 현재는 S3만 지원합니다.
 - `스토리지 명`: 해당 스토리지를 구별할 수 있는 임의의 이름을 입력합니다. (특수 문자 사용 불가, 50바이트 이하)
@@ -61,13 +75,13 @@ sequenceDiagram
 
 스토리지 등록이 완료되면 작업 등록을 위해 `패키징 작업` 화면으로 이동합니다. 화면 우측의 `등록` 버튼을 눌러 신규 작업을 등록합니다.
 
-![packaging-job](/docs/images/fw-packaging-job-ko.png)
+{{< figure library="true" numbered="true" src="fw-packaging-job-ko.png" title="패키징 작업" >}}
 
 > 패키징 작업 등록 전에 패키징할 원본 비디오 파일(mp4)을 입력용 버킷에 업로드해야 합니다.
 
 `패키징 작업 등록` 화면의 각 항목들을 아래와 같이 입력합니다.
 
-![job-reg](/docs/images/fw-job-registration-ko.png)
+{{< figure library="true" numbered="true" src="fw-job-registration-ko.png" title="작업 등록" >}}
 
 - `Job 명`: 해당 작업을 구분할 임의의 이름을 입력합니다. (특수 문자 사용 불가, 최대 50바이트)
 - `콘텐츠 ID`: 패키징할 콘텐츠의 고유 ID(Content ID)를 입력합니다. (특수 문자 사용 불가, 최대 200바이트)
@@ -89,8 +103,6 @@ sequenceDiagram
 
 완료된 패키징 작업의 이력은 아래와 같이 `패키징 완료 이력` 화면에서 조회할 수 있습니다.
 
-![job-history](/docs/images/fw-job-history-ko.png)
+{{< figure library="true" numbered="true" src="fw-job-history-ko.png" title="패키징 이력" >}}
 
-패키징 완료된 DASH/HLS 콘텐츠는 실시간 조합을 위해 워터마크 삽입 연동을 지원하는 CDN과 연결되어야 합니다. 해당 연동 처리에 대한 상세 내용은 [워터마크 삽입 가이드]({{% ref "../embedding"%}})를 참고하시기 바랍니다.
-
-***
+패키징 완료된 DASH/HLS 콘텐츠는 실시간 조합을 위해 워터마크 삽입 연동을 지원하는 CDN과 연결되어야 합니다. 해당 연동 처리에 대한 상세 내용은 [워터마크 삽입 가이드](../../embedding)를 참고하시기 바랍니다.

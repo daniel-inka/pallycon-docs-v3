@@ -1,9 +1,20 @@
 ---
-title: "Watermarking Release Notes"
-date: 2018-08-28T16:12:37+09:00
+title: Watermarking Release Notes
+linktitle: Watermarking Release Notes
+summary: Release notes for PallyCon Forensic Watermarking products
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
+menu:
+  multidrm:
+    parent: Forensic Watermarking
+    weight: 100
+    name: Watermarking Release Notes
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
-categories: ["watermarking"]
 ---
 
 ## Server Products
@@ -35,6 +46,7 @@ categories: ["watermarking"]
 
 |Date |Version |Descriptions |
 |:---|:---|:---|
+| 2020.12.01 | 1.2.0 |- Fixed the API response delay issue|
 | 2020.09.15 | 1.1.1 |- Added API call limit for trial account (max 1,000 calls)<br>- Added limit for watermark string length (max 254 bytes) |
 | 2020.05.13 | 1.1.0 |- Added SessionUrl API for Akamai CDN |
 | 2019.12.26 | 1.0.0 |- Initial release of Session API |

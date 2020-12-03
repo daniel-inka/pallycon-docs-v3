@@ -1,12 +1,26 @@
 ---
-title: "Watermark Detecting"
-date: 2018-08-28T16:52:20+09:00
-weight: 30
-chapter: true
-pre: "<b>3. </b>"
----
+# Course title, summary, and position.
+linktitle: 4. Watermark Detecting
+summary: Watermark detection analyzes each frame of the video to detect the original watermark pattern and decrypts the data with the secret key used at the time of insertion.
+weight: 40
 
-# Watermark Detecting
+# Page metadata.
+title: Watermark Detecting
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: false  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 40
+    parent: Forensic Watermarking
+    name: Watermark Detecting
+---
 
 If the watermarked video is leaked and distributed illegally, you can request the PallyCon service to detect the suspicious content. Watermark detection analyzes each frame of the video to detect the original watermark pattern and decrypts the data with the secret key used at the time of insertion.
 
@@ -28,6 +42,4 @@ sequenceDiagram
 
 Please contact us for detailed information on watermark detection service.
 
-<a href="https://www.pallycon.com/contact/" target="_blank" class="btn btn-default">Contact Us</a>
-
-***
+<a href="https://www.pallycon.com/contact/" target="_blank" class="btn btn-primary">Contact Us</a>

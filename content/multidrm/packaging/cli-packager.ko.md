@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: CLI 패키져 가이드
-weight: 2
+weight: 20
 
 # Page metadata.
 title: CLI 패키져 가이드
@@ -17,7 +17,7 @@ type: book  # Do not modify.
 # - weight: Position of link in menu.
 menu:
   multidrm:
-    weight: 2
+    weight: 20
     parent: 콘텐츠 패키징
 ---
 

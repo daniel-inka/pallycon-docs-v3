@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 3. License Issuance
-weight: 3
+weight: 30
 
 # Page metadata.
 title: DRM License Issuance
@@ -18,7 +18,7 @@ menu:
   multidrm:
     parent: Multi-DRM
     name: License Issuance
-    weight: 3
+    weight: 30
 ---
 
 To play the packaged content on a client device, you must acquire a DRM license from that device. Licensing can be done in two ways: callback and token. Please refer to the table below for the differences and advantages and disadvantages of the two methods.

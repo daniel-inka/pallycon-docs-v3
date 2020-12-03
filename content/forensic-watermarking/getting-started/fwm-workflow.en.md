@@ -1,8 +1,19 @@
 ﻿---
-title: "Forensic Watermarking Integration Workflows"
-date: 2020-04-28T16:12:37+09:00
+title: Forensic Watermarking Integration Workflow
+linktitle: Integration Workflow
+summary: This document describes the end-to-end workflows and options of `PallyCon Forensic Watermarking` integration.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-11-10T00:00:00Z"
 draft: false
-weight: 7
+menu:
+  multidrm:
+    parent: Getting Started
+    weight: 40
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 40
 ---
 
 This document describes the end-to-end workflows and options of `PallyCon Forensic Watermarking` integration.
@@ -51,7 +62,7 @@ PallyCon provides optional content packaging service that can process the `water
 2. Register the input/output storage for the packaging
  - You need to configure your S3 storage on PallyCon Console with the informations such as bucket name, access key and secret key.
  - You can set different storages for the packaging input and output.
- - Please refer to [this guide](https://pallycon.com/docs/en/watermarking/preprocessing/packaging-service/) for more details.
+ - Please refer to [this guide](../../preprocessing/packaging-service/) for more details.
 
 > SaaS Packaging service charges `per input hour` based fee. Please check [our pricing page](https://pallycon.com/pricing/) for more details.
 
@@ -67,7 +78,7 @@ If you use Akamai CDN for content delivery, you can utilize the pre-integrated `
 
 ### Option 1-C: Amazon CloudFront Integration
 
-If you use CloudFront CDN, you need to setup PallyCon Watermark Embedder module on your CloudFront edge. Please check [this guide](https://pallycon.com/docs/en/watermarking/embedding/cloudfront-embedder/) for more details.
+If you use CloudFront CDN, you need to setup PallyCon Watermark Embedder module on your CloudFront edge. Please check [this guide](../../embedding/cloudfront-embedder/) for more details.
 
 ## Step 2: Content Preprocessing
 
@@ -95,12 +106,12 @@ graph LR;
 2. Create a `watermark packaging job` on PallyCon Console
  - This will let PallyCon cloud system start the preprocessing and packaging process.
  - You can set multiple mp4 files for adaptive streaming as well as subtitles.
- - Please refer to [this guide](https://pallycon.com/docs/en/watermarking/embedding/packaging-service/#packaging-job-registration) for more details.
+ - Please refer to [this guide](../../preprocessing/packaging-service/#packaging-job-registration) for more details.
 
 3. Preprocessing and packaging on PallyCon SaaS
  - PallyCon SaaS copies the soure mp4 files (and optional subtitles) to its own system.
  - It creates A/B variants of mp4 and packages them into DASH/HLS streams, and copies the result on your output storage.
- - Please refer to [this guide](https://pallycon.com/docs/en/watermarking/embedding/packaging-service/#packaging-job-registration) for more details.
+ - Please refer to [this guide](../../preprocessing/packaging-service/#packaging-job-registration) for more details.
 
 4. Get the packaging results and copy them to your origin server
  - You will get an email notification when the packaging job is done.
@@ -129,7 +140,7 @@ graph LR;
 
 2. Run the CLI Preprocessor for watermark preprocessing and packaging
  - You need to setup an on-premise or cloud system that meets the hardware requirements of the CLI Preprocessor.
- - Please refer to [this guide](https://pallycon.com/docs/en/watermarking/preprocessing/cli-preprocessor/) for more details.
+ - Please refer to [this guide](../../preprocessing/cli-preprocessor/) for more details.
 
 3. Request content key for DRM encryption
  - CLI Preprocessor communicates with PallyCon DRM server to get the encryption key for DRM packaging.
@@ -164,7 +175,7 @@ graph LR;
 
 2. Run the CLI Preprocessor for watermark preprocessing only
  - You need to setup an on-premise or cloud system that meets the hardware requirements of the CLI tool.
- - Please refer to [this guide](https://pallycon.com/docs/en/watermarking/preprocessing/cli-preprocessor/) for more details.
+ - Please refer to [this guide](../../preprocessing/cli-preprocessor/) for more details.
  - You may set the CLI parameter to skip the packaging process and generate A/B variant mp4 files.
 
 3. Run the 3rd party packager on both of A/B variant MP4 files
@@ -238,7 +249,7 @@ graph LR;
 ```
 
 1. Integrate PallyCon preprocessor library with your encoder
- - Please refer to [this guide](https://pallycon.com/docs/en/watermarking/preprocessing/preprocessor-library/) for more details.
+ - Please refer to [this guide](../../preprocessing/preprocessor-library/) for more details.
 
 2. Encode source video into preprocessed(A/B variant) mp4 videos
  - The result will be two mp4 files for a single source video.
@@ -311,7 +322,7 @@ graph LR;
 ```
 
 1. Send content URL and session data to PallyCon Session Manager
-  - While configuring the player, the service backend (CMS) requests a `Session URL` to `PallyCon Session Manager` via [Session Manager API](https://pallycon.com/docs/en/watermarking/embedding/session-manager/).
+  - While configuring the player, the service backend (CMS) requests a `Session URL` to `PallyCon Session Manager` via [Session Manager API](../../embedding/session-manager/).
   - The request contains the session data of the client such as user ID, IP address, and timestamp.
 
 2. Store session data and generate session URL
@@ -329,6 +340,4 @@ graph LR;
 
 ## Watermark Detection
 
-If you find a leaked content after the watermark integration is done, you may request the watermark detection service to our team. Please check [this guide](https://pallycon.com/docs/en/watermarking/detecting/) for more details.
-
-***
+If you find a leaked content after the watermark integration is done, you may request the watermark detection service to our team. Please check [this guide](../../detecting/) for more details.

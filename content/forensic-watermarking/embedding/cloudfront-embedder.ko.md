@@ -1,11 +1,25 @@
 ---
-title: "CloudFront CDN 워터마크 삽입 모듈"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: CloudFront 워터마크 삽입
+summary: 
 weight: 20
----
 
-## 개요
+# Page metadata.
+title: CloudFront 워터마크 삽입 가이드
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 20
+    parent: 워터마크 삽입
+---
 
 본 문서에서는 Amazon CloudFront CDN을 사용하는 서비스 사이트를 위해 CloudFront용 워터마크 삽입 모듈을 Lambda@Edge로 적용하는 방법에 대하여 설명합니다.
 
@@ -20,7 +34,7 @@ sequenceDiagram
     Note right of A: 조홥된 콘텐츠 재생
 ```
 
-Lambda@Edge 설정에 필요한 소스 파일은 [샘플 다운로드 페이지]({{%ref "downloads.ko.md"%}})에서 다운로드 받을 수 있습니다.
+Lambda@Edge 설정에 필요한 소스 파일은 [샘플 다운로드 페이지](../../getting-started/fwm-downloads)에서 다운로드 받을 수 있습니다.
 
 ## Lambda@Edge 생성
 
@@ -119,5 +133,3 @@ AWS console 에 접속하여 `CloudFront` 메뉴 선택 후 lambda@Edge를 적�
 CloudFront의 Status가 `InProgress` 상태로 변경되며, Lambda@Edge가 적용이 완료되면 `Deployed`로 상태가 변경이 되고 모든 설정이 완료됩니다.
 
 > 자세한 Lambda@Edge 관련 내용은 AWS 에서 제공하는 [CloudFront 가이드](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html)를 참조하시기 바랍니다.
-
-***

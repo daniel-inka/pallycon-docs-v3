@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 4. 클라이언트 연동
-weight: 4
+weight: 40
 
 # Page metadata.
 title: DRM 클라이언트 연동
@@ -16,7 +16,7 @@ type: book  # Do not modify.
 # - weight: Position of link in menu.
 menu:
   multidrm:
-    weight: 3
+    weight: 40
     parent: 멀티 DRM
     name: 클라이언트 연동
 ---

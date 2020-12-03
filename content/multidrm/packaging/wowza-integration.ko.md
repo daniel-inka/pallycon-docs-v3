@@ -1,6 +1,6 @@
 ---
 linktitle: Wowza 연동 가이드
-weight: 5
+weight: 50
 
 # Page metadata.
 title: Wowza 연동 가이드
@@ -13,7 +13,7 @@ type: book  # Do not modify.
 
 menu:
   multidrm:
-    weight: 5
+    weight: 50
     parent: 콘텐츠 패키징
 ---
 

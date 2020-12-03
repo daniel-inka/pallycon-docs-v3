@@ -1,6 +1,6 @@
 ---
 linktitle: PallyCon Visible Watermarking Guide
-weight: 3
+weight: 20
 
 # Page metadata.
 title: PallyCon Visible Watermarking Guide
@@ -11,8 +11,8 @@ toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
 menu:
-  visiblewatermarking:
-    weight: 3
+  otherproducts:
+    weight: 20
     parent: Other Products
 ---
 
@@ -244,5 +244,3 @@ player.on("failed_setting", () => {
 
   * Solution 
   Set 'disablePictureInPicture' in `<video>` to prevent user from selecting PIP mode.
-
-***

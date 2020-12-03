@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 4. Client Integration
-weight: 4
+weight: 40
 
 # Page metadata.
 title: DRM Client Integration
@@ -18,7 +18,7 @@ menu:
   multidrm:
     parent: Multi-DRM
     name: Client Integration
-    weight: 4
+    weight: 40
 ---
 
 PallyCon Multi DRM service provides integration APIs and SDKs to support various client environment such as PC, mobile, OTT platform. The following documents describe how to use each client-specific SDK.

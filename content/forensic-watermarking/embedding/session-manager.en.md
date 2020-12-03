@@ -1,8 +1,24 @@
 ---
-title: "Session Manager API Guide"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: Session Manager API Guide
+summary: Session manager generates a mixed content URL with the information of the playback session. 
 weight: 10
+
+# Page metadata.
+title: Session Manager API Guide
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 10
+    parent: Watermark Embedding
 ---
 
 After pre-processing of watermark, the '0' and '1' versions of content (DASH or HLS) are mixed in real time and delivered to the client on the user's playback request. PallyCon Forensic Watermarking service provides the session manager which generates the mixed content URL with the information of the playback session.
@@ -25,7 +41,7 @@ The session manager API uses the following common specifications:
 
 The HTTP API requests used by the PallyCon service follow the specifications below.
 
-> Please find the API request sample code in [Packager and Sample Download page]({{%ref "downloads.en.md"%}}).
+> Please find the API request sample code in [Sample Download page](../../getting-started/fwm-downloads).
 
 ### Request
 
@@ -332,5 +348,3 @@ https://watermark.pallycon.com/api/v2/session/watermarkUrl/akamai/EXPL?pallycon-
     "url":"https://cdn.service-site.com/dldzkdpsxmdnjrtm/OHVPUw4N4tUoc-wlcA72aX6Hj5a_v-HuXcLAbFwYSpwDDsiVdSLNbWnbjkVvTX20yiKw7U6nOmJzZaDep1_3YJYxfvHzof01IAVgAguBhGk=/output/ddb2b84b-c3ce-4f37-9182-c36f83fc3fce/dash/stream.mpd"
 }
 ```
-
-***

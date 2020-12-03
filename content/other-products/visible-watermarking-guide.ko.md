@@ -1,6 +1,6 @@
 ---
 linktitle: PallyCon Visible Watermarking 가이드
-weight: 3
+weight: 20
 
 # Page metadata.
 title: PallyCon Visible Watermarking 가이드
@@ -11,8 +11,8 @@ toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
 menu:
-  visiblewatermarking:
-    weight: 3
+  otherproducts:
+    weight: 20
     parent: 기타 제품 가이드
 ---
 
@@ -240,5 +240,3 @@ player.on("failed_setting", () => {
 
   * 해결  
   사용자가 PIP 모드를 선택하지 못하도록 `<video>` 에 'disablePictureInPicture' 를 설정합니다.
-
-***

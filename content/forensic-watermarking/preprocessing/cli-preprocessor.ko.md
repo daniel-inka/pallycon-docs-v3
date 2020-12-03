@@ -1,8 +1,24 @@
 ---
-title: "CLI 전처리기 가이드"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: CLI 전처리기 가이드
+summary: PallyCon CLI 전처리기는 인코딩된 MP4 동영상을 대상으로 워터마크 전처리를 수행하는 CLI(Command Line Interface) 기반 툴입니다.
 weight: 10
+
+# Page metadata.
+title: CLI 전처리기 가이드
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 10
+    parent: 워터마크 전처리
 ---
 
 PallyCon CLI 전처리기는 인코딩된 MP4 동영상을 대상으로 워터마크 전처리를 수행하는 CLI(Command Line Interface) 기반 툴입니다.
@@ -175,9 +191,9 @@ CLI 전처리기를 실행하려면 다음과 같은 환경이 필요합니다.
 
 DRM 패키징과 워터마크 믹싱에 대한 상세 사항은 다음의 가이드 문서들을 참고하시기 바랍니다.
 
-- [DRM 패키징 가이드]({{% ref "../../multidrm/packaging"%}})
+- [DRM 패키징 가이드](../../../multidrm/packaging)
 
-- [워터마크 삽입 가이드]({{% ref "../embedding"%}})
+- [워터마크 삽입 가이드](../../embedding)
 
 ### 샘플 믹서
 
@@ -201,5 +217,3 @@ CLI 전처리기 압축 파일의 'bin' 폴더 내 sampleMixer 실행 파일을 
   ```sh
   sampleMixer ~/demo/output_0.mp4 ~/demo/output_1.mp4 ~/demo/output_mix.mp4 testmsg
   ```
-
-***

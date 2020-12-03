@@ -1,8 +1,24 @@
 ---
-title: "CloudFront CDN Watermark Embedder"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: CloudFront CDN Embedder
+summary: This document describes how to apply PallyCon watermark embedder with Lambda@Edge for service sites using the Amazon CloudFront CDN.
 weight: 20
+
+# Page metadata.
+title: CloudFront CDN Watermark Embedder Guide
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 20
+    parent: Watermark Embedding
 ---
 
 ## Overview
@@ -20,7 +36,7 @@ sequenceDiagram
     Note right of A: Playback of mixed content
 ```
 
-The source files needed for setting up Lambda@Edge can be downloaded from the [Sample download page]({{%ref "downloads.en.md"%}}).
+The source files needed for setting up Lambda@Edge can be downloaded from the [Sample download page](../../getting-started/fwm-downloads).
 
 ## Create Lambda@Edge
 
@@ -118,5 +134,3 @@ Connect to the AWS console, select the `CloudFront` menu and select CloudFront t
 The status of CloudFront is changed to `InProgress`, and when Lambda@Edge is applied, status is changed to `Deployed` and all settings are completed.
 
 > For more information about Lambda@Edge, please refer to [CloudFront guide](https://docs.aws.amazon.com/ko_kr/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html) from AWS.
-
-***

@@ -1,8 +1,24 @@
 ---
-title: "전처리 라이브러리 가이드"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: 전처리 라이브러리 가이드
+summary: PallyCon 워터마킹 전처리 라이브러리는 인코딩/트랜스코딩 솔루션에 포팅될 수 있도록 C++ 라이브러리 형태로 구현된 전처리기입니다.
 weight: 20
+
+# Page metadata.
+title: 전처리 라이브러리 가이드
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 20
+    parent: 워터마크 전처리
 ---
 
 PallyCon 워터마킹 전처리 라이브러리는 인코딩/트랜스코딩 솔루션에 포팅될 수 있도록 C++ 라이브러리 형태로 구현된 전처리기입니다. 영상 인코딩 과정에서 직접 워터마크 전처리를 수행하는 방식으로, CLI 전처리기를 이용할 때 필요한 재인코딩 과정을 생략할 수 있습니다.
@@ -21,7 +37,7 @@ graph LR;
 
 기본적으로 FFMPEG 기반의 인코더/트랜스코더에 포팅을 지원하며 기타 상용 솔루션에 적용을 위해서는 해당 솔루션 업체의 작업이 필요합니다. 더 많은 정보가 필요하거나 전처리 라이브러리의 적용을 원하는 업체는 잉카엔트웍스로 문의하시기 바랍니다.
 
-<a href="https://www.pallycon.com/contact/?lang=ko" target="_blank" class="btn btn-default">문의하기</a>
+<a href="https://www.pallycon.com/contact/?lang=ko" target="_blank" class="btn btn-primary">문의하기</a>
 
 ## 지원 환경 및 설정
 
@@ -150,5 +166,3 @@ Pallycon Watermark 규격상 다음과 같은 제약사항을 따라야 합니�
 3. 인코더 GOP 60
    - embedsample.cpp::openOutputFile()::enc_ctx->gop_size
    - embedsample.cpp::checkAndUpdateParam()::pCtx->x264_param
-
-***

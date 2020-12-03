@@ -1,9 +1,19 @@
 ---
-title: "Watermarking Concepts and Terms"
-date: 2018-08-28T16:12:37+09:00
+title: Forensic Watermarking Concepts and Terms
+linktitle: Concepts and Terms
+summary: Describes various concepts and terms related to PallyCon Forensic Watermarking service.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-11-10T00:00:00Z"
 draft: false
-weight: 5
-categories: ["watermarking"]
+menu:
+  watermarking:
+    parent: Getting Started
+    weight: 20
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 20
 ---
 
 Describes various concepts and terms related to PallyCon Forensic Watermarking service.
@@ -47,7 +57,7 @@ The inserted watermark value is encrypted using a secret key unique to each cont
 
 The watermark preprocessing can be done by CLI preprocessor, preprocessing library or SaaS packaging service depending on the customer's choice.
 
-<a href="{{< ref "../preprocessing/" >}}" target="_self" class="btn btn-default">Go to Watermark Preprocessing Guide</a>
+<a href="../../preprocessing/" target="_self" class="btn btn-primary">Go to Watermark Preprocessing Guide</a>
 
 ### CLI Preprocessor
 
@@ -69,7 +79,7 @@ A watermarking service provided in the form of cloud SaaS. You can preprocess an
 
 ## Packaging Job Result Callback URL
 
-A URL that is used to send the results of a packaging job to a watermarking service customer who signed up packaging service. You need to build this webpage on your server by following our specification and input its URL into the settings page of PallyCon Console site. PallyCon server calls the URL when a packaging job is finished. Please refer to the [Packaging Service Guide]({{% ref "packaging-service.en.md"%}}) for details.
+A URL that is used to send the results of a packaging job to a watermarking service customer who signed up packaging service. You need to build this webpage on your server by following our specification and input its URL into the settings page of PallyCon Console site. PallyCon server calls the URL when a packaging job is finished. Please refer to the [Packaging Service Guide](../../preprocessing/packaging-service) for details.
 
 ## Watermark Embedding
 
@@ -81,7 +91,7 @@ As a result, unique information about the playback session is inserted invisibly
 The segment list of the DASH manifest (.mpd) or HLS playlist (.m3u8) passed as a Session URL applies the same path and filename to all users, regardless of session information. Therefore, it is **safe from segment naming attack** which is mixing the segment lists of multiple sessions for the same content.
 {{% /callout %}}
 
-<a href="{{< ref "../embedding/" >}}" target="_self" class="btn btn-default">Go to Watermark Embedding Guide</a>
+<a href="../../embedding/" target="_self" class="btn btn-primary">Go to Watermark Embedding Guide</a>
 
 ### Session Data
 
@@ -111,7 +121,7 @@ If the watermarked video is leaked and distributed illegally, you can request th
 
 If the watermark payload is found through the detection process, the session database finds the session information whose key value is the payload and reports it as the detection result.
 
-<a href="{{< ref "../detecting/" >}}" target="_self" class="btn btn-default">Go to Watermark Detecting Guide</a>
+<a href="../../detecting/" target="_self" class="btn btn-primary">Go to Watermark Detecting Guide</a>
 
 ## Supported Specifications
 
@@ -122,10 +132,8 @@ PallyCon Forensic Watermarking supports the below specifications.
 | Content Type | Supports video contents only | |
 | Format and codec | MP4 (CBR) VOD video, H.264/H.265 codec supported | Live video will be supported later |
 | Supported Resolution | Up to 4K/UHD resolution | |
-| Dynamic Range | SDR (Standard Dynamic Range) supported | HDR will be supported later |
+| Dynamic Range | SDR (Standard Dynamic Range), HDR (High Dynamic Range) supported | |
 | Streaming Protocol | MPEG-DASH, HLS (Http Live Streaming) | |
 | CDN Integration | Akamai and Amazon CloudFront CDN supported | Contact us for other CDN integration |
 | Watermark Data Size | Up to 255 bytes string using mapping table | |
 | DRM Integration | Multi DRM (PlayReady, Widevine, FairPlay) supported | |
-
----

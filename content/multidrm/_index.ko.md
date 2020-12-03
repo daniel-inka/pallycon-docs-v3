@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 멀티DRM 가이드
-weight: 1
+weight: 10
 
 # Page metadata.
 title: PallyCon 멀티DRM 가이드
@@ -18,8 +18,8 @@ type: book  # Do not modify.
 menu:
   multidrm:
     name: 멀티DRM 가이드
-    weight: 1
----
+    weight: 10
+--- 
 
 PallyCon 멀티 DRM 서비스는 클라우드 기반의 SaaS (Solution as a Service)로, 콘텐츠에 DRM을 적용하는 패키징 솔루션과 DRM 라이선스 발급 서버, 그리고 DRM 콘텐츠의 재생에 필요한 클라이언트 연동 솔루션으로 이루어져 있습니다.
 

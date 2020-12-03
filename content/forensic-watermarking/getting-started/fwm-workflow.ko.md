@@ -1,8 +1,19 @@
 ﻿---
-title: "포렌식 워터마킹 연동 워크플로우"
-date: 2020-04-28T16:12:37+09:00
+title: 포렌식 워터마킹 연동 워크플로우
+linktitle: 연동 워크플로우
+summary: 이 문서는 `PallyCon 포렌식 워터마킹` 연동에 필요한 전체 워크플로우와 각종 옵션들을 설명합니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-11-10T00:00:00Z"
 draft: false
-weight: 7
+menu:
+  multidrm:
+    parent: 시작하기
+    weight: 40
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 40
 ---
 
 이 문서는 `PallyCon 포렌식 워터마킹` 연동에 필요한 전체 워크플로우와 각종 옵션들을 설명합니다.
@@ -51,7 +62,7 @@ PallyCon은 AWS 기반 클라우드 시스템에서 `워터마크 전처리`와 
 2. 패키징 작업을 위한 입/출력 스토리지 등록
  - PallyCon 콘솔 사이트에서 S3 버킷 이름, 액세스 키 및 비밀 키와 같은 정보를 입력하여 S3 스토리지를 등록합니다.
  - 패키징 입력과 출력에 대해 각각 다른 저장소를 설정할 수 있습니다.
- - 자세한 내용은 [이 안내서](https://pallycon.com/docs/ko/watermarking/preprocessing/packaging-service/)를 참조하시기 바랍니다.
+ - 자세한 내용은 [패키징 서비스 가이드](../../preprocessing/packaging-service/)를 참조하시기 바랍니다.
 
 > SaaS 패키징 서비스는 `입력 시간` 당 요금을 부과합니다. 자세한 내용은 [가격 정책 페이지](https://pallycon.com/ko/pricing/)를 확인하십시오.
 
@@ -67,7 +78,7 @@ PallyCon은 AWS 기반 클라우드 시스템에서 `워터마크 전처리`와 
 
 ### 옵션 1-C: 아마존 CloudFront 연동
 
-CloudFront CDN을 사용하는 경우, CloudFront 엣지에 PallyCon Watermark Embedder 모듈을 설정해야 합니다. 자세한 내용은 [이 안내서](https://pallycon.com/docs/ko/watermarking/embedding/cloudfront-embedder/)를 확인하십시오.
+CloudFront CDN을 사용하는 경우, CloudFront 엣지에 PallyCon Watermark Embedder 모듈을 설정해야 합니다. 자세한 내용은 [이 안내서](../../embedding/cloudfront-embedder/)를 확인하십시오.
 
 ## 2단계: 워터마킹 전처리
 
@@ -95,12 +106,12 @@ graph LR;
 2. 워터마크 패키징 작업 생성
  - PallyCon 콘솔을 통해 PallyCon 클라우드 시스템이 전처리 및 패키징 프로세스를 수행하게 합니다.
  - 해상도 별 MP4 영상을 등록해 어댑티브 스트림을 생성하거나 자막을 추가할 수 있습니다.
- - 자세한 방법은 [해당 가이드](https://pallycon.com/docs/ko/watermarking/embedding/packaging-service/#packaging-job-registration)를 참고하시기 바랍니다..
+ - 자세한 방법은 [해당 가이드](../../preprocessing/packaging-service/#packaging-job-registration)를 참고하시기 바랍니다..
 
 3. PallyCon 클라우드 시스템에서의 전처리 및 패키징
  - PallyCon 클라우드의 패키징 서버는 원본 MP4 영상과 관련 파일들을 고객사 스토리지로부터 복사합니다.
  - 패키징 서버는 전처리 과정을 통해 원본 영상의 A/B 버전을 만들고, 각각 DASH/HLS 스트림으로 패키징된 결과를 출력 저장소에 저장합니다.
- - 자세한 방법은 [해당 가이드](https://pallycon.com/docs/ko/watermarking/embedding/packaging-service/#packaging-job-registration)를 참고하시기 바랍니다.
+ - 자세한 방법은 [해당 가이드](../../preprocessing/packaging-service/#packaging-job-registration)를 참고하시기 바랍니다.
 
 4. 패키징 결과를 CDN 오리진에 복사
  - 패키징 작업 완료 시 이메일 알림을 받거나 콘솔에서 확인 가능합니다.
@@ -129,7 +140,7 @@ graph LR;
 
 2. CLI 전처리기를 통해 워터마크 전처리 및 DRM 패키징 수행
  - CLI 전처리기의 하드웨어 요구 사항을 충족시키는 온프레미스 또는 클라우드 시스템을 준비해야 합니다.
- - 자세한 사항은 [해당 가이드](https://pallycon.com/docs/ko/watermarking/preprocessing/cli-preprocessor/)를 참고하시기 바랍니다.
+ - 자세한 사항은 [해당 가이드](../../preprocessing/cli-preprocessor/)를 참고하시기 바랍니다.
 
 3. DRM 암호화를 위한 콘텐츠 키 요청
  - CLI 전처리기는 PallyCon DRM 서버와 통신하여 DRM 패키징을 위한 암호화 키를 얻습니다.
@@ -164,7 +175,7 @@ graph LR;
 
 2. CLI 전처리기를 이용해 워터마킹 전처리만 수행
 - CLI 전처리기의 하드웨어 요구 사항을 충족시키는 온프레미스 또는 클라우드 시스템을 준비해야 합니다.
- - 자세한 사항은 [해당 가이드](https://pallycon.com/docs/ko/watermarking/preprocessing/cli-preprocessor/)를 참고하시기 바랍니다.
+ - 자세한 사항은 [해당 가이드](../../preprocessing/cli-preprocessor/)를 참고하시기 바랍니다.
  - 패키징 프로세스를 건너 뛰고 A/B 버전 mp4 파일을 생성하도록 CLI 매개 변수를 설정할 수 있습니다.
 
 3. 타사 패키져를 이용해 A/B 버전 MP4 비디오를 각각 패키징
@@ -238,7 +249,7 @@ graph LR;
 ```
 
 1. 인코더에 PallyCon 전처리 라이브러리 적용
- - 자세한 사항은 [해당 가이드](https://pallycon.com/docs/ko/watermarking/preprocessing/preprocessor-library/)를 참고하시기 바랍니다.
+ - 자세한 사항은 [해당 가이드](../../preprocessing/preprocessor-library/)를 참고하시기 바랍니다.
 
 2. 원본 영상을 A/B 버전 MP4 비디오로 인코딩
  - 하나의 원본 영상에 대해서 두 가지 버전의 MP4 파일이 생성됩니다.
@@ -311,7 +322,7 @@ graph LR;
 ```
 
 1. 스트림 정보 및 세션 데이터를 PallyCon 세션 매니저로 전송
-  - 콘텐츠 서비스 백엔드(CMS)는 [세션 매니저 API](https://pallycon.com/docs/ko/watermarking/embedding/session-manager/)를 통해 `PallyCon 세션 매니저`에 `워터마킹된 스트림 URL`을 요청합니다.
+  - 콘텐츠 서비스 백엔드(CMS)는 [세션 매니저 API](../../embedding/session-manager/)를 통해 `PallyCon 세션 매니저`에 `워터마킹된 스트림 URL`을 요청합니다.
   - 요청에는 해당 스트림 정보와 사용자 ID, IP 주소 및 타임 스탬프와 같은 클라이언트의 세션 데이터가 포함됩니다.
 
 2. 세션 데이터 저장 및 세션 URL 생성
@@ -330,6 +341,4 @@ graph LR;
 ## 워터마크 검출
 
 워터마크 연동이 완료된 후 유출된 콘텐츠를 발견하면, 워터 마크 감지를 PallyCon 서비스에 요청할 수 있습니다.
- 보다 자세한 사항은 [해당 가이드](https://pallycon.com/docs/en/watermarking/detecting/)를 참고하시기 바랍니다.
-
-***
+ 보다 자세한 사항은 [해당 가이드](../../detecting/)를 참고하시기 바랍니다.

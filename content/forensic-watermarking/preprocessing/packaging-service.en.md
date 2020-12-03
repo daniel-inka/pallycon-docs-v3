@@ -1,8 +1,24 @@
 ---
-title: "Packaging Service Guide"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: Packaging Service Guide
+summary: You can preprocess and package your content using the PallyCon cloud service without having to build a separate server with the CLI preprocessor or library.
 weight: 30
+
+# Page metadata.
+title: Preprocessor Library Guide
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 30
+    parent: Watermark Preprocessing
 ---
 
 A watermarking service provided in the form of cloud SaaS. You can preprocess and package your content using the PallyCon cloud service without having to build a separate server with the CLI preprocessor or library.
@@ -22,8 +38,6 @@ sequenceDiagram
 
 The packaging service can be used via the web UI of the PallyCon console site or the following HTTP APIs.
 
-> Please contact us if you want the watermark packaging HTTP API specification.
-
 ## Packaging guide through the web console
 
 You can can perform content packaging for watermark preprocessing process on [PallyCon Console site](https://console.pallycon.com) using Web UI. The following procedure will package the original MP4 video into two 0/1 watermarked DASH or HLS content. (A/B variants)
@@ -34,7 +48,7 @@ To use the watermark packaging service, you must first select the AWS region to 
 
 After login to the console site, go to the `Site Settings` > `Integration Settings` screen and set the region to be used on `Packaging Service Region` in the `Forensic Watermarking Settings` section.
 
-![region-setting](/docs/images/fw-settings-en.png)
+{{< figure library="true" numbered="true" src="fw-settings-en.png" title="Region Setting" >}}
 
 > The `Packaging Service Region` list displays only the regions for which the instance type is currently supported for packaging. Storage of regions not listed can not be used for the packaging operations.
 
@@ -42,11 +56,11 @@ Next, set the AWS S3 storage information where the original content and packagin
 
 From the `Forensic Watermarking` menu on the left side of the screen, go to the `Packaging Service` > `Storage Setting` screen and click the `Register` button.
 
-![storage-setting](/docs/images/fw-storage-setting-en.png)
+{{< figure library="true" numbered="true" src="fw-storage-setting-en.png" title="Storage Setting" >}}
 
 Enter each item on the `Storage Registration` screen as below.
 
-![storage-reg](/docs/images/fw-storage-reg-en.png)
+{{< figure library="true" numbered="true" src="fw-storage-reg-en.png" title="Storage Registration" >}}
 
 - `Type`: Select the type of storage to be registered. Currently, only S3 is supported.
 - `Storage Name`: Enter an arbitrary name to identify the storage. (Special characters can not be used, max 50 bytes)
@@ -61,13 +75,13 @@ Enter each item on the `Storage Registration` screen as below.
 
 When the storage registration is complete, go to the `Packaging` screen for job registration. Click the `Create` button on the right side of the screen to register a new job.
 
-![packaging-job](/docs/images/fw-packaging-job-en.png)
+{{< figure library="true" numbered="true" src="fw-packaging-job-en.png" title="Packaging Job" >}}
 
 > You must upload the original video file (mp4) to be packaged into the input bucket before you register the packaging job.
 
 Enter each item on the `Registration of packaging operation` screen as follows.
 
-![job-reg](/docs/images/fw-job-registration-en.png)
+{{< figure library="true" numbered="true" src="fw-job-registration-en.png" title="Job Registration" >}}
 
 - `Job Name`: Enter an arbitrary name to distinguish the job. (Special characters can not be used, maximum 50 bytes)
 - `Content ID`: Enter the unique ID (Content ID) of the content to be packaged. (Special characters can not be used, maximum 200 bytes)
@@ -89,8 +103,6 @@ When packaging is successful, 0/1 version watermarking content packaged in DASH/
 
 The history of the completed packaging jobs can be viewed on the `Packaging history` screen as shown below.
 
-![job-history](/docs/images/fw-job-history-en.png)
+{{< figure library="true" numbered="true" src="fw-job-history-en.png" title="Job History" >}}
 
-Packaged DASH/HLS content must be connected to the CDN supported by the watermark embedding module for real-time mixing. Please refer to [Watermark Embedding Guide]({{% ref "../embedding"%}}) for details of this integration.
-
-***
+Packaged DASH/HLS content must be connected to the CDN supported by the watermark embedding module for real-time mixing. Please refer to [Watermark Embedding Guide](../../embedding) for details of this integration.

@@ -10,10 +10,10 @@ draft: false
 menu:
   multidrm:
     parent: Getting Started
-    weight: 3
+    weight: 30
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 3
+weight: 30
 ---
 
 PallyCon Multi-DRM product supports the following client platforms and operating systems:

@@ -10,10 +10,10 @@ draft: false
 menu:
   multidrm:
     parent: Getting Started
-    weight: 1
+    weight: 10
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1
+weight: 10
 ---
 
 We provide onboarding guides for PallyCon Multi-DRM service, so that you can easily find guide documents that suit your various situations and requirements.

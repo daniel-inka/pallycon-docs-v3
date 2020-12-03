@@ -1,11 +1,27 @@
 ---
-title: "세션 매니저 API 가이드"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: 세션 매니저 API 가이드
+summary: 세션 매니저는 해당 재생 세션의 정보와 조합할 콘텐츠 URL을 입력받아 최종 사용자에게 전달될 세션 URL을 생성합니다. 
 weight: 10
+
+# Page metadata.
+title: 세션 매니저 API 가이드
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 10
+    parent: 워터마크 삽입
 ---
 
-워터마크 전처리를 마친 '0'과 '1' 두 버전의 콘텐츠(DASH 또는 HLS)는 사용자의 재생 요청 시에 실시간으로 조합되어 클라이언트에 전달됩니다. PallyCon 포렌식 워터마킹 서비스에서 제공하는 세션 매니저는 해당 재생 세션의 정보와 조합할 콘텐츠 URL을 입력받아, 최종 사용자에게 전달될 세션 URL을 생성합니다. 
+워터마크 전처리를 마친 '0'과 '1' 두 버전의 콘텐츠(DASH 또는 HLS)는 사용자의 재생 요청 시에 실시간으로 조합되어 클라이언트에 전달됩니다. PallyCon 포렌식 워터마킹 서비스에서 제공하는 세션 매니저는 해당 재생 세션의 정보와 조합할 콘텐츠 URL을 입력받아, 최종 사용자에게 전달될 세션 URL을 생성합니다.
 
 서비스 사이트는 아마존 CloudFront 또는 아카마이 CDN의 워터마크 연동을 통해 세션 URL에 따라 조합된 콘텐츠를 클라이언트에 스트리밍할 수 있습니다.
 
@@ -23,7 +39,7 @@ sequenceDiagram
 
 PallyCon 서비스에서 사용하는 각종 HTTP API 요청시 아래 규격을 따릅니다.
 
-> API 요청 규격에 대한 샘플 코드는 [패키져/샘플 다운로드 페이지]({{%ref "downloads.ko.md"%}})에서 확인하시기 바랍니다.
+> API 요청 규격에 대한 샘플 코드는 [샘플 다운로드 페이지](../../getting-started/fwm-downloads)에서 확인하시기 바랍니다.
 
 ### 요청 규격
 
@@ -331,5 +347,3 @@ https://watermark.pallycon.com/api/v2/session/watermarkUrl/EXPL?pallycon-apidata
     "url":"https://cdn.service-site.com/dldzkdpsxmdnjrtm/OHVPUw4N4tUoc-wlcA72aX6Hj5a_v-HuXcLAbFwYSpwDDsiVdSLNbWnbjkVvTX20yiKw7U6nOmJzZaDep1_3YJYxfvHzof01IAVgAguBhGk=/output/ddb2b84b-c3ce-4f37-9182-c36f83fc3fce/dash/stream.mpd"
 }
 ```
-
-***

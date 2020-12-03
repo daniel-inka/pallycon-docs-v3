@@ -10,10 +10,10 @@ draft: false
 menu:
   multidrm:
     parent: Getting Started
-    weight: 4
+    weight: 40
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 4
+weight: 40
 ---
 
 You can download `PallyCon CLI Packager` and `PallyCon integration sample` from the below links, to integrate PallyCon service with your service site.

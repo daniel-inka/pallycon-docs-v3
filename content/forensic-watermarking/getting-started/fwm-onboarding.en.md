@@ -1,51 +1,51 @@
 ---
-title: 멀티DRM 온보딩 가이드
-linktitle: 멀티DRM 온보딩
-summary: 고객사의 다양한 상황과 요구사항에 맞는 가이드 문서를 쉽게 찾을 수 있도록 멀티DRM 제품에 대한 온보딩 가이드를 제공합니다.
+title: Forensic Watermarking Onboarding Guide
+linktitle: Onboarding Guide
+summary: We provide onboarding guides for PallyCon Forensic Watermarking service, so that you can easily find guide documents that suit your various situations and requirements.
 toc: true
 type: book
 date: "2019-05-05T00:00:00+01:00"
 lastmod: "2020-11-10T00:00:00Z"
 draft: false
 menu:
-  multidrm:
-    parent: 멀티DRM 시작하기
+  watermarking:
+    parent: Getting Started
     weight: 10
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10
 ---
 
-고객사의 다양한 상황과 요구사항에 맞는 가이드 문서를 쉽게 찾을 수 있도록 멀티DRM 제품에 대한 온보딩 가이드를 제공합니다. 아래 순서도의 각 단계별로 링크된 가이드 중에서 원하는 항목을 클릭해 해당 페이지로 이동할 수 있습니다.
+We provide onboarding guides for PallyCon Forensic Watermarking service, so that you can easily find guide documents that suit your various situations and requirements.
 
-## 1단계 - 콘텐츠 패키징
+## Step 1 - Content packaging
 
 ```mermaid
 graph TD;
-  start_onboarding(멀티DRM 온보딩 시작) --> content_packaging["1단계 - 콘텐츠 패키징 ."]
+  start_onboarding(Start Onboarding) --> content_packaging["Step 1 - Content packaging"]
 
-  content_packaging --> vod_packager{"파일 기반 패키저 선택 .<br>(VOD 콘텐츠의 경우) ."}
-  vod_packager --> cli_packager(PallyCon<br>CLI 패키져 .)
+  content_packaging --> vod_packager{"Choose file-based packager<br>(for VOD content)"}
+  vod_packager --> cli_packager(PallyCon<br>CLI Packager)
   vod_packager --> mediaconvert(AWS Elemental<br>MediaConvert)
-  vod_packager --> bitmovin_vod(Bitmovin<br>인코더)
+  vod_packager --> bitmovin_vod(Bitmovin<br>Encoder)
   vod_packager --> wowza_vod(Wowza Streaming<br>Engine)
 
-  cli_packager --> live_packager{"라이브 패키져 선택<br>(라이브 콘텐츠의 경우) ."}
+  cli_packager --> live_packager{"Choose live packager<br>(for live content)"}
   mediaconvert --> live_packager
   bitmovin_vod --> live_packager
   wowza_vod --> live_packager
   
   live_packager --> wowza_live(Wowza Streaming<br>Engine)
   live_packager --> mediapackage(AWS Elemental<br>MediaPackage)
-  live_packager --> bitmovin_live(Bitmovin<br>인코더)
-  live_packager --> cpix(그 외 CPIX<br>연동 솔루션 .)
+  live_packager --> bitmovin_live(Bitmovin<br>Encoder)
+  live_packager --> cpix(Other CPIX-based<br>solutions)
   
-  wowza_live --> packaging_done[패키징 결과물 CDN 적용 .<br>- 1단계 완료]
+  wowza_live --> packaging_done[Apply CDN to result<br>- End of step 1]
   mediapackage --> packaging_done
   wowza_live --> packaging_done
   bitmovin_live --> packaging_done
   cpix --> packaging_done
-
+  
   click cli_packager "../../packaging/cli-packager"
   click mediaconvert "../../packaging/aws-elemental/#mediaconvert"
   click mediapackage "../../packaging/aws-elemental/#mediapackage"
@@ -54,34 +54,36 @@ graph TD;
   click bitmovin_vod "../../packaging/bitmovin-encoder-guide"
   click bitmovin_live "../../packaging/bitmovin-encoder-guide"
   click cpix "../../packaging/cpix-api"
+
 ```
 
-## 2단계 - 서버 측 DRM 연동
+## Step 2 - Server-side DRM integration
 
 ```mermaid
 graph TD;
-  drm_license[2단계 - 서버 측 DRM 연동] --> apple_support{FairPlay DRM을 통한 <br>애플 기기 지원 필요?}
-  apple_support -->|예| fps_cert(FairPlay 인증서 신청 및 등록 .)
-  apple_support -->|아니오| license_token(라이선스 토큰 생성 로직 구현 .)
+  drm_license[Step 2 - Server-side DRM integration] --> apple_support{Need FairPlay DRM<br>for Apple devices?}
+  apple_support -->|Yes| fps_cert(Request and register FairPlay cert)
+  apple_support -->|No| license_token(Implement license token)
   fps_cert --> license_token
-  license_token --> license_test[라이선스 토큰 연동 테스트 .<br>- 2단계 완료]
+  license_token --> license_test[Test license token integration<br>- End of step 2]
 
   click license_token "../../license/license-token"
   click fps_cert "../../license/fps-cert-tutorial"
+
 ```
 
-## 3단계 - 클라이언트 연동
+## Step 3 - Client integration
 
 ```mermaid
 graph TD;
-  drm_client[3단계 - 클라이언트 연동 .] --> web_client{"HTML5 Player 선택<br>(웹 브라우저 지원 시) ."}
+  drm_client[Step 3 - Client integration] --> web_client{"Choose HTML5 player<br>(for browser support)"}
   web_client --> shaka_player(Shaka Player)  
   web_client --> bitmovin_player(Bitmovin Player)
   web_client --> theo_player(THEO Player)
   web_client --> videojs(VideoJS Player)
-  web_client --> html5_player(기타 각종<br>HTML5 Player)
+  web_client --> html5_player(Other<br>HTML5 Player)
 
-  shaka_player --> mobile_sdk{"모바일 SDK 또는 <br>직접 연동 선택<br>(모바일 앱 지원 시) ."}
+  shaka_player --> mobile_sdk{"Choose mobile SDK<br>or self-integration<br>(for mobile app)"}
   bitmovin_player --> mobile_sdk
   theo_player --> mobile_sdk
   videojs --> mobile_sdk
@@ -90,24 +92,24 @@ graph TD;
   mobile_sdk --> fps_ios(FPS<br>iOS SDK)
   mobile_sdk --> ncg_android(NCG<br>Android SDK)
   mobile_sdk --> ncg_ios(NCG<br>iOS SDK)
-  mobile_sdk --> multidrm_native(멀티DRM<br>네이티브 연동 .)
+  mobile_sdk --> multidrm_native(Multi-DRM<br>native integration)
 
-  widevine_android --> ott_devices{"OTT SDK 선택<br>(OTT 기기 지원 시) ."}
+  widevine_android --> ott_devices{"Choose OTT SDK<br>(for OTT devices)"}
   fps_ios --> ott_devices
   ncg_android --> ott_devices
   ncg_ios --> ott_devices
   multidrm_native --> ott_devices
-  ott_devices -->|안드로이드TV .| widevine_androidtv(Widevine<br>AndroidTV SDK)
-  ott_devices -->|애플TV| fps_tvos(FPS<br>tvOS SDK)
+  ott_devices -->|Android TV| widevine_androidtv(Widevine<br>AndroidTV SDK)
+  ott_devices -->|Apple TV| fps_tvos(FPS<br>tvOS SDK)
   ott_devices -->|XBox| playready_uwp(PlayReady<br>UWP SDK)
-  ott_devices -->|크롬캐스트 .| chromecast(ChromeCast<br>연동)
+  ott_devices -->|Chromecast| chromecast(ChromeCast<br>integration)
 
-  widevine_androidtv --> playback_test[최종 재생 테스트 .<br>- 3단계 완료]
+  widevine_androidtv --> playback_test[Playback test<br>- End of step 3]
   fps_tvos --> playback_test
   playready_uwp --> playback_test
   chromecast --> playback_test
 
-  playback_test --> finish_onboarding(멀티DRM 온보딩 완료)
+  playback_test --> finish_onboarding(Finish Onboarding)
 
   click shaka_player "../../clients/html5-player/#shaka"
   click bitmovin_player "../../clients/html5-player/#bitmovin"

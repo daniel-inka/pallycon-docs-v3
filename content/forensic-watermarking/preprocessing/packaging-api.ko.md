@@ -1,8 +1,24 @@
 ---
-title: "패키징 API 가이드"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: 패키징 API 가이드
+summary: PallyCon 클라우드 서비스를 이용하여 API 기반 워터마크 전처리 및 패키징 작업을 수행할 수 있습니다.
 weight: 40
+
+# Page metadata.
+title: 패키징 API 가이드
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 40
+    parent: 워터마크 전처리
 ---
 
 PallyCon 워터마크 패키징 서비스는 클라우드 SaaS 형태로 제공되는 워터마크 삽입 서비스입니다. CLI 전처리기 또는 전처리 라이브러리를 이용한 별도의 서버를 구축할 필요 없이, 인코딩 결과물을 대상으로 PallyCon 클라우드 서비스를 이용하여 API 기반 워터마크 전처리 및 패키징 작업을 수행할 수 있습니다.
@@ -26,7 +42,7 @@ sequenceDiagram
 
 PallyCon 서비스에서 사용하는 각종 HTTP API 요청시 아래 규격을 따릅니다.
 
-> API 요청 규격에 대한 샘플 코드는 [패키져/샘플 다운로드 페이지]({{%ref "downloads.ko.md"%}})에서 확인하시기 바랍니다.
+> API 요청 규격에 대한 샘플 코드는 [샘플 다운로드 페이지](../../getting-started/fwm-downloads)에서 확인하시기 바랍니다.
 
 ### 요청 규격
 
@@ -586,5 +602,3 @@ PallyCon 콘솔 사이트에 패키징 결과에 대한 콜백 URL을 등록하�
 |WM900020| S3 PUT Object 실패|
 |WM900021| 업로드할 결과 파일이 없음|
 |WM900022| 미디어 정보 오류|
-
-***

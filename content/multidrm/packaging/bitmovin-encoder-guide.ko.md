@@ -1,6 +1,6 @@
 ---
 linktitle: Bitmovin 인코더 연동
-weight: 6
+weight: 60
 
 # Page metadata.
 title: Bitmovin 인코더 연동 가이드
@@ -13,7 +13,7 @@ type: book  # Do not modify.
 
 menu:
   multidrm:
-    weight: 6
+    weight: 60
     parent: 콘텐츠 패키징
 ---
 

@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 기타 제품 가이드
-weight: 3
+weight: 30
 
 # Page metadata.
 title: 기타 제품 가이드
@@ -17,7 +17,7 @@ type: book  # Do not modify.
 menu:
   otherproducts:
     name: 기타 제품 가이드
-    weight: 1
+    weight: 30
 ---
 
 `PallyCon 안티 캡쳐 제품`은 윈도우즈 크롬 브라우저(이하 크롬)에서 Widevine DRM 동영상 재생 시, 녹화 프로그램을 모니터링 및 차단할 수 있는 제품입니다.

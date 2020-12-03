@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: Multi-DRM Guide
-weight: 1
+weight: 10
 
 # Page metadata.
 title: PallyCon Multi-DRM Guide
@@ -18,7 +18,7 @@ type: book  # Do not modify.
 menu:
   multidrm:
     name: Multi-DRM Guide
-    weight: 1
+    weight: 10
 ---
 
 PallyCon Multi DRM service is a cloud-based SaaS (Solution as a Service) which consists of packaging solutions that apply DRM to contents, DRM license issuance service, and client solutions for DRM contents playback.

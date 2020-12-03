@@ -1,6 +1,6 @@
 ---
 linktitle: Wowza Interation
-weight: 5
+weight: 50
 
 # Page metadata.
 title: Wowza Integration Guide
@@ -13,7 +13,7 @@ type: book  # Do not modify.
 
 menu:
   multidrm:
-    weight: 5
+    weight: 50
     parent: Content Packaging
 ---
 

@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 2. Content Packaging
-weight: 2
+weight: 20
 
 # Page metadata.
 title: Content Packaging
@@ -19,7 +19,7 @@ menu:
   multidrm:
     parent: Multi-DRM Guide
     name: Content Packaging
-    weight: 2
+    weight: 20
 ---
 
 In order to apply PallyCon Multi-DRM service, you must first perform packaging processes to encrypt your contents. The below documents describe a variety of content packaging methods, including PallyCon Packager, AWS Elemental Media Services, Wowza Streaming Engine, and PallyCon Packaging Services.

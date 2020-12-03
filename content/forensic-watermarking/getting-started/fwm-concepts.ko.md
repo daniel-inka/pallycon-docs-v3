@@ -1,9 +1,19 @@
 ---
-title: "워터마킹 개념 및 용어"
-date: 2018-08-28T16:12:37+09:00
+title: 포렌식 워터마킹 개념 및 용어
+linktitle: 개념 및 용어
+summary: PallyCon 포렌식 워터마킹 서비스의 각종 개념과 용어에 대하여 설명합니다.
+toc: true
+type: book
+date: "2019-05-05T00:00:00+01:00"
+lastmod: "2020-11-10T00:00:00Z"
 draft: false
-weight: 5
-categories: ["watermarking"]
+menu:
+  watermarking:
+    parent: 시작하기
+    weight: 20
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 20
 ---
 
 PallyCon 포렌식 워터마킹 서비스의 각종 개념과 용어에 대하여 설명합니다.
@@ -47,7 +57,7 @@ graph LR;
 
 워터마크 전처리 방식은 고객사의 환경에 따라 CLI 전처리기, 전처리 라이브러리 또는 워터마킹 패키징 서비스 중에서 선택할 수 있습니다.
 
-<a href="{{< ref "../preprocessing/" >}}" target="_self" class="btn btn-default">워터마크 전처리 가이드 바로 가기</a>
+<a href="../../preprocessing/" target="_self" class="btn btn-primary">워터마크 전처리 가이드 바로 가기</a>
 
 ### CLI 전처리기
 
@@ -69,7 +79,7 @@ graph LR;
 
 ### 패키징 작업 결과 콜백 URL
 
-패키징 서비스가 포함된 워터마킹 서비스 고객을 대상으로 패키징 작업 결과를 알리기 위해 사용되는 URL입니다. 연동 규격에 따라 고객사에서 직접 구축한 웹 페이지 URL을 콘솔에 입력하면, PallyCon 서버가 해당 URL을 호출해 결과를 전송합니다. 상세한 내용은 [패키징 서비스 가이드]({{% ref "packaging-service.ko.md"%}})를 참고하시기 바랍니다.
+패키징 서비스가 포함된 워터마킹 서비스 고객을 대상으로 패키징 작업 결과를 알리기 위해 사용되는 URL입니다. 연동 규격에 따라 고객사에서 직접 구축한 웹 페이지 URL을 콘솔에 입력하면, PallyCon 서버가 해당 URL을 호출해 결과를 전송합니다. 상세한 내용은 [패키징 서비스 가이드](../../preprocessing/packaging-service)를 참고하시기 바랍니다.
 
 ## 워터마크 삽입
 
@@ -81,7 +91,7 @@ graph LR;
 세션 URL로 전달되는 DASH manifest(.mpd )또는 HLS playlist(.m3u8)의 세그먼트 목록은 세션 정보와 무관하게 모든 사용자에 동일한 경로 및 파일명이 적용됩니다. 따라서 동일 콘텐츠를 대상으로 여러 세션의 세그먼트 목록을 조합해 워터마킹을 무력화하는 **세그먼트 네이밍 공격으로부터 안전하게 보호**됩니다.
 {{% /callout %}}
 
-<a href="{{< ref "../embedding/" >}}" target="_self" class="btn btn-default">워터마크 삽입 가이드 바로 가기</a>
+<a href="../../embedding/" target="_self" class="btn btn-primary">워터마크 삽입 가이드 바로 가기</a>
 
 ### 세션 정보
 
@@ -111,7 +121,7 @@ graph LR;
 
 검출 과정을 통해 워터마크 페이로드를 찾아내면, 세션 데이터베이스에서 해당 페이로드를 키 값으로 하는 세션 정보를 찾아 검출 결과로 리포트합니다.
 
-<a href="{{< ref "../detecting/" >}}" target="_self" class="btn btn-default">워터마크 검출 가이드 바로 가기</a>
+<a href="../../detecting/" target="_self" class="btn btn-primary">워터마크 검출 가이드 바로 가기</a>
 
 ## 지원 사양
 
@@ -122,10 +132,8 @@ PallyCon 포렌식 워터마킹 솔루션은 아래와 같은 사양을 지원�
 | 콘텐츠 유형 | 비디오 콘텐츠 지원 | |
 | 영상 포맷 및 코덱 | MP4 (CBR) VOD 영상, H.264/H.265 코덱 지원 | 라이브 영상 지원 추가 예정 |
 | 지원 해상도 | 최대 4K/UHD 해상도 지원 | |
-| Dynamic Range | SDR (Standard Dynamic Range) 지원 | HDR 지원 추가 예정 |
+| Dynamic Range | SDR (Standard Dynamic Range), HDR (High Dynamic Range) 지원 |  |
 | 스트리밍 프로토콜 | MPEG-DASH, HLS (Http Live Streaming) | |
 | CDN 연동 | Amazon CloudFront, Akamai CDN 지원 | 타 CDN 연동은 별도 문의 |
 | 워터마크 데이터 크기 | 매핑 테이블을 이용하여 최대 255 바이트 문자열 지원 | |
 | DRM 연동 | 멀티 DRM (PlayReady, Widevine, FairPlay) 연동 지원 | |
-
----

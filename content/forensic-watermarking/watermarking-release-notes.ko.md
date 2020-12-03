@@ -1,9 +1,20 @@
 ---
-title: "워터마킹 릴리즈 노트"
-date: 2018-08-28T16:12:37+09:00
+title: 워터마킹 릴리즈 노트
+linktitle: 워터마킹 릴리즈 노트
+summary: PallyCon 포렌식 워터마킹 서비스의 각 제품 별 릴리즈 노트입니다.
+toc: true
+type: book
+date: "2020-05-05T00:00:00+01:00"
+lastmod: "2020-11-11T00:00:00Z"
 draft: false
+menu:
+  multidrm:
+    parent: 포렌식 워터마킹
+    weight: 100
+    name: 워터마킹 릴리즈 노트
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
-categories: ["watermarking"]
 ---
 
 ## 서버 제품군
@@ -35,6 +46,7 @@ categories: ["watermarking"]
 
 |날짜 |버전 |내용 |
 |:---|:---|:---|
+| 2020.12.01 | 1.2.0 |- API 응답 지연 현상 개선 |
 | 2020.09.15 | 1.1.1 |- 트라이얼 계정에 대한 API 호출 횟수 제한 적용 (최대 1,000회)<br>- 워터마크 글자 수 제한 적용 (최대 254 바이트) |
 | 2020.05.13 | 1.1.0 |- 아카마이 CDN 용 SessionUrl API 추가 |
 | 2019.12.26 | 1.0.0 |- 세션 API 초기 버전 릴리즈 |

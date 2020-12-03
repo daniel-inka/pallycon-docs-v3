@@ -12,10 +12,10 @@ featured: true
 menu:
   multidrm:
     parent: 멀티DRM 시작하기
-    weight: 5
+    weight: 50
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 5
+weight: 50
 ---
 
 ## 개요

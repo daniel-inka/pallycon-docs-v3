@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 linktitle: 3. 라이선스 발급 연동
-weight: 3
+weight: 30
 
 # Page metadata.
 title: DRM 라이선스 발급 연동
@@ -17,7 +17,7 @@ type: book  # Do not modify.
 # - weight: Position of link in menu.
 menu:
   multidrm:
-    weight: 3
+    weight: 30
     parent: 멀티 DRM
     name: 라이선스 발급 연동
 ---

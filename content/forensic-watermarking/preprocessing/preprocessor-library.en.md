@@ -1,8 +1,24 @@
 ---
-title: "Preprocessor Library Guide"
-date: 2018-08-28T16:14:38+09:00
-draft: false
+# Course title, summary, and position.
+linktitle: Preprocessor Library Guide
+summary: PallyCon Watermark Preprocessor Library is a C ++ library that can be ported to an encoding solution.
 weight: 20
+
+# Page metadata.
+title: Preprocessor Library Guide
+date: "2018-09-09T00:00:00Z"
+lastmod: "2020-10-18T00:00:00Z"
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: book  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  watermarking:
+    weight: 20
+    parent: Watermark Preprocessing
 ---
 
 PallyCon Watermark Preprocessor Library is a C ++ library that can be ported to an encoding solution. By preprocessing watermark directly in the video encoding process, you can omit the re-encoding process required for CLI Preprocessor.
@@ -21,7 +37,7 @@ graph LR;
 
 By default, porting to FFMPEG-based encoder/transcoder is supported. To apply Preprocessor library to other commercial solutions, it is required to port the library by the solution vendor. Please contact us if you need more information or want to apply the library.
 
-<a href="https://www.pallycon.com/contact/" target="_blank" class="btn btn-default">Contact Us</a>
+<a href="https://www.pallycon.com/contact/" target="_blank" class="btn btn-primary">Contact Us</a>
 
 ## Prerequisites
 
@@ -150,5 +166,3 @@ Configure your encoder by referring to the below example about libx264.
 3. GOP size should be 60
    - embedsample.cpp::openOutputFile()::enc_ctx->gop_size
    - embedsample.cpp::checkAndUpdateParam()::pCtx->x264_param
-
-***
