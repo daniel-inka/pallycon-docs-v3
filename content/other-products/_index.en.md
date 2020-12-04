@@ -22,6 +22,8 @@ menu:
 
 `PallyCon Anti-Capture` is a product that can monitor and block recording programs when playing Widevine DRM video in Windows Chrome browser.
 
+`PallyCon Visible Watermarking` is a watermark solution for HTML5 players to identify the user when video content is leaked illegally.
+
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
@@ -32,17 +34,21 @@ menu:
       </div>
     </div>
   </div>
-</div>
-
-`PallyCon Visible Watermarking` is a watermark solution for HTML5 players to identify the user when video content is leaked illegally.
-
-<div class="row">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Visible Watermarking Guide</h3>
         <p class="card-text">This document explains how to apply Visible Watermarking solution to HTML5 player.</p>
         <a href="./visible-watermarking-guide" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Release Notes</h3>
+        <p class="card-text">This document shows release notes for other products.</p>
+        <a href="./other-release-notes" class="btn btn-primary">Read More</a>
       </div>
     </div>
   </div>

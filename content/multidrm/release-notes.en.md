@@ -11,7 +11,6 @@ menu:
   multidrm:
     parent: Muti-DRM Guide
     weight: 100
-    name: Release Notes
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
@@ -148,9 +147,3 @@ Release notes for PallyCon Multi-DRM products
 | 2019.01.22 | 2.4.2 |- Added new license token API. (acquireLicenseByToken) |
 | 2018.11.27 | 2.4.1 |- Updated recovery process when RODB file is broken or modified. |
 | 2018.09.19 | 2.4.0 |- Added simple version sample project for easier trial of the SDK.<br>- Enhanced secure time logic for better security of offline playback.<br>- Supports Swift 4.2, iOS 12. Built with Xcode 10 and Swift 4.2.<br>- Changed the name of C++ library from libstdc++ to libc++ for Xcode 10. |
-
-### Anti-Capture Windows SDK
-
-|<div style="width:90px">Date</div> |<div style="width:50px">Version</div> |Descriptions |
-|:---|:---|:---|
-| 2020.05.21 | 1.0.0 |- Initial release of Anti-Capture SDK|

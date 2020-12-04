@@ -7,6 +7,8 @@ type: book
 date: "2019-05-05T00:00:00+01:00"
 lastmod: "2020-11-10T00:00:00Z"
 draft: false
+featured: true
+
 menu:
   multidrm:
     parent: 시작하기
@@ -153,7 +155,7 @@ graph LR;
  - 출력 스트림의 구조는 선택한 대상 CDN에 따라 다릅니다.
  - CLI 전처리기의 입력 파라미터로 아마존 CloudFront 및 아카마이 CDN을 선택할 수 있습니다.
 
-### 옵션 2-C: PallyCon CLI 전처리기 (타사 패키저 이용 시)
+### 옵션 2-C: PallyCon CLI 전처리기 (타사 패키저 이용 시) {#option2-c}
 
 PallyCon SaaS 패키징 서비스 또는 CLI 패키저 이외의 타사 트랜스코더 또는 패키저를 PallyCon 포렌식 워터마킹과 함께 사용하려면 아래 워크플로우를 따라야합니다.
 

@@ -29,8 +29,8 @@ subtitle = "We provide onboarding guides for the main products, multi-DRM and fo
   # gradient_end = "SkyBlue"
   
   # Background image.
-  image = "headers/bubbles-wide.jpg"  # Name of image in `static/media/`.
-  image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image = "headers/welcome-onboard-unsplash.jpg"  # Name of image in `static/media/`.
+  image_darken = 0.2  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
   image_parallax = false  # Use a fun parallax-like fixed background effect? true/false
@@ -63,5 +63,5 @@ PallyCon Multi-DRM service provides multi-DRM licensing and client integration s
 
 Premium content such as Hollywood studio content requires forensic watermarking in addition to multi-DRM. This document describes how to apply the PallyCon forensic watermarking cloud service and explains related APIs.
 
-[**Read More**](./forensic-watermarking/)
+[**Read More**](./forensic-watermarking/getting-started/fwm-onboarding)
 {{% /callout %}}

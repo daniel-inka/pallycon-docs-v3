@@ -13,7 +13,7 @@ subtitle = "고객사의 다양한 상황과 요구사항에 맞는 가이드 �
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -29,8 +29,8 @@ subtitle = "고객사의 다양한 상황과 요구사항에 맞는 가이드 �
   # gradient_end = "SkyBlue"
   
   # Background image.
-  image = "headers/bubbles-wide.jpg"  # Name of image in `static/media/`.
-  image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image = "headers/welcome-onboard-unsplash.jpg"  # Name of image in `static/media/`.
+  image_darken = 0.2  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
   image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
@@ -44,7 +44,7 @@ subtitle = "고객사의 다양한 상황과 요구사항에 맞는 가이드 �
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ css_style = ".section-heading p {color: #FFF;}"
  
  # CSS class.
  css_class = ""
@@ -63,5 +63,5 @@ PallyCon 멀티DRM 서비스는 다양한 클라이언트 환경에서 멀티미
 
 헐리우드 스튜디오 콘텐츠 등 프리미엄 콘텐츠에는 멀티DRM 외에도 포렌식 워터마킹 적용이 필요합니다. 본 문서는 클라우드 SaaS 방식의 PallyCon 포렌식 워터마킹 서비스를 적용하는 방법과 관련 API를 설명합니다.
 
-[**바로 가기**](./forensic-watermarking/)
+[**바로 가기**](./forensic-watermarking/getting-started/fwm-onboarding)
 {{% /callout %}}

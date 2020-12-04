@@ -11,7 +11,6 @@ menu:
   multidrm:
     parent: Forensic Watermarking
     weight: 100
-    name: Watermarking Release Notes
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
@@ -81,5 +80,3 @@ weight: 100
 | 2020.09.29 | 1.2.0 |- Added 'margin' to positiontype option. Watermark position can be set with fixed value.|
 | 2020.09.08 | 1.1.0 |- Added siteId parameter for authentication.<br>- Added support for linebreak in watermark text. Removed the text length limit. |
 | 2020.06.02 | 1.0.0 |- Initial release of Visible Watermark SDK|
-
-***

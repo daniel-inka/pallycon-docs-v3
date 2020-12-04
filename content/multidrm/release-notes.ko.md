@@ -11,7 +11,6 @@ menu:
   multidrm:
     parent: 멀티DRM 가이드
     weight: 100
-    name: 릴리즈 노트
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
@@ -147,9 +146,3 @@ PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니다.
 | 2019.01.22 | 2.4.2 |- 토큰 방식의 라이선스 획득을 위한 새로운 함수가 추가 되었습니다. (acquireLicenseByToken) |
 | 2018.11.27 | 2.4.1 |- RODB 파일이 손상되거나 수정 된 경우 복구 프로세스가 업데이트되었습니다. |
 | 2018.09.19 | 2.4.0 |- Simple 버전 샘플 프로젝트 추가. 기존 샘플보다 쉽게 SDK 기본 기능을 체험할 수 있습니다.<br>- 시큐어타임 로직 개선. 일부 단말에서 오프라인 재생 시 보안이 강화되었습니다.<br>- Swift 4.2, iOS 12 지원. Xcode 10, Swift 4.2 로 빌드 되었습니다.<br>- Xcode 10 버전 C++ 라이브러리 이름 변경. Xcode 10버전부터 기존의 libstdc++에서 libc++로 변경되었습니다. |
-
-### 윈도우즈용 안티 캡쳐 SDK
-
-|<div style="width:90px">날짜</div> |<div style="width:50px">버전</div> |내용 |
-|:---|:---|:---|
-| 2020.05.21 | 1.0.0 |- 안티 캡쳐 SDK 최초 릴리즈 |

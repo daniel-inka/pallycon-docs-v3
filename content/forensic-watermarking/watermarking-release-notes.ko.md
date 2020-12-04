@@ -11,7 +11,6 @@ menu:
   multidrm:
     parent: 포렌식 워터마킹
     weight: 100
-    name: 워터마킹 릴리즈 노트
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
@@ -81,5 +80,3 @@ weight: 100
 | 2020.09.29 | 1.2.0 |- positiontype에 margin 항목 추가. 워터마크 표시 위치를 고정값으로 설정 가능|
 | 2020.09.08 | 1.1.0 |- 사이트 인증 기능을 위해 siteId 파라미터 추가<br>- 워터마크 텍스트 중간에 줄바꿈 지원 및 텍스트 길이 제한 제거 |
 | 2020.06.02 | 1.0.0 |- 초기 버전 릴리즈|
-
-***

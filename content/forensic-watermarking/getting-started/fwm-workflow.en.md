@@ -7,6 +7,8 @@ type: book
 date: "2019-05-05T00:00:00+01:00"
 lastmod: "2020-11-10T00:00:00Z"
 draft: false
+featured: true
+
 menu:
   multidrm:
     parent: Getting Started
@@ -153,7 +155,7 @@ graph LR;
  - The structure of output stream varies by the target CDN of your choice.
  - You can choose from Amazon CloudFront and Akamai CDN as the input parameter of CLI preprocessor.
 
-### Option 2-C: PallyCon CLI Preprocessor (with 3rd party packager integration)
+### Option 2-C: PallyCon CLI Preprocessor (with 3rd party packager integration) {#option2-c}
 
 If you want to use PallyCon Forensic Watermarking with a 3rd party transcoder or packager(other than PallyCon SaaS packaging service or CLI packager), you need to follow the below workflow.
 
