@@ -9,11 +9,11 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Customer Onboarding Guide"
-subtitle = "We provide onboarding guides for the main products, multi-DRM and forensic watermarking, so that you can easily find guide documents that suit your various situations and requirements."
+#subtitle = "We provide onboarding guides for the main products, multi-DRM and forensic watermarking, so that you can easily find guide documents that suit your various situations and requirements."
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
-  columns = "1"
+  columns = "2"
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -30,10 +30,10 @@ subtitle = "We provide onboarding guides for the main products, multi-DRM and fo
   
   # Background image.
   image = "headers/welcome-onboard-unsplash.jpg"  # Name of image in `static/media/`.
-  image_darken = 0.2  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
+  image_darken = 0.4  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
   image_size = "cover"  #  Options are `cover` (default), `contain`, or `actual` size.
   image_position = "center"  # Options include `left`, `center` (default), or `right`.
-  image_parallax = false  # Use a fun parallax-like fixed background effect? true/false
+  image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
 
   # Text color (true=light or false=dark).
   text_color_light = true
@@ -53,7 +53,7 @@ subtitle = "We provide onboarding guides for the main products, multi-DRM and fo
 {{% callout info %}}
 **Multi-DRM Onboarding Guide**
 
-PallyCon Multi-DRM service provides multi-DRM licensing and client integration solutions such as PlayReady, Widevine, FairPlay, and NCG DRM to protect multimedia content in various client environments.
+This document explains the step-by-step integration process of PallyCon multi-DRM service, such as content packaging and license issuance integration, and guides you to the relevant documents.
 
 [**Read More**](./multidrm/getting-started/multidrm-onboarding)
 {{% /callout %}}
@@ -61,7 +61,7 @@ PallyCon Multi-DRM service provides multi-DRM licensing and client integration s
 {{% callout note %}}
 **Forensic Watermarking Onboarding Guide**
 
-Premium content such as Hollywood studio content requires forensic watermarking in addition to multi-DRM. This document describes how to apply the PallyCon forensic watermarking cloud service and explains related APIs.
+This document explains the integration process such as watermark preprocessing and embedding required to apply PallyCon Forensic Watermarking service, and guides you to related documents.
 
 [**Read More**](./forensic-watermarking/getting-started/fwm-onboarding)
 {{% /callout %}}

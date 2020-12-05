@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "PallyCon Service Guide"
+title = "PallyCon Docs"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
 hero_media = "pallycon-end2end.png"
@@ -51,9 +51,8 @@ hero_media = "pallycon-end2end.png"
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" #data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
 
+<div>
+PallyCon Docs provides information and guides for integrating various PallyCon products such as Multi-DRM and Forensic Watermarking.</div>
 <br>
-`PallyCon Docs` provides information and guides for development using PallyCon Multi-DRM and Forensic Watermarking service.
-
-PallyCon service provides an integrated workflow for quickly and easily applying multi-DRM and forensic watermarking to the entire content workflow, from content encoding, delivery of encoded content through CDN, and playback on a client device.
-
-Using the various guides on this site, you can integrate each component of the content workflow with PallyCon service.
+<div>
+Using the guides and tutorials on this site, you can integrate each component of your content workflow with PallyCon content security service.</div>

@@ -24,27 +24,6 @@ This document describes the end-to-end workflows and options of `PallyCon Forens
 
 `PallyCon Forensic Watermarking` is a cloud-based SaaS service that allows you to quickly and easily apply watermarking without building complex server environments.
 
-It also provides various options for watermark preprocessing and embedding. The below workflow is an example with `PallyCon SaaS packaging` and `Akamai CDN` integration.
-
-```mermaid
-graph LR;
-    subgraph Content Service Site
-    B[Encoder] -->|1. Encoded<br>MP4 Video| C(Amazon S3 Origin)
-    C -->|5. A/B variants of<br>DASH/HLS Stream| D(Akamai Edge)
-    end
-    subgraph End User
-    E[Client<br>Player] -->|8. Stream URL<br>with WMT| D
-    D -->|9. Mixed<br>DASH/HLS Stream| E
-    end
-    subgraph PallyCon Service
-    C -->|2. Encoded MP4 Video| G(Packaging Server)
-    G -->|3. Preprocessing and Packaging| G
-    G -->|4. A/B variants of<BR>DASH/HLS Stream| C
-    E -->|6. Session Data<br>e.g. User ID| F(Watermarking<br>Session Manager)
-    F -->|7. WMT-Watermarking Token| E
-    end
-```
-
 There are three steps to apply PallyCon Forensic Watermarking to your content service. Each step has options you can choose.
 
 ## Step 1: Preparation of Watermarking Integration

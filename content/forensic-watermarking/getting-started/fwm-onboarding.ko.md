@@ -89,11 +89,9 @@ graph TD;
 
 ```mermaid
 graph TD;
-  detecting[3단계 - 검출 테스트] --> playback(세션 URL을 통한 영상 재생)
-  playback --> recording(여러 재생 세션 중 한 세션을 녹화)
-  recording --> request_detection(녹화된 영상을 PallyCon에 전달<br>워터마크 검출 요청)
-  request_detection --> confirm_detection(검출 결과 확인)
-  confirm_detection --> detection_done[3단계 완료]
+  detecting[3단계 - 검출 테스트] --> playback(세션 URL을 통한 영상 재생<br>여러 재생 세션 중 한 세션을 녹화)
+  playback --> request_detection(녹화된 영상을 PallyCon에 전달<br>워터마크 검출 요청)
+  request_detection --> detection_done[검출 결과 확인<br>3단계 완료]
   detection_done --> onboarding_complete(포렌식 워터마킹 온보딩 완료)
 
 ```

@@ -89,11 +89,9 @@ graph TD;
 
 ```mermaid
 graph TD;
-  detecting[Step 3 - Watermark detection test] --> playback(Playback using session URL)
-  playback --> recording(Record one of multiple playback sessions)
-  recording --> request_detection(Send recorded video to PallyCon<br>- request watermark detection)
-  request_detection --> confirm_detection(Confirm detection result)
-  confirm_detection --> detection_done[End of Step 3]
+  detecting[Step 3 - Watermark detection test] --> playback(Playback using session URL<br>Record one of multiple playback sessions)
+  playback --> request_detection(Send recorded video to PallyCon<br>- request watermark detection)
+  request_detection --> detection_done[Confirm detection result<br>End of Step 3]
   detection_done --> onboarding_complete(Finish onboarding)
 
 ```

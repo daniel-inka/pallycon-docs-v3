@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "Guide documents"
-subtitle = "The PallyCon Docs Guide is organized for each product provided by the PallyCon service as follows. Please click the link for the product you want to apply and check the related guide documents."
+subtitle = "The PallyCon Docs Guide is organized for each product provided by the PallyCon service as follows.<br> Please click the link for the product you want to apply and check the related guide documents."
 
 # Showcase features.
 # 

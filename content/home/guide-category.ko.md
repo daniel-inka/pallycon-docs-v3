@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "가이드 문서 구성"
-subtitle = "PallyCon Docs 가이드는 아래와 같이 PallyCon 서비스가 제공하는 각 제품별로 정리되어 있습니다. 적용하기 원하는 제품에 해당되는 링크를 클릭해 관련 가이드 문서들을 확인해주시기 바랍니다."
+subtitle = "PallyCon Docs 가이드는 아래와 같이 PallyCon 서비스가 제공하는 각 제품별로 정리되어 있습니다.<br> 적용하기 원하는 제품에 해당되는 링크를 클릭해 관련 가이드 문서들을 확인해주시기 바랍니다."
 
 # Showcase features.
 # 

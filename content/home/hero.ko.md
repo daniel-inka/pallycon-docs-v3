@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "PallyCon 서비스 가이드"
+title = "PallyCon Docs"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
 hero_media = "pallycon-end2end.png"
@@ -50,9 +50,11 @@ hero_media = "pallycon-end2end.png"
 #[cta_note]
 #  label = '<a class="js-github-release" href="https://sourcethemes.com/academic/updates" data-repo="gcushen/hugo-academic">Latest release<!-- V --></a>'
 +++
+
+<div>
+PallyCon Docs 사이트는 PallyCon 멀티 DRM과 포렌식 워터마킹 등 각종 서비스를 이용하는데 필요한 정보와 가이드를 제공합니다.
+</div>
 <br>
-`PallyCon Docs 사이트`는 PallyCon 멀티 DRM과 포렌식 워터마킹 서비스를 이용하는데 필요한 각종 정보와 가이드를 제공합니다.
-
-PallyCon 서비스는 온라인 미디어 서비스의 기본 요소인 콘텐츠 인코딩, 인코딩된 콘텐츠의 CDN을 통한 전달, 그리고 클라이언트에서의 재생까지 전체 콘텐츠 워크플로우에 멀티 DRM과 포렌식 워터마킹을 쉽고 빠르게 적용할 수 있도록 통합된 워크플로우를 지원합니다.
-
-이 사이트의 각종 가이드를 이용하여 콘텐츠 워크플로우의 각 구성요소들을 PallyCon 서비스와 연동할 수 있습니다.
+<div>
+이 사이트의 가이드와 자습서를 이용하여 콘텐츠 워크플로우의 각 구성 요소들을 PallyCon 콘텐츠 보안 서비스와 연동할 수 있습니다.
+</div>
