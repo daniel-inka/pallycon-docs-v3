@@ -1,6 +1,6 @@
 ---
 # Course title, summary, and position.
-linktitle: 1. 멀티DRM 시작하기
+linktitle: 1. 시작하기
 summary: PallyCon 멀티DRM 서비스를 빠르게 이해하고 체험할 수 있도록 기본 설명과 퀵스타트 가이드를 제공합니다.
 weight: 10
 
