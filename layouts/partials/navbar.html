@@ -47,11 +47,11 @@
     </div>
     {{end}}
     {{if eq .Site.Language.Lang "en"}}
-    <a href="{{.Site.BaseURL}}en/multidrm" target="_self" class="btn btn-outline-navbar">DRM</a>
-    <a href="{{.Site.BaseURL}}en/forensic-watermarking" target="_self" class="btn btn-outline-navbar">Watermark</a>
+    <a href="{{.Site.BaseURL}}/en/multidrm" target="_self" class="btn btn-outline-navbar">DRM</a>
+    <a href="{{.Site.BaseURL}}/en/forensic-watermarking" target="_self" class="btn btn-outline-navbar">Watermark</a>
     {{else}}
-    <a href="{{.Site.BaseURL}}ko/multidrm" target="_self" class="btn btn-outline-navbar">멀티DRM</a>
-    <a href="{{.Site.BaseURL}}ko/forensic-watermarking" target="_self" class="btn btn-outline-navbar">워터마킹</a>
+    <a href="{{.Site.BaseURL}}/ko/multidrm" target="_self" class="btn btn-outline-navbar">멀티DRM</a>
+    <a href="{{.Site.BaseURL}}/ko/forensic-watermarking" target="_self" class="btn btn-outline-navbar">워터마킹</a>
     {{end}}
   <!-- Collect the nav links, forms, and other content for toggling -->
     {{ $align_menu := site.Params.main_menu.align | default "l" }}
