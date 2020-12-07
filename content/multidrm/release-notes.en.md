@@ -5,7 +5,7 @@ summary: Release notes for PallyCon Multi-DRM products
 toc: true
 type: book
 date: "2020-05-05T00:00:00+01:00"
-lastmod: "2020-11-11T00:00:00Z"
+lastmod: "2020-11-12T00:00:00Z"
 draft: false
 menu:
   multidrm:

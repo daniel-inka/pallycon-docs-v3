@@ -5,7 +5,7 @@ summary: 토큰 방식의 DRM 라이선스 연동에 대한 자습서입니다.
 toc: true
 type: book
 date: "2020-05-05T00:00:00+01:00"
-lastmod: "2020-11-11T00:00:00Z"
+lastmod: "2020-06-01T00:00:00Z"
 draft: false
 menu:
   multidrm:

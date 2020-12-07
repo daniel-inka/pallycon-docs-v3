@@ -1,11 +1,11 @@
 ---
-title: 릴리즈 노트
+title: 기타 제품 릴리즈 노트
 linktitle: 릴리즈 노트
 summary: PallyCon 기타 제품의 릴리즈 노트입니다.
 toc: true
 type: book
 date: "2020-05-05T00:00:00+01:00"
-lastmod: "2020-11-11T00:00:00Z"
+lastmod: "2020-09-29T00:00:00Z"
 draft: false
 menu:
   otherproducts:

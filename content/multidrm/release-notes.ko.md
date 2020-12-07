@@ -5,7 +5,7 @@ summary: PallyCon 멀티 DRM 서비스의 각 제품 별 릴리즈 노트입니�
 toc: true
 type: book
 date: "2020-05-05T00:00:00+01:00"
-lastmod: "2020-11-11T00:00:00Z"
+lastmod: "2020-11-12T00:00:00Z"
 draft: false
 menu:
   multidrm:

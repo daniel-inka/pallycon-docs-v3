@@ -1,11 +1,11 @@
 ---
-title: Release Notes
+title: Other Release Notes
 linktitle: Release Notes
 summary: Release notes for other products
 toc: true
 type: book
 date: "2020-05-05T00:00:00+01:00"
-lastmod: "2020-11-11T00:00:00Z"
+lastmod: "2020-09-29T00:00:00Z"
 draft: false
 menu:
   otherproducts:
