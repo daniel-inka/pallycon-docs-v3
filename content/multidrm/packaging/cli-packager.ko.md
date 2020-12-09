@@ -63,7 +63,7 @@ PallyCon CLI 패키져는 구글의 Shaka Packager를 기반으로 개발되었�
 
 ### 명령어 옵션 목록
 
-| Name |<div style="width:60px">Type</div> | Required | Description |
+| <div style="width:150px">Name</div> |<div style="width:60px">Type</div> |<div style="width:60px">Required</div> | Description |
 | :--- | :---- | :--- | :--------------|
 | `--site_id` | string | Y | PallyCon 서비스 사이트 ID (4바이트) |
 | `--access_key` | string | Y | 서비스 사이트에 발급되는 인증 키 <br>PallyCon 콘솔 사이트에서 확인 |
@@ -100,7 +100,7 @@ PallyCon 키 서버에서 생성한 암호 키를 사용하지 않고, 서비스
 
 > 외부 키 사용 시에는 `--site_id`와 `--access_key` 옵션이 사용되지 않습니다.
 
-| Name | Type | Required | Description |
+| <div style="width:150px">Name</div> | <div style="width:60px">Type</div> | <div style="width:60px">Required</div> | Description |
 | :--- | :---- | :--- | :--------------|
 | `--enable_raw_key_encryption` | bool | Y | External key 사용 여부 |
 | `--provider` | string | N | Widevine PSSH 생성을 위한 DRM provider 문자열<br>기본 값: inkaentworks |

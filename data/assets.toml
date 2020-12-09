@@ -65,8 +65,10 @@
   #sri = "sha384-VMxod3UViCDOhgl3zLOlLoDd6tt4n3HYqCH9w798Q7U4sY2ueIN9Rz14B9MDfzdt"
   #version = "8.3.0"
   #sri = "sha384-AD70p+GzykYEMS3u5CoiZjVtXvadKmpu8JPOjaIzORi9JfCIJMB8M9bEsF78iLbi"
+
   version = "8.2.6"
   sri = "sha384-kXGsQYn4ZRcw1F4UpVwotKYR/godjlYmW66PZrHCH+hiWR1HnQg8wRQ5GNQ3muy5"
+
   #version = "8.1.0"
   #sri = "sha384-Wpc3+iIE3BUim/p0ZYN6xX2rFQ7eFgfYbgpUviSij1+UMadiATRq3Ec8x2gDIuyp"
   #version = "8.8.0"

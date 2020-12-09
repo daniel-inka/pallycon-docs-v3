@@ -19,7 +19,7 @@ menu:
 
 ## Overview
 
-When using [Bitmovin encoding service](https://bitmovin.com/encoding-service), multi DRM packaging is possible through [CPIX or SPEKE API integration]({{%ref "cpix-api.en.md"%}}) with PallyCon KMS(Key Management Server).
+When using [Bitmovin encoding service](https://bitmovin.com/encoding-service), multi DRM packaging is possible through [CPIX or SPEKE API integration](../cpix-api) with PallyCon KMS(Key Management Server).
 
 This document explains how to create DASH/HLS content with multi-DRM using examples written based on the Bitmovin Java SDK.
 

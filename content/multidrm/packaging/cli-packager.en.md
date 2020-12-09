@@ -63,7 +63,7 @@ PallyCon CLI Packager is based on Google's Shaka Packager. Please refer to [Gith
 
 ### Command parameters
 
-|Name |<div style="width:60px">Type</div> |<div style="width:40px">Required</div> |Description |
+|<div style="width:150px">Name |<div style="width:60px">Type</div> |<div style="width:60px">Required</div> |Description |
 |:---|:----|:---|:--------------|
 |`--site_id` | string | Y | Service site ID (4 bytes) issued by PallyCon |
 |`--access_key` | string | Y | Authentication key issued to the service site. <br> Can be checked on PallyCon Console site. |
@@ -100,7 +100,7 @@ This option is used when packaging with a key that is managed separately by the 
 
 > `--site_id` and `--access_key` options are not used when using external keys.
  
-|Name |<div style="width:60px">Type</div> |Required |Description |
+|<div style="width:150px">Name</div> |<div style="width:60px">Type</div> |<div style="width:60px">Required</div> |Description |
 |:---|:----|:---|:--------------|
 |`--enable_raw_key_encryption` | bool | Y | Enable the use of external key  |
 |`--provider` | string | N | DRM Provider name for Widevine PSSH<br>Default: inkaentworks |

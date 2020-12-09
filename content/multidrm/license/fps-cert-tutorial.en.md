@@ -1,5 +1,5 @@
 ---
-title: FairPlay Cert Registration Tutorial
+title: FairPlay Certificate Registration Tutorial
 linktitle: FairPlay Cert Tutorial
 summary: This document provides a tutorial for FPS cert registration.
 toc: true

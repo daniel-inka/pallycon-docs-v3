@@ -1,6 +1,6 @@
 ---
 title: Multi-DRM Concepts and Terms
-linktitle: Multi-DRM Concepts and Terms
+linktitle: Concepts and Terms
 summary: Describes various common concepts and terms related to PallyCon Multi-DRM service.
 toc: true
 type: book
@@ -69,13 +69,13 @@ It is a technology that restricts the illegal use of various digital contents an
 
 ## Multi-DRM
 
-It means application of multiple DRM technologies for each client platform to support DRM in various PC, mobile and OTT client environments. Please refer to [Supported Environments page]({{%ref "supported-env.en.md"%}}) for DRM and streaming protocol support information according to client environment.
+It means application of multiple DRM technologies for each client platform to support DRM in various PC, mobile and OTT client environments. Please refer to [Supported Environments page](../supported-env) for DRM and streaming protocol support information according to client environment.
 
 ## Packaging
 
 The process of applying DRM by encrypting the original contents. There are pre-packaging method that serves pre-packaged contents to users and real-time packaging method which processes packaging at the time of contents playback.
 
-For a detailed description of DRM packaging, see the [Content Packaging Guide]({{%ref "/multidrm/packaging/_index.en.md"%}}).
+For a detailed description of DRM packaging, see the [Content Packaging Guide](../../packaging/).
 
 ## Packaging Callback URL
 
@@ -97,7 +97,7 @@ When a client requests a DRM license to play the content, the PallyCon cloud ser
 
 When a client plays content, the service site generates a license token according to the specification and delivers it to the client. The client sends the token to the PallyCon cloud server to receive the DRM license.
 
-For more information about license token, please refer to the [Guide]({{%ref "license-token.en.md"%}}).
+For more information about license token, please refer to the [Guide](../../license/license-token).
 
 ## License Callback URL
 
@@ -105,4 +105,4 @@ A URL that is used when issuing DRM license by callback method. You need to buil
 
 ## KMS Token
 
-An authentication token used for content packaging key integration via CPIX API. A unique token is generated for each service site, and this token should be added to the API-specific key request URL such as PallyCon CPIX API or SPEKE API. Please refer to the [Developer Guide]({{%ref "cpix-api.en.md"%}}) for details.
+An authentication token used for content packaging key integration via CPIX API. A unique token is generated for each service site, and this token should be added to the API-specific key request URL such as PallyCon CPIX API or SPEKE API. Please refer to the [Developer Guide](../../packaging/cpix-api) for details.

@@ -76,7 +76,7 @@ sequenceDiagram
 (4) 라이선스 요청
 
 - 클라이언트는 서비스 사이트로부터 전달받은 토큰(base64 문자열)을 pallycon-customdata-v2에 담아 PallyCon 클라우드 서버에 라이선스를 요청합니다.
-- CustomData를 통한 라이선스 요청은 [멀티 DRM 라이선스 연동 가이드](../../clients/multidrm-native-integration/#pallycon-custom-data-v2) 또는 [클라이언트 연동 가이드](../../clients)를 참조하시기 바랍니다.
+- CustomData를 통한 라이선스 요청은 [멀티 DRM 네이티브 연동 가이드](../../clients/multidrm-native-integration/#pallycon-custom-data-v2) 또는 [클라이언트 연동 가이드](../../clients)를 참조하시기 바랍니다.
 
 (5) 라이선스 발급
 
@@ -315,13 +315,13 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 #### security_policy.widevine 
 
-| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
+| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:100px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | security_level | int | 1 (WV L3) | 해당 트랙에 대한 Widevine security level 설정 (1:SW_SECURE_CRYPTO, 2:SW_SECURE_DECODE, 3:HW_SECURE_CRYPTO, 4:HW_SECURE_DECODE, 5:HW_SECURE_ALL) <br> 5로 설정하면 Widevine L1 기기에서만 재생 가능 |
-| required_hdcp_version | string | "HDCP_NONE" (HDCP 미적용) | 디지털 출력에 대한 보안(HDCP) 레벨 설정<br> - 입력값: "HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT" 중 하나 |
-| required_cgms_flags | string | "CGMS_NONE" | 아날로그 출력에 대한 보안(CGMS-A) 레벨 설정<br> - 입력값: "CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER" 중 하나 |
+| required_hdcp_version | string | HDCP_NONE | 디지털 출력에 대한 보안(HDCP) 레벨 설정<br> - 입력값: "HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT" 중 하나 |
+| required_cgms_flags | string | CGMS_NONE | 아날로그 출력에 대한 보안(CGMS-A) 레벨 설정<br> - 입력값: "CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER" 중 하나 |
 | disable_analog_output | boolean | false | 아날로그 출력 허용 여부 (false: 아날로그 출력 허용) |
-| hdcp_srm_rule | string | "HDCP_SRM_RULE_NONE" | HDCP 기기가 SRM(System Renewability Message)을 처리하지 못하는 경우에 해당 트랙의 재생 여부 설정. CURRENT_SRM: 최신 SRM 적용 안되는 기기에서는 해당 트랙 재생 안됨 <br> - 입력값: "HDCP_SRM_RULE_NONE", "CURRENT_SRM" 중 하나 |
+| hdcp_srm_rule | string | HDCP_SRM_RULE_NONE | HDCP 기기가 SRM(System Renewability Message)을 처리하지 못하는 경우에 해당 트랙의 재생 여부 설정. CURRENT_SRM: 최신 SRM 적용 안되는 기기에서는 해당 트랙 재생 안됨 <br> - 입력값: "HDCP_SRM_RULE_NONE", "CURRENT_SRM" 중 하나 |
 
 #### security_policy.playready 
 
@@ -337,15 +337,15 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 #### security_policy.fairplay 
 
-| **Name** | **Type** | **Default** | **Description** |
+| **Name** | <div style="width:70px">**Type**</div> | <div style="width:60px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
-| hdcp_enforcement | int | -1 (HDCP 미적용) | 해당 트랙에 대한 HDCP 적용 여부 및 HDCP 버전. <br> -1: HDCP 미적용, 0: HDCP Type 0(버전 무관), 1: HDCP Type 1(2.2 이상 필요) |
+| hdcp_enforcement | int | -1 | 해당 트랙에 대한 HDCP 적용 여부 및 HDCP 버전. <br> -1: HDCP 미적용, 0: HDCP Type 0(버전 무관), 1: HDCP Type 1(2.2 이상 필요) |
 | allow_airplay | boolean | true | AirPlay 허용 여부 |
 | allow_av_adapter | boolean | true | 디지털 AV 어댑터를 통한 출력 허용 여부 |
 
 #### security_policy.ncg 
 
-| **Name** | **Type** | **Default** | **Description** |
+| **Name** | <div style="width:70px">**Type**</div> | <div style="width:60px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | allow_mobile_abnormal_device | boolean | false | 탈옥 또는 루팅된 모바일 기기에서의 재생 허용 여부 |
 | allow_external_display | boolean | false | 외부 출력 허용 여부 |

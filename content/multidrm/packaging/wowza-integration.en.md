@@ -1,5 +1,5 @@
 ---
-linktitle: Wowza Interation
+linktitle: Wowza Integration
 weight: 50
 
 # Page metadata.

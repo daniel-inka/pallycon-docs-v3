@@ -315,13 +315,13 @@ Set policies related to security such as hardware DRM and output protection leve
 
 #### security_policy.widevine 
 
-| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:90px">**Default**</div> | **Description** |
+| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:110px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | security_level | int | 1 (WV L3) | Widevine security level setting for the track <br> (1: SW_SECURE_CRYPTO, 2: SW_SECURE_DECODE, 3: HW_SECURE_CRYPTO, 4: HW_SECURE_DECODE, 5: HW_SECURE_ALL) <br>If set to 5, playback is possible only on Widevine L1 devices. |
-| required_hdcp_version | string | "HDCP_NONE" | Sets the required HDCP version for digital output <br> - Value: "HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT"|
-| required_cgms_flags | string | "CGMS_NONE" | Sets the security level for analog outputs<br> - Value: "CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER" |
+| required_hdcp_version | string | HDCP_NONE | Sets the required HDCP version for digital output <br> - Value: "HDCP_NONE", "HDCP_V1", "HDCP_V2", "HDCP_V2_1", "HDCP_V2_2", "HDCP_NO_DIGITAL_OUTPUT"|
+| required_cgms_flags | string | CGMS_NONE | Sets the security level for analog outputs<br> - Value: "CGMS_NONE", "COPY_FREE", "COPY_ONCE", "COPY_NEVER" |
 | disable_analog_output | boolean | false | Whether analog output is allowed (false: analog output is allowed) |
-| hdcp_srm_rule | string | "HDCP_SRM_RULE_NONE" | Whether to allow the playback of the track when the HDCP device cannot process the System Renewability Message (SRM).<br> - Value: "HDCP_SRM_RULE_NONE", "CURRENT_SRM" <br> CURRENT_SRM: The track does not play on devices that do not have the latest SRM |
+| hdcp_srm_rule | string | HDCP_SRM_RULE_NONE | Whether to allow the playback of the track when the HDCP device cannot process the System Renewability Message (SRM).<br> - Value: "HDCP_SRM_RULE_NONE", "CURRENT_SRM" <br> CURRENT_SRM: The track does not play on devices that do not have the latest SRM |
 
 #### security_policy.playready 
 
@@ -337,7 +337,7 @@ Set policies related to security such as hardware DRM and output protection leve
 
 #### security_policy.fairplay 
 
-| **Name** | **Type** | **Default** | **Description** |
+| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | **Default** | **Description** |
 | --- | --- | --- | --- |
 | hdcp_enforcement | int | -1 (No HDCP requirement) | HDCP version required for the track. <br> -1: HDCP not applied, 0: HDCP Type 0 (version independent), 1: HDCP Type 1 (requires 2.2 or higher) |
 | allow_airplay | boolean | true | Whether to allow AirPlay |
@@ -345,7 +345,7 @@ Set policies related to security such as hardware DRM and output protection leve
 
 #### security_policy.ncg 
 
-| **Name** | **Type** | **Default** | **Description** |
+| **Name** | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | allow_mobile_abnormal_device | boolean | false | Whether to allow playback on jailbroken or rooted mobile devices |
 | allow_external_display | boolean | false | Whether external display is allowed. (default: false) |
