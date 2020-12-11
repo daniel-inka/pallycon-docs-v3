@@ -34,7 +34,7 @@ PallyCon 포렌식 워터마킹 서비스를 이용하는데 필요한 샘플 �
 
 - 아래 링크에서 Amazon CloudFront CDN 연동을 위한 Lambda@Edge 샘플 소스를 다운받을 수 있습니다.
 
- {{% button href="../../../../files/pallycon-watermark-lambda-v2.2.0.zip" icon="fas fa-download" %}}CloudFront Lambda 샘플 다운로드{{% /button %}}
+ {{% button href="../../../../files/pallycon-watermark-lambda-v2.2.1.zip" icon="fas fa-download" %}}CloudFront Lambda 샘플 다운로드{{% /button %}}
 
 > 아카마이 CDN은 Lambda@Edge와 같은 연동 모듈이 불필요합니다. CloudFront와 아카마이 이외의 CDN 연동이 필요한 경우, 별도로 문의하시기 바랍니다.
 

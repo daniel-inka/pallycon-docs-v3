@@ -34,7 +34,7 @@ You can download sample codes to integrate PallyCon Forensic Watermarking servic
 
 - You can download the Lambda@Edge sample source for the Amazon CloudFront CDN integration from the link below.
 
-  {{% button href="../../../files/pallycon-watermark-lambda-v2.2.0.zip" icon="fas fa-download" %}}Download CloudFront Lambda sample{{% /button %}}
+  {{% button href="../../../../files/pallycon-watermark-lambda-v2.2.1.zip" icon="fas fa-download" %}}Download CloudFront Lambda sample{{% /button %}}
 
 > In case of Akamai CDN, you don't need this kind of integration module. If you need to use a CDN other than CloudFront and Akamai, please contact us.
 
