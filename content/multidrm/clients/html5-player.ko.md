@@ -48,7 +48,7 @@ FairPlay Streaming 연동을 위해서는 라이선스 요청 주소와 Custom H
 
 각 플레이어 별 연동 API 코드에 사용된 입력 값들에 대한 설명은 아래를 참고하시기 바랍니다.
 
-|Name |Value |Remarks |
+|<div style="width:100px">Name</div> |Value |Remarks |
 |---|---|---|
 | DASH_MANIFEST_URL | CENC 규격으로 패키징된 MPEG-DASH 콘텐츠의 manifest(mpd) 파일 URL | Widevine, PlayReady 공통으로 사용 |
 | SERVER_CERTIFICATE | Widevine server에서 발급 된 인증서 | chrome58 버젼 이상의 브라우저에서 widevine 컨텐츠 재생 시 사용. 없을 경우 서버로 인증서를 요청 후 라이센스를 요청하게 됨.|

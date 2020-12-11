@@ -4,8 +4,8 @@ linktitle: FairPlay iOS SDK
 summary: 본 문서는 FairPlay iOS SDK에 포함된 라이브러리와 샘플 프로젝트의 사용법에 대해 설명합니다.
 toc: true
 type: book
-date: "2019-05-05T00:00:00+01:00"
-lastmod: "2020-09-16T00:00:00Z"
+date: "2020-10-23T00:00:00+01:00"
+lastmod: "2020-10-23T00:00:00Z"
 draft: false
 
 menu:

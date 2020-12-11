@@ -4,8 +4,8 @@ linktitle: 워터마킹 온보딩
 summary: 고객사의 다양한 상황과 요구사항에 맞는 가이드 문서를 쉽게 찾을 수 있도록 포렌식 워터마킹 제품에 대한 온보딩 가이드를 제공합니다.
 toc: true
 type: book
-date: "2019-05-05T00:00:00+01:00"
-lastmod: "2020-12-03T00:00:00Z"
+date: "2020-11-25T00:00:00+01:00"
+lastmod: "2020-12-05T00:00:00Z"
 draft: false
 menu:
   watermarking:

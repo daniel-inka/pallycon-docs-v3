@@ -4,8 +4,9 @@ weight: 20
 
 # Page metadata.
 title: PallyCon Visible Watermarking Guide
-date: "2018-09-09T00:00:00Z"
-lastmod: "2018-09-09T00:00:00Z"
+summary: PallyCon Visible Watermarking is a watermark solution for HTML5 players to identify the user when video content is leaked illegally.
+date: "2020-10-23T00:00:00+01:00"
+lastmod: "2020-10-23T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.

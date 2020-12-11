@@ -48,7 +48,7 @@ Widevine and PlayReady DRM can be configured by setting the license request URL 
 
 Please refer to the description below for the input values ​​used in each player-specific API code.
 
-|Name |Value |Remarks |
+|<div style="width:100px">Name</div> |Value |Remarks |
 |---|---|---|
 | DASH_MANIFEST_URL | Manifest(mpd) URL of MPEG-DASH content which is encrypted by CENC spec | common for Widevine and PlayReady |
 | SERVER_CERTIFICATE | Certificate data which is issued by Widevine server. | Used for CENC with Widevine DRM running on Chrome 58 or later version. If this data is missing, the certificate will be requested to PallyCon Cloud before license acquisition.|

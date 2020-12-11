@@ -4,6 +4,7 @@ weight: 10
 
 # Page metadata.
 title: PallyCon Anti-Capture Guide
+summary: This document explains how to download and install the Anti-Capture product, explains the process and how to apply it to the player.
 date: "2018-09-09T00:00:00Z"
 lastmod: "2018-09-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -112,7 +113,7 @@ The `PallyConLib.js` API delivers messages to anti-capture programs installed on
 
 The step-by-step API shown below must be applied to the webpage from staging content to end playback.
 
-| Progress Steps | PallyConLib.js API | Description |
+| <div style="width:120px">Steps</div> | <div style="width:170px">PallyConLib.js API</div> | Description |
 | --- | --- | --- |
 | 1. Load Page | CheckInstall | When the page loads, check to see if AntiCapture is installed. |
 | 2. Prepare to play | ActivateAntiCapture | Activate the anti-capture program installed before starting video playback. |
@@ -122,15 +123,15 @@ The step-by-step API shown below must be applied to the webpage from staging con
 
 ### API Descriptions
 
-|API Name | Description |
+|<div style="width:160px">API Name</div> | Description |
 |---|---|
 | CheckInstall | Check the extension to see if Anti-Capture is installed on your PC. If NOK, you need to disable video playback and install anti-capture program. |
 | ActivateAntiCapture | Enables monitoring of anti-capture services installed on your PC through the extension. |
 | DeactivateAntiCapture | Deactivates the monitoring of anti-capture services installed on your PC through the extension. |
 | CheckCaptureStatus | Anticapture program checks the monitored information and returns the result. |
 | SetMonitoringInterval | Change the monitoring interval of the Anti-Capture service. A cycle of 5 seconds or less is not recommended for heavy use of system resources. |
-| Check the monitoring information continuously by calling the StartMonitoring | CheckCaptureStatus API every five seconds. Calling StartMonitoring without calling ActivateAntiCapture results in an error. |
-| StopMonitoring | The CheckCaptureStatus API, which is called every 5 seconds, stops. Calling DeactivateAntiCapture before calling StopMonitoring results in an error. |
+| StartMonitoring | CheckCaptureStatus API is called every 5 seconds to continuously check monitoring information. If you call StartMonitoring without calling ActivateAntiCapture, an error occurs. |
+| StopMonitoring | Stops calling the CheckCaptureStatus API. Calling DeactivateAntiCapture before calling StopMonitoring results in an error. |
 
 ## Example
 

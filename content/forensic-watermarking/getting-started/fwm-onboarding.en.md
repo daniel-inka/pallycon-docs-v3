@@ -4,8 +4,8 @@ linktitle: Onboarding Guide
 summary: We provide onboarding guides for PallyCon Forensic Watermarking service, so that you can easily find guide documents that suit your various situations and requirements.
 toc: true
 type: book
-date: "2019-05-05T00:00:00+01:00"
-lastmod: "2020-12-03T00:00:00Z"
+date: "2020-11-25T00:00:00+01:00"
+lastmod: "2020-12-05T00:00:00Z"
 draft: false
 menu:
   watermarking:

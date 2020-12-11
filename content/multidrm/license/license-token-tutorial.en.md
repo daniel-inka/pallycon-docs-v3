@@ -72,7 +72,7 @@ console.log("license rule : " + JSON.stringify(licenseRule));
 
 ### Input value description
 
-| **Name** | **Format** | **Description** |
+| <div style="width:80px">**Name**</div> | **Format** | **Description** |
 | --- | --- | --- |
 | AES_IV | 16 bytes string | "0123456789abcdef" (fixed value) |
 | siteId | 4 uppercase alphabet | The ID of the service site registered on PallyCon Console site (check the PallyCon Console's 'Site Settings' page) |
@@ -165,7 +165,7 @@ let hashString = crypto
 console.log("hash string : " + hashString);
 ```
 
-The input value for generating a hash is a string of various configuration values, encrypted license rules, and current time information according to [token specification]({{%ref "license-token.en.md"%}}).
+The input value for generating a hash is a string of various configuration values, encrypted license rules, and current time information according to [token specification](../license-token).
 
 > The SHA256 algorithm is used to generate hash values, and the resulting value of the hash function must be entered into the base64 function as a binary data, without being converted to a string.
 

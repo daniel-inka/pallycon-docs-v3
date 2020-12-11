@@ -4,8 +4,8 @@ linktitle: Multi-DRM Onboarding
 summary: We provide onboarding guides for PallyCon Multi-DRM service, so that you can easily find guide documents that suit your various situations and requirements.
 toc: true
 type: book
-date: "2019-05-05T00:00:00+01:00"
-lastmod: "2020-11-10T00:00:00Z"
+date: "2020-11-15T00:00:00+01:00"
+lastmod: "2020-12-01T00:00:00Z"
 draft: false
 menu:
   multidrm:

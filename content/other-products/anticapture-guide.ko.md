@@ -4,6 +4,7 @@ weight: 10
 
 # Page metadata.
 title: PallyCon 안티 캡쳐 가이드
+summary: 이 문서에서는 안티캡처 제품 다운로드와 설치 방법을 설명하고, 동작 과정 및 플레이어에 적용하는 방법을 설명합니다.
 date: "2018-09-09T00:00:00Z"
 lastmod: "2018-09-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -108,7 +109,7 @@ PallyCon 안티 캡쳐 제품을 이용하려는 고객은 별도 컨택을 통�
 
 아래 표시된 진행 단계별 API를 콘텐츠 재생 준비에서 재생 종료에 걸쳐 해당 웹페이지에 적용해야 합니다.
 
-|진행 단계 | PallyConLib.js API |설명 |
+|<div style="width:100px">진행 단계</div> | <div style="width:120px">PallyConLib.js API</div> |설명 |
 |---|---|---|
 | 1. 페이지 로드 | CheckInstall | 페이지가 로드될 때 안티캡쳐 설치 여부를 확인합니다. |
 | 2. 재생 준비 | ActivateAntiCapture | 영상 재생 시작 전에 설치된 안티 캡쳐 프로그램을 활성화 합니다. |
@@ -118,7 +119,7 @@ PallyCon 안티 캡쳐 제품을 이용하려는 고객은 별도 컨택을 통�
 
 ### API 설명
 
-|API 이름 | 설명 |
+|<div style="width:160px">API 이름</div> | 설명 |
 |---|---|
 |CheckInstall | PC에 안티캡쳐가 설치되어 있는지를 확장 프로그램을 통해 확인합니다. NOK일 경우 영상 재생을 비활성화하고 안티캡쳐 프로그램을 설치하도록 안내해야 합니다. |
 |ActivateAntiCapture |확장 프로그램을 통해 PC에 설치된 안티캡쳐 서비스의 모니터링을 활성화합니다. |

@@ -20,13 +20,13 @@ PallyCon 멀티 DRM 제품은 다음과 같은 클라이언트 플랫폼과 OS�
 
 ## PC 플랫폼
 
-|OS |웹브라우저 또는 SDK |스트리밍 방식 |DRM |다운로드 시나리오 |기타 |
-|:---|:---|:---|:---|:---|:---|
-|Windows 8.1 이상 |IE11, 엣지 |MPEG-DASH |PlayReady |지원 안함 | |
-|Windows 7.0 이상, Mac OS |크롬 v35 이상, 파이어폭스 v47 이상 |MPEG-DASH |Widevine Modular |지원 안함 | |
-|Windows 7.0 이상 |NCG Windows SDK |HLS 또는 프로그래시브 다운로드 |Netsync Content Guard |지원 |영상 재생 기능은 별도 구현 필요 |
-|Windows 10 | PallyCon PlayReady UWP SDK | MPEG-DASH | PlayReady | 지원 | 오프라인 시나리오는 지원 안함|
-|Mac OS 10.10 이상 |Safari v8 이상 |HLS |FairPlay Streaming |지원 안함 |. |
+| OS                      | 웹브라우저 또는 SDK | 스트리밍 방식 | DRM | 다운로드 시나리오 | 기타 |
+|-------------------------|------------------------------|-------------------------|:---|:---|:---|
+| Windows 8.1 이상         | IE11, 엣지                    | MPEG-DASH |PlayReady |지원 안함 | |
+| Windows 7.0 이상, Mac OS | 크롬 v35 이상, 파이어폭스 v47 이상 | MPEG-DASH |Widevine Modular |지원 안함 | |
+| Windows 7.0 이상         | NCG Windows SDK              | HLS 또는 프로그래시브 다운로드 |Netsync Content Guard |지원 |영상 재생 기능은 별도 구현 필요 |
+| Windows 10              | PallyCon PlayReady UWP SDK | MPEG-DASH | PlayReady | 지원 | 오프라인 시나리오는 지원 안함|
+| Mac OS 10.10 이상        | Safari v8 이상 |HLS |FairPlay Streaming |지원 안함 | |
 
 ## 모바일 플랫폼
 

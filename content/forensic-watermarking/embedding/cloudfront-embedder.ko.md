@@ -100,7 +100,7 @@ Lambda@Edge 설정에 필요한 소스 파일은 [샘플 다운로드 페이지]
 
 - 아래 테이블에 해당하는 변수의 값을 설정합니다.
 
-    | Source Line | Name | Required | Description |
+    | <div style="width:50px">Source Line</div> | <div style="width:60px">Name</div> | <div style="width:60px">Required</div> | Description |
     | :--- | :-- | :-- | :------------ |
     | 3 | AVAILABLE_INTERVAL | True | 워터마크 적용을 위해 요청된 URL에는 timestamp 값이 포함되어 있습니다. 본 항목은 해당 timestamp의 유효 기간을 체크하기 위한 값입니다. <br/>0으로 설정할 경우 timestamp 유효 기간을 체크하지 않습니다.<br/> 단위: (분) |
     | 4 | AES_KEY | True | PallyCon 콘솔 사이트에서 제공하는 사이트 키 값을 입력합니다. |

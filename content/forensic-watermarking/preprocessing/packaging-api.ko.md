@@ -62,7 +62,7 @@ PallyCon 서비스에서 사용하는 각종 HTTP API 요청시 아래 규격을
 
 **요청 데이터 명세**
 
-| Name | Value | Required | Description |
+| <div style="width:60px">Name</div> | <div style="width:50px">Value</div> | <div style="width:70px">Required</div> | Description |
 | :---- | :----- | :-- | :---------- |
 | `data` | String | Y | 각 API마다 정의된 규격으로 생성한 JSON 문자열을 AES 암호화하고, 결과값을 base64 문자열로 입력 |
 | `timestamp` | String | Y | GMT 시간대 기준으로 요청 시점의 시간을 "yyyy-mm-ddThh:mm:ssZ" 포맷으로 입력 |
@@ -269,8 +269,6 @@ SHA256 해시의 입력값은 다음과 같은 문자열을 조합해 입력합�
 | error_message | String   | 에러인 경우 에러 메시지                                |
 | storage_id    | String   | 스토리지 ID                                            |
 
-***
-
 ## 패키징 작업 등록 API {#packaging-job-register}
 
 이 API는 새로운 워터마킹 패키징 작업을 등록합니다. 패키징 작업을 등록하기 전에 먼저 작업용 스토리지를 등록하고, 해당 스토리지에 원본 MP4 파일을 업로드해야 합니다.
@@ -342,7 +340,7 @@ SHA256 해시의 입력값은 다음과 같은 문자열을 조합해 입력합�
 
 **storage.input**
 
-| **Key**       | **type** | **required** | **description**                                                                 |
+| <div style="width:120px">**Key**</div> | <div style="width:60px">**type**</div>   | <div style="width:60px">**required**</div> | **description** |
 |---------------|----------|--------------|---------------------------------------------------------------------------------|
 | storage_id    | String   | Y            | PallyCon에서 발급한 스토리지 고유 ID    |
 | contents_path | Array    | Y            | 원본 파일이 업로드된 폴더/파일 경로. 여러 개가 지정될 경우 Adaptive Streaming 형태로 패키징됨 |
@@ -363,14 +361,14 @@ SHA256 해시의 입력값은 다음과 같은 문자열을 조합해 입력합�
 
 **dash_option**
 
-| **Key**  | **type** | **required** | **description** |
+| <div style="width:100px">**Key**</div> | <div style="width:60px">**type**</div>   | <div style="width:60px">**required**</div> | **description** |
 |----------|----------|--------------|-----------------|
 | min_buffer_time | Number | N      | 원활한 재생을 보장하는 데 필요한 초기 버퍼링 된 미디어의 최소 시간입니다. 최소값: 2 |
 | enable_average_bandwidth_mpd | Boolean | N | 최대 대역폭이 아닌 평균을 mpd 단위로 적용합니다. 기본값: false |
 
 **drm_option**
 
-| **Key**  | **type** | **required** | **description** |
+| <div style="width:130px">**Key**</div> | <div style="width:60px">**type**</div>   | <div style="width:60px">**required**</div> | **description** |
 |----------|----------|--------------|-----------------|
 | multi_key | Boolean | N | 멀티키 패키징 여부. 기본값: false |
 | skip_audio_encryption | Boolean | N | 오디오 트랙 DRM 암호화 여부. 기본값: false (암호화 적용) |
@@ -429,7 +427,7 @@ PallyCon 패키징 서버에서 패키징 작업 목록를 가져오기 위해�
 
 #### 요청 데이터 명세
 
-| **Key**      | **type** | **required** | **description**                                   |
+| <div style="width:120px">**Key**</div> | <div style="width:60px">**type**</div>   | <div style="width:60px">**required**</div> | **description** |
 |---------------------|----------|--------------|--------------------------------------------|
 | from                | String   | N            | 패키징 작업 등록 시간 검색 조건                         |
 | to                  | String   | N            | 패키징 작업 등록 시간 검색 조건                         |

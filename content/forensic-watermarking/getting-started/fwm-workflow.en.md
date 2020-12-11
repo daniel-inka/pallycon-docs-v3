@@ -224,7 +224,7 @@ graph LR;
     B -->|Two sets of frame<br>with 0, 1 marked| C["Encoded result<br>(two MP4 videos)"]
     end
     C --> D(DASH or<br>HLS packaging)
-    subgraph Transcoder or Packager
+    subgraph Packager
     D --> E["Packaging result<br>(two set of streaming content)"]
     end
 ```

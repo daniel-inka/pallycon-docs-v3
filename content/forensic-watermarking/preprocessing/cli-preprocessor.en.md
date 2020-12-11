@@ -157,7 +157,7 @@ Execute the FMembedder executable file in the 'bin' folder in the downloaded arc
 
 - Required parameters
 
-| Parameter | Description | Example   | Remarks   |
+| <div style="width:80px">Parameter</div> | Description | <div style="width:120px">Example</div>   | Remarks   |
 |:------ |:----------|:------|:------|
 | `-i` | Input media filename | `-i ~/demo/input.mp4` | |
 | `-o` | Output media filename | `-o ~/demo/output.mp4` | The resulting output will be two files with '0' and '1' marked. (~/demo/output_0.mp4 and ~/demo/output_1.mp4) |

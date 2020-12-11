@@ -59,7 +59,7 @@ PallyCon 서비스에서 사용하는 각종 HTTP API 요청시 아래 규격을
 
 **요청 데이터 명세**
 
-| Name | Value | Required | Description |
+| <div style="width:80px">Name</div> | <div style="width:60px">Value</div> | <div style="width:60px">Required</div> | Description |
 | ---- | ----- | ---- | -------------- |
 | `data` | String | Y | 각 API마다 정의된 규격으로 생성한 JSON 문자열을 AES 암호화하고, 결과값을 base64 문자열로 입력 |
 | `timestamp` | String | Y | GMT 시간대 기준으로 요청 시점의 시간을 "yyyy-mm-ddThh:mm:ssZ" 포맷으로 입력 |
@@ -111,7 +111,7 @@ SHA256 해시의 입력값은 다음과 같은 문자열을 조합해 입력합�
 
 **API 데이터 명세**
 
-| Name | Value | Required | Description |
+| <div style="width:120px">Name</div> | <div style="width:60px">Value</div> | <div style="width:60px">Required</div> | Description |
 | ---- | ----- | ---- | -------------- |
 | `domain` | String | Y | 재생할 콘텐츠 URL의 도메인 부분 (예: cdn.yoursite.com) |
 | `output_path` | String | Y | 워터마크 패키징 요청 시 입력하였던 output_path |
@@ -180,7 +180,7 @@ SHA256 해시의 입력값은 다음과 같은 문자열을 조합해 입력합�
 
 **API 데이터 명세**
 
-| Name | Value | Required | Description |
+| <div style="width:120px">Name</div> | <div style="width:60px">Value</div> | <div style="width:60px">Required</div> | Description |
 | ---- | ----- | ---- | -------------- |
 | `domain` | String | Y | 재생할 콘텐츠 URL의 도메인 부분 (예: cdn.yoursite.com) |
 | `output_path` | String | Y | 워터마크 패키징 요청 시 입력하였던 output_path |
@@ -301,8 +301,6 @@ A3DfypNw0bLgR3FAa5Q2TbS1iiUK4iIfEXPLN5CNHHCgEPVDFBpgtHzraqNUzBZoy4pzx3fSDnzHDMek
 ```s
 xsQVqDW04FsO43Y64Gd6EFz0l5zIrebVr1yBWUY+Nuo=
 ```
-
-***
 
 ### 4단계 - 요청 데이터 JSON 생성 및 Base64 인코딩
 

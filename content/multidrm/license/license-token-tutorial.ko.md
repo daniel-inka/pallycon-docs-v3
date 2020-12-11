@@ -5,7 +5,7 @@ summary: 토큰 방식의 DRM 라이선스 연동에 대한 자습서입니다.
 toc: true
 type: book
 date: "2020-05-05T00:00:00+01:00"
-lastmod: "2020-06-01T00:00:00Z"
+lastmod: "2020-12-01T00:00:00Z"
 draft: false
 menu:
   multidrm:
@@ -72,7 +72,7 @@ console.log("license rule : " + JSON.stringify(licenseRule));
 
 ### 입력 값 설명
 
-| **변수 명** | **입력 형식** | **설명** |
+| <div style="width:100px">**변수 명**</div> | **입력 형식** | **설명** |
 | --- | --- | --- |
 | AES_IV | 16자리 문자열 | "0123456789abcdef" 고정 값 입력 |
 | siteId | 4자리 영문 대문자 | PallyCon 콘솔 사이트에 등록한 서비스 사이트의 ID (콘솔 '사이트 설정' 페이지에서 확인) |

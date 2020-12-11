@@ -101,7 +101,7 @@ The source files needed for setting up Lambda@Edge can be downloaded from the [S
 
 - Set the value of the corresponding variable in the table below.
 
-    | Source Line | Name | Required | Description |
+    | <div style="width:50px">Source Line</div> | <div style="width:60px">Name</div> | <div style="width:60px">Required</div> | Description |
     | :--- | :-- | :-- | :------------ |
     | 3 | AVAILABLE_INTERVAL | True | The URL requested for watermarking contains a timestamp value. This item is the value for checking the validity of the timestamp. <br/> If set to 0, the timestamp validity period is not checked. <br/> Unit: (minutes) |
     | 4 | AES_KEY | True | Enter the site key value provided by the PallyCon console site. |

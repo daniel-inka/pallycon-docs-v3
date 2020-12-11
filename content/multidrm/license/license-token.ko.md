@@ -289,7 +289,7 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 - 해상도 별 트랙이 나누어진 콘텐츠의 경우, playback policy는 모든 트랙에 동일하게 적용됩니다.
 
-|<div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
+|<div style="width:140px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | persistent | boolean | false | 오프라인용 라이선스 저장 여부. <br>true : 라이선스 유지, false : 재생 후 라이선스 제거(스트리밍) <br> false로 설정 시 license_duration과 expire_date 옵션은 정상 동작하지 않습니다. |
 | license_duration | int | 0 | 라이선스 유효 기간 (단위: 초) 0으로 설정 시 무제한. 이 옵션과 아래 만료 날짜 옵션 중 하나만 설정 가능합니다. |
@@ -325,7 +325,7 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 #### security_policy.playready 
 
-|<div style="width:120px">**Name**</div> | **Type** | <div style="width:70px">**Default**</div> | **Description** |
+|<div style="width:150px">**Name**</div> | **Type** | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | security_level | int | 150 | 해당 트랙에 대한 PlayReady security level. (150, 2000, 3000) 하드웨어 DRM 적용 시 3000으로 설정. |
 | digital_video_protection_level | int | 100 | 디지털 비디오 출력에 대한 보안 레벨 설정 (100, 250, 270, 300, 301) |
@@ -337,7 +337,7 @@ ewogICAgImRybV90eXBlIjoiV2lkZXZpbmUiLAogICAgInNpdGVfaWQiOiJBQkNEIiwKICAgICJ1c2Vy
 
 #### security_policy.fairplay 
 
-| **Name** | <div style="width:70px">**Type**</div> | <div style="width:60px">**Default**</div> | **Description** |
+| <div style="width:130px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:60px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | hdcp_enforcement | int | -1 | 해당 트랙에 대한 HDCP 적용 여부 및 HDCP 버전. <br> -1: HDCP 미적용, 0: HDCP Type 0(버전 무관), 1: HDCP Type 1(2.2 이상 필요) |
 | allow_airplay | boolean | true | AirPlay 허용 여부 |
@@ -366,7 +366,7 @@ PallyCon 서비스에서 관리하지 않는 외부 키로 패키징된 콘텐�
 
 #### external_key.mpeg_cenc
 
-| **Name** | **Type** | **Required** | **Description** |
+| <div style="width:70px">**Name**</div> | **Type** | <div style="width:70px">**Required**</div> | **Description** |
 | --- | --- | --- | --- |
 | track_type | string | Yes | 아래 외부 키가 적용될 트랙을 정의 ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2")|
 | key_id | hex-string | Yes | DASH CENC 패키징(PlayReady/Widevine) 시 사용한 key ID 16byte hex string 값 |
@@ -375,7 +375,7 @@ PallyCon 서비스에서 관리하지 않는 외부 키로 패키징된 콘텐�
 
 #### external_key.hls_aes 
 
-| **Name** | **Type** | **Required** | **Description** |
+| <div style="width:70px">**Name**</div> | **Type** | <div style="width:70px">**Required**</div> | **Description** |
 | --- | --- | --- | --- |
 | track_type | string | Yes | 아래 외부 키가 적용될 트랙을 정의 ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2")|
 | key | hex-string | Yes | HLS Sample AES 패키징(FairPlay Streaming) 시 사용한 key 16byte hex string 값 |

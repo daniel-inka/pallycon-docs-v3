@@ -4,8 +4,8 @@ linktitle: FairPlay iOS SDK
 summary: This document describes how to use the libraries and sample project included in the FairPlay iOS SDK.
 toc: true
 type: book
-date: "2019-05-05T00:00:00+01:00"
-lastmod: "2020-09-16T00:00:00Z"
+date: "2020-10-23T00:00:00+01:00"
+lastmod: "2020-10-23T00:00:00Z"
 draft: false
 
 menu:

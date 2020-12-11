@@ -289,7 +289,7 @@ Set policies related to replay, such as license validity period and whether it i
 
 - In the case of content with divided tracks by resolution, the playback policy is applied equally to all tracks.
 
-|<div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
+|<div style="width:140px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | persistent | boolean | No | Whether the license is persistent for offline scenario. (default: false) <br>true : keep license, false : remove license after play(for streaming) |
 | duration | int | 0 | License validity period. (Unit: second) Unlimited when set to 0. <br> **'expire\_date' is ignored if 'duration' is set.** |
@@ -337,7 +337,7 @@ Set policies related to security such as hardware DRM and output protection leve
 
 #### security_policy.fairplay 
 
-| <div style="width:120px">**Name**</div> | <div style="width:70px">**Type**</div> | **Default** | **Description** |
+| <div style="width:140px">**Name**</div> | <div style="width:70px">**Type**</div> | **Default** | **Description** |
 | --- | --- | --- | --- |
 | hdcp_enforcement | int | -1 (No HDCP requirement) | HDCP version required for the track. <br> -1: HDCP not applied, 0: HDCP Type 0 (version independent), 1: HDCP Type 1 (requires 2.2 or higher) |
 | allow_airplay | boolean | true | Whether to allow AirPlay |
@@ -345,7 +345,7 @@ Set policies related to security such as hardware DRM and output protection leve
 
 #### security_policy.ncg 
 
-| **Name** | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
+| <div style="width:140px">**Name**</div> | <div style="width:70px">**Type**</div> | <div style="width:70px">**Default**</div> | **Description** |
 | --- | --- | --- | --- |
 | allow_mobile_abnormal_device | boolean | false | Whether to allow playback on jailbroken or rooted mobile devices |
 | allow_external_display | boolean | false | Whether external display is allowed. (default: false) |
@@ -366,7 +366,7 @@ Used to issue licenses for content packaged with foreign keys not managed by the
 
 #### external_key.mpeg\_cenc {#external-key-cenc}
 
-| **Name** | **Type** | **Required** | **Description** |
+| <div style="width:100px">**Name**</div> | **Type** | <div style="width:70px">**Required**</div> | **Description** |
 | --- | --- | --- | --- |
 | track_type | string | Yes | Defines the track to which the below external key is applied ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2") |
 | key\_id | hex-string | Yes | Key ID for DASH CENC packaging(PlayReady/Widevine). 16byte hex string |
@@ -375,7 +375,7 @@ Used to issue licenses for content packaged with foreign keys not managed by the
 
 #### external_key.hls\_aes {#external-key-aes}
 
-| **Name** | **Type** | **Required** | **Description** |
+| <div style="width:100px">**Name**</div> | **Type** | <div style="width:70px">**Required**</div> | **Description** |
 | --- | --- | --- | --- |
 | track_type | string | Yes | Defines the track to which the below external key is applied ("ALL", "ALL_VIDEO", "AUDIO", "SD", "HD", "UHD1", "UHD2")|
 | key | hex-string | Yes | Key for HLS Sample AES packaging(FairPlay Streaming). 16byte hex string |
