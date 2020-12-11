@@ -7,6 +7,8 @@ type: book
 date: "2020-05-05T00:00:00+01:00"
 lastmod: "2020-11-11T00:00:00Z"
 draft: false
+featured: true
+
 menu:
   multidrm:
     parent: 라이선스 발급 연동

@@ -20,8 +20,26 @@ date_format = "Jan 2006"
 
 [[item]]
   organization = "Update"
-  title = "PallyCon Docs renewal for version 3.0"
-  date_start = "2020-09-10"
+  title = "Renewal with Hugo Wowchemy theme (Docs 3.0)"
+  date_start = "2020-12-10"
+  description = ""
+
+[[item]]
+  organization = "Update"
+  title = "Docs renewal with Hugo + Learn theme (v2.5)"
+  date_start = "2018-09-06"
+  description = ""
+
+[[item]]
+  organization = "Update"
+  title = "Hosted on GitBook service (v2.0)"
+  date_start = "2017-02-16"
+  description = ""
+
+[[item]]
+  organization = "Initial Release"
+  title = "PallyCon Docs v1.0 based on Slate"
+  date_start = "2014-08-28"
   description = ""
 
 +++

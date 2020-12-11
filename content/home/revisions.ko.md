@@ -20,8 +20,26 @@ date_format = "Jan 2006"
 
 [[item]]
   organization = "업데이트"
-  title = "PallyCon Docs 사이트 3.0 리뉴얼"
-  date_start = "2020-09-10"
+  title = "Hugo Wowchemy 테마에 기반한 Docs 3.0 리뉴얼"
+  date_start = "2020-12-10"
+  description = ""
+
+[[item]]
+  organization = "업데이트"
+  title = "Hugo + Learn 테마 기반으로 이전 (v2.5)"
+  date_start = "2018-09-06"
+  description = ""
+
+[[item]]
+  organization = "업데이트"
+  title = "GitBook 서비스 기반으로 이전 (v2.0)"
+  date_start = "2017-02-16"
+  description = ""
+
+[[item]]
+  organization = "최초 릴리즈"
+  title = "PallyCon Docs 사이트 1.0 (Slate 기반)"
+  date_start = "2014-08-28"
   description = ""
 
 +++
