@@ -28,10 +28,10 @@ menu:
 
 ```mermaid
 graph TD;
-    A[원본 프레임] --> B(워터마크 전처리기)
-    B --> C[워터마크 처리된<br>0, 1 두 벌 프레임]
-    subgraph PallyCon 포렌식 워터마킹
-    D(워터마크 0 또는 1) -->|비밀 키 암호화| B
+    A[원본 프레임 &nbsp] --> B(워터마크 전처리기 &nbsp)
+    B --> C[워터마크 처리된 &nbsp<br>0, 1 두 벌 프레임 &nbsp]
+    subgraph PallyCon 포렌식 워터마킹 &nbsp
+    D(워터마크 0 또는 1 &nbsp) -->|비밀 키 암호화 &nbsp| B
     end
 ```
 

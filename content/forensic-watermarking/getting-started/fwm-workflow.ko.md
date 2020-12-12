@@ -69,13 +69,13 @@ CloudFront CDN을 사용하는 경우, CloudFront 엣지에 PallyCon Watermark E
 
 ```mermaid
 graph LR;
-    subgraph 콘텐츠 서비스 사이트
-    A[인코더] -->|1. 인코딩된<br>MP4 비디오| B(아마존 S3 스토리지)
+    subgraph 콘텐츠 서비스 사이트 &nbsp
+    A[인코더 &nbsp] -->|1. 인코딩된 &nbsp<br>MP4 비디오 &nbsp| B(아마존 S3 스토리지 &nbsp)
     end
     subgraph PallyCon SaaS
-    B -->|2. 인코딩된 MP4 비디오| C(패키징 서버)
-    C -->|3. 워터마킹 전처리 및 패키징| C
-    C -->|4. A/B 버전<BR>DASH/HLS 스트림| B
+    B -->|2. 인코딩된 MP4 비디오 &nbsp| C(패키징 서버 &nbsp)
+    C -->|3. 워터마킹 전처리 및 패키징 &nbsp| C
+    C -->|4. A/B 버전 &nbsp<BR>DASH/HLS 스트림 &nbsp| B
     end
 ```
 
@@ -106,14 +106,14 @@ SaaS 패키징 대신 직접 워터마킹 전처리를 수행하려면 `PallyCon
 
 ```mermaid
 graph LR;
-    subgraph 콘텐츠 서비스 사이트
-    A[인코더] -->|1. 인코딩된<br>MP4 비디오| B(CLI 전처리기가<br>설치된 서버)
-    B -->|2. 워터마킹 전처리 및 DRM 패키징| B
-    B -->|5. A/B 버전<BR>DASH/HLS 스트림| C(오리진 서버)
+    subgraph 콘텐츠 서비스 사이트 &nbsp
+    A[인코더 &nbsp] -->|1. 인코딩된 &nbsp<br>MP4 비디오 &nbsp| B(CLI 전처리기가 &nbsp<br>설치된 서버 &nbsp)
+    B -->|2. 워터마킹 전처리 및 DRM 패키징 &nbsp| B
+    B -->|5. A/B 버전 &nbsp<BR>DASH/HLS 스트림 &nbsp| C(오리진 서버 &nbsp)
     end
-    subgraph PallyCon 서비스
-    B -->|3. 콘텐츠 암호화 키 요청| D(키 서버)
-    D -->|4. 콘텐츠 키 응답| B
+    subgraph PallyCon 서비스 &nbsp
+    B -->|3. 콘텐츠 암호화 키 요청 &nbsp| D(키 서버 &nbsp)
+    D -->|4. 콘텐츠 키 응답 &nbsp| B
     end
 ```
 
@@ -140,15 +140,15 @@ PallyCon SaaS 패키징 서비스 또는 CLI 패키저 이외의 타사 트랜�
 
 ```mermaid
 graph LR;
-    subgraph 콘텐츠 서비스 사이트
-    A[인코더] -->|1. 인코딩된<br>MP4 비디오| B(PallyCon CLI 전처리기)
-    B -->|2. 워터마킹 전처리| B
-    B -->|3. A/B 버전<BR>MP4 비디오| C(타사 패키저)
-    C -->|6. A/B 버전<br>DASH/HLS 스트림| E(오리진 서버)
+    subgraph 콘텐츠 서비스 사이트 &nbsp
+    A[인코더 &nbsp] -->|1. 인코딩된 &nbsp<br>MP4 비디오 &nbsp| B(PallyCon CLI 전처리기 &nbsp)
+    B -->|2. 워터마킹 전처리 &nbsp| B
+    B -->|3. A/B 버전 &nbsp<BR>MP4 비디오 &nbsp| C(타사 패키저 &nbsp)
+    C -->|6. A/B 버전 &nbsp<br>DASH/HLS 스트림 &nbsp| E(오리진 서버 &nbsp)
     end
-    subgraph DRM 제공 업체
-    C -->|4. 콘텐츠 암호화 키 요청| D(키 서버)
-    D -->|5. 콘텐츠 키 응답| C
+    subgraph DRM 제공 업체 &nbsp
+    C -->|4. 콘텐츠 암호화 키 요청 &nbsp| D(키 서버 &nbsp)
+    D -->|5. 콘텐츠 키 응답 &nbsp| C
     end
 ```
 
@@ -219,13 +219,13 @@ graph LR;
 
 ```mermaid
 graph LR;
-    subgraph 인코더
-    A[원본 영상] -->|프레임 이미지| B(전처리 라이브러리)
-    B -->|0 또는 1로 마킹된<br>두벌 프레임| C["인코딩 결과<br>(A/B 버전 비디오 파일)"]
+    subgraph 인코더 &nbsp
+    A[원본 영상 &nbsp] -->|프레임 이미지 &nbsp| B(전처리 라이브러리 &nbsp)
+    B -->|0 또는 1로 마킹된 &nbsp<br>두벌 프레임 &nbsp| C["인코딩 결과 &nbsp<br>(A/B 버전 비디오 파일 &nbsp)"]
     end
-    C --> D(DASH 또는<br>HLS 패키징)
-    subgraph 패키져
-    D --> E["패키징 결과<br>(A/B 버전 스트림)"]
+    C --> D(DASH 또는 &nbsp<br>HLS 패키징 &nbsp)
+    subgraph 패키져 &nbsp
+    D --> E["패키징 결과 &nbsp<br>(A/B 버전 스트림) &nbsp"]
     end
 ```
 
@@ -249,18 +249,18 @@ A/B 버전의 스트림 콘텐츠는 CDN 엣지와의 연동을 통해 재생 �
 
 ```mermaid
 graph LR;
-    subgraph 콘텐츠 서비스 사이트
-    A[서비스 백엔드]
-    D[오리진 서버] -->|A/B 버전 스트림| E(아카마이 엣지)
+    subgraph 콘텐츠 서비스 사이트 &nbsp
+    A[서비스 백엔드 &nbsp]
+    D[오리진 서버 &nbsp] -->|A/B 버전 스트림 &nbsp| E(아카마이 엣지 &nbsp)
     end
-    subgraph 최종 사용자
-    A -->|4. WMT 포함된 스트림 URL| B(클라이언트 플레이어)
-    E -->|5. 워터마크 삽입된 스트림| B
+    subgraph 최종 사용자 &nbsp
+    A -->|4. WMT 포함된 스트림 URL &nbsp| B(클라이언트 플레이어 &nbsp)
+    E -->|5. 워터마크 삽입된 스트림 &nbsp| B
     end
-    subgraph PallyCon 서비스
-    A -->|1. 스트림 정보 + 세션 데이터| C(세션 매니저)
-    C -->|2. 세션 데이터 저장 및 WMT 생성| C
-    C -->|3. WMT 포함된 스트림 URL| A
+    subgraph PallyCon 서비스 &nbsp
+    A -->|1. 스트림 정보 + 세션 데이터 &nbsp| C(세션 매니저 &nbsp)
+    C -->|2. 세션 데이터 저장 및 WMT 생성 &nbsp| C
+    C -->|3. WMT 포함된 스트림 URL &nbsp| A
     end
 ```
 
@@ -286,19 +286,19 @@ graph LR;
 
 ```mermaid
 graph LR;
-    subgraph 콘텐츠 서비스 사이트
-    A[서비스 백엔드]
-    D[오리진 서버] -->|A/B 버전 스트림| E(아마존 CloudFront)
-    E -->|5. Lambda Edge<br>워터마크 삽입| E
+    subgraph 콘텐츠 서비스 사이트 &nbsp
+    A[서비스 백엔드 &nbsp]
+    D[오리진 서버 &nbsp] -->|A/B 버전 스트림 &nbsp| E(아마존 CloudFront &nbsp)
+    E -->|5. Lambda Edge &nbsp<br>워터마크 삽입 &nbsp| E
     end
-    subgraph 최종 사용자
-    A -->|4. 세션 URL| B(클라이언트 플레이어)
-    E -->|6. 워터마크 적용된 스트림| B
+    subgraph 최종 사용자 &nbsp
+    A -->|4. 세션 URL &nbsp| B(클라이언트 플레이어 &nbsp)
+    E -->|6. 워터마크 적용된 스트림 &nbsp| B
     end
-    subgraph PallyCon 서비스
-    A -->|1. 스트림 정보 및 세션 데이터| C(세션 매니저)
-    C -->|2. 세션 데이터 저장| C
-    C -->|3. 세션 URL| A
+    subgraph PallyCon 서비스 &nbsp
+    A -->|1. 스트림 정보 및 세션 데이터 &nbsp| C(세션 매니저 &nbsp)
+    C -->|2. 세션 데이터 저장 &nbsp| C
+    C -->|3. 세션 URL &nbsp| A
     end
 ```
 

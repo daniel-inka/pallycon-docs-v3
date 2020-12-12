@@ -22,18 +22,18 @@ PallyCon Multi DRM 서비스는 클라우드 기반의 SaaS (Solution as a Servi
 
 ```mermaid
 graph LR;
-    subgraph 고객사 서비스
-    A[원본 콘텐츠] --> B(인코더)
-    B -->|인코딩된 콘텐츠| C(DRM 패키져)
-    C -->|암호화된<br>DASH/HLS 스트림| D(CDN<br>스토리지)
+    subgraph 고객사 서비스&nbsp
+    A[원본 콘텐츠&nbsp] --> B(인코더&nbsp)
+    B -->|인코딩된 콘텐츠&nbsp| C(DRM 패키져&nbsp)
+    C -->|암호화된<br>DASH/HLS 스트림&nbsp| D(CDN<br>스토리지&nbsp)
     end
-    subgraph PallyCon 서비스
-    C -->|패키징<br>정보| E(PallyCon 멀티DRM<br>라이선스 서버)
-    E --> |암호화 키| C
+    subgraph PallyCon 서비스&nbsp
+    C -->|패키징&nbsp<br>정보&nbsp| E(PallyCon 멀티DRM<br>라이선스 서버&nbsp)
+    E --> |암호화 키&nbsp| C
     end
-    subgraph 최종 사용자
-    D --> |암호화된<br>DASH/HLS 스트림| F(클라이언트<br>플레이어)
-    E --> |DRM 라이선스| F
+    subgraph 최종 사용자&nbsp
+    D --> |암호화된&nbsp<br>DASH/HLS 스트림&nbsp| F(클라이언트&nbsp<br>플레이어&nbsp)
+    E --> |DRM 라이선스&nbsp| F
     end
 ```
 

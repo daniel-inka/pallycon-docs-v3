@@ -25,13 +25,13 @@ PallyCon 워터마킹 전처리 라이브러리는 인코딩/트랜스코딩 솔
 
 ```mermaid
 graph LR;
-    subgraph 인코더/트랜스코더
-    A[원본 영상] -->|인코딩 대상 프레임| B(전처리 라이브러리)
-    B -->|0, 1 마크된<br>두 벌 프레임| C["인코딩 결과물<br>(0, 1 두 벌 MP4)"]
+    subgraph 인코더 &nbsp
+    A[원본 영상 &nbsp] -->|인코딩 대상 프레임 &nbsp| B(전처리 라이브러리 &nbsp)
+    B -->|0, 1 마크된 &nbsp<br>두 벌 프레임 &nbsp| C["인코딩 결과물 &nbsp<br>(0, 1 두 벌 MP4) &nbsp"]
     end
-    C --> D(DASH 또는<br>HLS 패키징)
-    subgraph 패키저
-    D --> E["패키징 결과물<br>(0, 1 두 벌)"]
+    C --> D(DASH 또는 &nbsp<br>HLS 패키징 &nbsp)
+    subgraph 패키저 &nbsp
+    D --> E["패키징 결과물 &nbsp<br>(0, 1 두 벌) &nbsp"]
     end
 ```
 

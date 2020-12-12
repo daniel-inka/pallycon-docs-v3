@@ -26,14 +26,14 @@ PallyCon 서비스를 적용하기 위해서는 가장 먼저 콘텐츠를 암�
 
 ```mermaid
 graph LR;
-    subgraph 고객사 서비스
-    A[원본 콘텐츠] --> B(인코더)
-    B -->|인코딩된 콘텐츠| C(PallyCon 패키져<br>또는<br>3rd Party 트랜스코더)
-    C -->|암호화된<br>DASH/HLS 스트림| D(CDN<br>스토리지)
+    subgraph 고객사 서비스&nbsp
+    A[원본 콘텐츠&nbsp] --> B(인코더&nbsp)
+    B -->|인코딩된 콘텐츠&nbsp| C(PallyCon 패키져&nbsp<br>또는&nbsp<br>3rd Party 트랜스코더&nbsp)
+    C -->|암호화된&nbsp<br>DASH/HLS 스트림&nbsp| D(CDN<br>스토리지&nbsp)
     end
-    subgraph PallyCon 서비스
-    C -->|패키징<br>정보| E(키 관리 서버)
-    E -->|암호화 키| C
+    subgraph PallyCon 서비스&nbsp
+    C -->|패키징&nbsp<br>정보&nbsp| E(키 관리 서버&nbsp)
+    E -->|암호화 키&nbsp| C
     end
 ```
 

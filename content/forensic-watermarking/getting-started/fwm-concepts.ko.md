@@ -24,19 +24,19 @@ PallyCon 포렌식 워터마킹 서비스의 각종 개념과 용어에 대하�
 
 ```mermaid
 graph LR;
-    subgraph 고객사 서비스
-    A[원본<br>영상] --> B(인코더)
-    B -->|인코딩된<br>영상| C(CLI 전처리기<br>또는<br>패키징 서비스)
-    C -->|워터마크 A 버전<br>DASH/HLS 스트림| D(CDN 엣지<br>워터마크 삽입)
-    C -->|워터마크 B 버전<br>DASH/HLS 스트림| D
-    G(서비스 백엔드<br>CMS)
+    subgraph 고객사 서비스 &nbsp
+    A[원본 &nbsp<br>영상 &nbsp] --> B(인코더 &nbsp)
+    B -->|인코딩된 &nbsp<br>영상 &nbsp| C(CLI 전처리기 &nbsp<br>또는 &nbsp<br>패키징 서비스 &nbsp)
+    C -->|워터마크 A 버전 &nbsp<br>DASH/HLS 스트림 &nbsp| D(CDN 엣지 &nbsp<br>워터마크 삽입 &nbsp)
+    C -->|워터마크 B 버전 &nbsp<br>DASH/HLS 스트림 &nbsp| D
+    G(서비스 백엔드 &nbsp<br>CMS)
     end
-    subgraph 최종 사용자
-    G --> |세션 URL| E(클라이언트<br>플레이어)
-    D -->|세션 정보에 따른<br>Mixed DASH/HLS 스트림| E
+    subgraph 최종 사용자 &nbsp
+    G --> |세션 URL| E(클라이언트 &nbsp<br>플레이어 &nbsp)
+    D -->|세션 정보에 따른 &nbsp<br>Mixed DASH/HLS 스트림 &nbsp| E
     end
-    subgraph PallyCon 서비스
-    G -->|재생 세션<br>정보| F(워터마킹<br>세션 매니저)
+    subgraph PallyCon 서비스 &nbsp
+    G -->|재생 세션 &nbsp<br>정보 &nbsp| F(워터마킹 &nbsp<br>세션 매니저 &nbsp)
     F -->|세션 URL| G
     end
 ```
