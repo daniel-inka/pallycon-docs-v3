@@ -67,7 +67,7 @@
 
 [[main]]
   name = "Docs"
-  url = "en/"
+  url = "https://pallycon.com/docs/en/"
   parent = "developer"
   weight = 32
 

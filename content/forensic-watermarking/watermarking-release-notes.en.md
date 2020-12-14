@@ -72,11 +72,3 @@ weight: 100
 | 2019.04.11 | 1.3.1 |- Added support for HDR 10 hardware decoding.<br>- Shows 'DEMO' in the video when a trial key is used. |
 | 2019.03.11 | 1.3.0 |- Added support for UHD resolution, HEVC codec, and HDR.<br>- Added support for multi-thread decoding. |
 | 2018.07.16 | 1.0.0 |- Initial release of CLI preprocessor |
-
-### Visible Watermark SDK
-
-|Date |Version |Descriptions |
-|:---|:---|:---|
-| 2020.09.29 | 1.2.0 |- Added 'margin' to positiontype option. Watermark position can be set with fixed value.|
-| 2020.09.08 | 1.1.0 |- Added siteId parameter for authentication.<br>- Added support for linebreak in watermark text. Removed the text length limit. |
-| 2020.06.02 | 1.0.0 |- Initial release of Visible Watermark SDK|
