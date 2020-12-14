@@ -15,7 +15,7 @@ subtitle = "새로 추가되거나 최근에 업데이트된 문서들입니다.
   page_type = "book"
   
   # Choose how much pages you would like to display (0 = all pages)
-  count = 3
+  count = 4
   
   # Choose how many pages you would like to offset by
   offset = 0
